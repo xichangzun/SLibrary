@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.xcz.UserInfo.domain.UserInfo" table="USER" schema="SLibrary">
+        <id name="id" type="string">
+            <column name="ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="user_name" type="string">
+            <column name="user_name" length="20" not-null="false" />
+        </property>
+        <property name="pwd" type="string">
+            <column name="pwd" length="20" not-null="false" />
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="35" not-null="false" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="30" not-null="false" />
+        </property>
+        <property name="tel" type="string">
+            <column name="tel" length="15" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

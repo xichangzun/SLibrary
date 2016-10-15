@@ -1,0 +1,2 @@
+showmytag({tags:[]});
+showtag({tags:[]});

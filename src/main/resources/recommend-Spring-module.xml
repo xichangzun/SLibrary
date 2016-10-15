@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="recommendAction" class="com.xcz.recommendation.action.RecommendAction">
+        <property name="service">
+            <ref bean="recommendServiceTarget"/>
+        </property>
+    </bean>
+    <bean id="recommendServiceTarget" class="com.xcz.recommendation.service.recommendServiceImpl">
+        <property name="hibernateDAO">
+            <ref bean="hibernateDAO"/>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.xcz.recommendation.domain.Recommendation" table="RECOMMENDATION" schema="SLibrary">
+        <composite-id name="uionPK" class="com.xcz.borrow_history.domain.UionPK">
+            <key-property name="user_id" />
+            <key-property name="ISBN" />
+        </composite-id>
+        <property name="book_name" type="java.lang.String">
+            <column name="book_name" length="40" not-null="true"/>
+        </property>
+        <property name="lang" type="java.lang.String">
+            <column name="lang" length="15" not-null="false"/>
+        </property>
+        <property name="author" type="java.lang.String">
+            <column name="author" length="20" not-null="true"/>
+        </property>
+        <property name="press" type="java.lang.String">
+            <column name="press" length="20" not-null="true"/>
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="price" length="5" precision="2" />
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount" length="3" not-null="true"/>
+        </property>
+        <property name="reason" type="java.lang.String">
+            <column name="reason" length="50" not-null="true"/>
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="status" length="1"/>
+        </property>
+    </class>
+</hibernate-mapping>
