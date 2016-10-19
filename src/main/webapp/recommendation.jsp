@@ -5,7 +5,7 @@
   Time: 下午10:57
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
@@ -39,7 +39,7 @@
         <section class="h_bot_part container">
             <div class="clearfix row">
                 <div class="col-lg-8 col-md-6 col-sm-4 t_xs_align_c">
-                    <a href="index.html" class="logo m_xs_bottom_15 d_xs_inline_b">
+                    <a href="index.jsp" class="logo m_xs_bottom_15 d_xs_inline_b">
                         <img src="images/logo.png" alt="">
                     </a>
                 </div>
@@ -47,8 +47,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
                     <div class="row clearfix">
                         <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
-                            <li><a href="user_info.html" class="default_t_color">My Account</a></li>
-                            <li><a href="index.html" class="default_t_color">Checkout</a></li>
+                            <li><a href="user_info.jsp" class="default_t_color">My Account</a></li>
+                            <li><a href="index.jsp" class="default_t_color">Checkout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -66,10 +66,10 @@
                 <!--main menu-->
                 <nav role="navigation" class="f_left f_xs_none d_xs_none">
                     <ul class="horizontal_list main_menu clearfix">
-                        <li class="relative f_xs_none m_xs_bottom_5"><a href="user_info.html" class="tr_delay_hover color_light tt_uppercase"><b>My Information</b></a></li>
-                        <li class="relative f_xs_none m_xs_bottom_5"><a href="circulation.html" class="tr_delay_hover color_light tt_uppercase"><b>Borrowing&Reservation</b></a></li>
-                        <li class="relative current f_xs_none m_xs_bottom_5"><a href="recommendation.html" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
-                        <li class="relative f_xs_none m_xs_bottom_5"><a href="changepwd.html" class="tr_delay_hover color_light tt_uppercase"><b>Change Password</b></a></li>
+                        <li class="relative f_xs_none m_xs_bottom_5"><a href="user_info.jsp" class="tr_delay_hover color_light tt_uppercase"><b>My Information</b></a></li>
+                        <li class="relative f_xs_none m_xs_bottom_5"><a href="circulation.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Borrowing&Reservation</b></a></li>
+                        <li class="relative current f_xs_none m_xs_bottom_5"><a href="recommendation.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
+                        <li class="relative f_xs_none m_xs_bottom_5"><a href="changepwd.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Change Password</b></a></li>
                     </ul>
                 </nav>
                 <button class="f_right search_button tr_all_hover f_xs_none d_xs_none">
@@ -93,8 +93,8 @@
     <section class="breadcrumbs">
         <div class="container">
             <ul class="horizontal_list clearfix bc_list f_size_medium">
-                <li class="m_right_10 current"><a href="index.html" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-                <li><a href="recommendation.html" class="default_t_color">Recommendation</a></li>
+                <li class="m_right_10 current"><a href="index.jsp" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+                <li><a href="recommendation.jsp" class="default_t_color">Recommendation</a></li>
             </ul>
         </div>
     </section>
@@ -115,67 +115,49 @@
                             <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
                             <h2 class="tt_uppercase color_dark m_bottom_25">Recommending Form</h2>
                             <p class="m_bottom_10">Please input the details of the book you want to recommend:</p>
-                            <form id="contactform">
+                            <form  action="/Recommend/add" method="post">
                                 <ul>
                                     <li class="clearfix m_bottom_15">
                                         <div class="f_left half_column">
                                             <label for="cf_name" class="required d_inline_b m_bottom_5">Book Name</label>
-                                            <input type="text" id="cf_name" name="cf_name" class="full_width r_corners">
+                                            <input type="text" id="cf_name" name="book_name" class="full_width r_corners">
                                         </div>
                                         <div class="f_left half_column">
                                             <label for="cf_email" class="required d_inline_b m_bottom_5">Language</label>
-                                            <input type="email" id="cf_email" name="cf_email" class="full_width r_corners">
+                                            <input type="text" id="cf_lang" name="lang" class="full_width r_corners">
                                         </div>
                                     </li>
                                     <li class="m_bottom_15">
                                         <div class="f_left half_column">
                                             <label for="cf_email" class="required d_inline_b m_bottom_5">Writer</label>
-                                            <input type="email" id="cf_email" name="cf_email" class="full_width r_corners">
+                                            <input type="text" id="cf_author" name="author" class="full_width r_corners">
                                         </div>
                                         <div class="f_left half_column">
                                             <label for="cf_email" class="required d_inline_b m_bottom_5">Publisher</label>
-                                            <input type="email" id="cf_email" name="cf_email" class="full_width r_corners">
+                                            <input type="text" id="cf_press" name="press" class="full_width r_corners">
                                         </div>
                                     </li>
                                     <li class="m_bottom_15">
                                         <div class="f_left half_column">
                                             <label for="cf_email" class="required d_inline_b m_bottom_5">ISBN/ISSN</label>
-                                            <input type="email" id="cf_email" name="cf_email" class="full_width r_corners">
+                                            <input type="text" id="cf_ISBN" name="ISBN" class="full_width r_corners">
                                         </div>
                                         <div class="f_left half_column">
                                             <label for="cf_email" class="d_inline_b m_bottom_5">Price</label>
-                                            <input type="email" id="cf_email" name="cf_email" class="full_width r_corners">
+                                            <input type="text" id="cf_email" name="price" class="full_width r_corners">
                                         </div>
                                     </li>
                                 </ul>
-                            </form>
-                            <h2 class="tt_uppercase color_dark m_bottom_25">&nbsp </h2>
-                            <p class="m_bottom_10">Please input your recommending information:</p>
-                            <form id="contactform">
+                                <p class="m_bottom_10">Please input your recommending information:</p>
                                 <ul>
+
                                     <li class="clearfix m_bottom_15">
-                                        <div class="f_left half_column">
-                                            <label for="cf_name" class="d_inline_b m_bottom_5">Your Name</label>
-                                            <input type="text" id="cf_name" name="cf_name" class="full_width r_corners">
-                                        </div>
-                                        <div class="f_left half_column">
-                                            <label for="cf_email" class="d_inline_b m_bottom_5">Email</label>
-                                            <input type="email" id="cf_email" name="cf_email" class="full_width r_corners">
-                                        </div>
-                                    </li>
-                                    <li class="clearfix m_bottom_15">
-                                        <div class="f_left half_column">
-                                            <label for="cf_subject" class="d_inline_b m_bottom_5">Your ID</label>
-                                            <input type="text" id="cf_subject" name="cf_subject" class="full_width r_corners">
-                                        </div>
-                                        <div class="f_left half_column">
-                                            <label for="cf_subject" class="d_inline_b m_bottom_5 required">Suggesting the amount of this book</label>
-                                            <input type="text" id="cf_subject" name="cf_subject" class="full_width r_corners">
-                                        </div>
+                                        <label for="cf_subject" class="d_inline_b m_bottom_5 required">Suggesting the amount of this book</label>
+                                        <input type="text" id="cf_subject" name="amount" class="full_width r_corners">
                                     </li>
                                     <li class="m_bottom_15">
                                         <label for="cf_message" class="d_inline_b m_bottom_5">Recommending reason</label>
-                                        <textarea id="cf_message" name="cf_message" class="full_width r_corners"></textarea>
+                                        <textarea id="cf_message" name="reason" class="full_width r_corners"></textarea>
                                     </li>
                                     <li class="m_bottom_15">
                                         <p class="color_dark m_bottom_25">Thank you for recommending books!</p>

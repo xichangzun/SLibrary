@@ -71,7 +71,7 @@
                     <ul class="horizontal_list main_menu clearfix">
                         <li class="relative current f_xs_none m_xs_bottom_5"><a href="user_info.jsp" class="tr_delay_hover color_light tt_uppercase"><b>My Information</b></a></li>
                         <li class="relative f_xs_none m_xs_bottom_5"><a href="/BorrowHistory/queryBorrowInfo" class="tr_delay_hover color_light tt_uppercase"><b>Borrowing&Reservation</b></a></li>
-                        <li class="relative f_xs_none m_xs_bottom_5"><a href="recommendation.html" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
+                        <li class="relative f_xs_none m_xs_bottom_5"><a href="recommendation.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
                         <li class="relative f_xs_none m_xs_bottom_5"><a href="changepwd.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Change Password</b></a></li>
                     </ul>
                 </nav>

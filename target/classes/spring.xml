@@ -14,7 +14,8 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd ">
     <context:property-placeholder location="classpath:database.properties"></context:property-placeholder>
     <context:component-scan base-package="com.xcz.UserInfo.action,com.xcz.UserInfo.domain,com.xcz.UserInfo.service,com.xcz.search.action,com.xcz.search.domain,com.xcz.search.service,
-    com.xcz.borrow_history.action, com.xcz.borrow_history.domain, com.xcz.borrow_history.service"/>
+    com.xcz.borrow_history.action, com.xcz.borrow_history.domain, com.xcz.borrow_history.service,
+    com.xcz.recommendation.action, com.xcz.recommendation.domain,com.xcz.recommendation.service"/>
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driverClassName}"></property>
@@ -41,6 +42,7 @@
                 <value>classpath:Book.hbm.xml</value>
                 <value>classpath:BorrowHistory.hbm.xml</value>
                 <value>classpath:Reservation.hbm.xml</value>
+                <value>classpath:Recommendation.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -53,4 +55,5 @@
     <import resource="UserInfo-Spring-module.xml"/>
     <import resource="Search-Spring-module.xml"/>
     <import resource="BorrowHistory-Spring-module.xml"/>
+    <import resource="recommend-Spring-module.xml"/>
 </beans>
