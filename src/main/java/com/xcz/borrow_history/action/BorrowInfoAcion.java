@@ -47,6 +47,7 @@ public class BorrowInfoAcion extends BaseAction {
             // 有借阅的书未必有当前外借的书
             ArrayList<String> ISBNs = new ArrayList<String>();
             ArrayList<String> curISBNs = new ArrayList<String>();
+            borrowHistories = new ArrayList<BorrowHistory>();
 
             for (int i=0; i<histories.length; i++){
 
@@ -60,6 +61,7 @@ public class BorrowInfoAcion extends BaseAction {
                     borrowHistories.add(histories[i]);
                 }
             }
+            //System.out.println(borrowHistories.size());
             if(ISBNs.isEmpty())
             {
                 request.getSession().setAttribute("borrow_count",0);
@@ -67,7 +69,8 @@ public class BorrowInfoAcion extends BaseAction {
             else
             {
                 borrowBooks = this.getBorrowInfoService().queryBooks(ISBNs);
-
+                /*System.out.println(borrowBooks.size());
+                System.out.println(borrowHistories.size());*/
                 resultForRecord[] result = new resultForRecord[borrowHistories.size()];
                 for(int i = 0;i<borrowHistories.size();i++)
                 {
@@ -111,11 +114,11 @@ public class BorrowInfoAcion extends BaseAction {
                 result[i].author = reserveBooks.get(i).getAuthor();
                 if(reservations[i].getStatus())
                 {
-                    result[i].status = "可借";
+                    result[i].status = "OK";
                 }
                 else
                 {
-                    result[i].status = "等待中";
+                    result[i].status = "Waiting";
                 }
             }
             request.getSession().setAttribute("reserve_count", ISBNs.size());

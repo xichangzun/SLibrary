@@ -68,7 +68,7 @@
                     <ul class="horizontal_list main_menu clearfix">
                         <li class="relative f_xs_none m_xs_bottom_5"><a href="user_info.jsp" class="tr_delay_hover color_light tt_uppercase"><b>My Information</b></a></li>
                         <li class="relative f_xs_none m_xs_bottom_5"><a href="circulation.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Borrowing&Reservation</b></a></li>
-                        <li class="relative f_xs_none m_xs_bottom_5"><a href="recommendation.html" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
+                        <li class="relative f_xs_none m_xs_bottom_5"><a href="recommendation.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
                         <li class="relative current f_xs_none m_xs_bottom_5"><a href="changepwd.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Change Password</b></a></li>
                     </ul>
                 </nav>
@@ -114,7 +114,7 @@
                             <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
                             <h2 class="tt_uppercase color_dark m_bottom_25">Change Password</h2>
 
-                            <form id="contactform" action="/User/change" method="post">
+                            <form  action="/User/change" method="post">
 
                                 <table style="font-size:16px">
                                     <tr class="m_bottom_45">
@@ -129,12 +129,12 @@
                                     </tr>
                                     <tr class="m_bottom_25">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="contactform" class="m_bottom_5 d_inline_b">Name</label>&nbsp;
+                                            <label  class="m_bottom_5 d_inline_b">Name</label>&nbsp;
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <label for="contactform" class="m_bottom_5 d_inline_b color_dark">${user_name}</label>
+                                            <label  class="m_bottom_5 d_inline_b color_dark">${user_name}</label>
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_25">
@@ -164,7 +164,7 @@
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <input type="password" id="confirmpassword" name="cf_name" class="full_width r_corners">
+                                            <input type="password" id="confirmpassword" name="cf_password" class="full_width r_corners">
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_25">
@@ -177,7 +177,8 @@
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="center" valign="middle">
-                                            <button  class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove" type="submit" form="contactform" value="Submit">Save</button>
+                                            <button  class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove" type="submit"  value="Submit">Save</button>
+
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_25">

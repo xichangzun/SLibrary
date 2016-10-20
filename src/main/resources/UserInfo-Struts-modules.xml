@@ -14,8 +14,8 @@
             <result name="success" type="redirect">/index.jsp</result>
         </action>
         <action name="change" class="loginAction" method="changePWD">
-            <result name="success" type="redirect">/</result>
-            <result name="error" type="redirect">/</result>
+            <result name="success" type="redirect">/changepwd.jsp</result>
+            <result name="error" type="redirect">/changepwd.jsp</result>
         </action>
     </package>
 </struts>

@@ -114,7 +114,7 @@
                             <br>
                             <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
                             <h2 class="tt_uppercase color_dark m_bottom_25">Recommending Form</h2>
-                            <p class="m_bottom_10">Please input the details of the book you want to recommend:</p>
+                            <p class="m_bottom_10">Please input the book information:</p>
                             <form  action="/Recommend/add" method="post">
                                 <ul>
                                     <li class="clearfix m_bottom_15">
@@ -129,17 +129,17 @@
                                     </li>
                                     <li class="m_bottom_15">
                                         <div class="f_left half_column">
-                                            <label for="cf_email" class="required d_inline_b m_bottom_5">Writer</label>
+                                            <label for="cf_email" class="required d_inline_b m_bottom_5">Author</label>
                                             <input type="text" id="cf_author" name="author" class="full_width r_corners">
                                         </div>
                                         <div class="f_left half_column">
-                                            <label for="cf_email" class="required d_inline_b m_bottom_5">Publisher</label>
+                                            <label for="cf_email" class="required d_inline_b m_bottom_5">Press</label>
                                             <input type="text" id="cf_press" name="press" class="full_width r_corners">
                                         </div>
                                     </li>
                                     <li class="m_bottom_15">
                                         <div class="f_left half_column">
-                                            <label for="cf_email" class="required d_inline_b m_bottom_5">ISBN/ISSN</label>
+                                            <label for="cf_email" class="required d_inline_b m_bottom_5">ISBN</label>
                                             <input type="text" id="cf_ISBN" name="ISBN" class="full_width r_corners">
                                         </div>
                                         <div class="f_left half_column">
@@ -148,7 +148,8 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <p class="m_bottom_10">Please input your recommending information:</p>
+
+                                <h2 class="tt_uppercase color_dark m_bottom_25">&nbsp </h2>
                                 <ul>
 
                                     <li class="clearfix m_bottom_15">

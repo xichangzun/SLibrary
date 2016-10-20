@@ -331,10 +331,8 @@ else if(session.getAttribute("error") != null)
                                             <ul id="filter_portfolio" class="select_list d_none">
                                                 <select class="form-control" style="width: auto;position:relative; z-index:99999">
                                                     <option data-filter="*" value="All">All</option>
-                                                    <option data-filter=".fashion" value="Fashion">BookName</option>
-                                                    <option data-filter=".portraits" value="Portraits">Writer</option>
-                                                    <option data-filter=".people" value="People">BookNo.</option>
-                                                    <option data-filter=".cities" value="Cities">ISSN</option>
+                                                    <option data-filter=".fashion" value="Fashion">Book Name</option>
+                                                    <option data-filter=".portraits" value="Portraits">Author</option>
                                                     <option data-filter=".nature" value="Nature">ISBN</option>
                                                 </select>
                                             </ul>

@@ -81,17 +81,17 @@ public class UserAction extends BaseAction {
     public String changePWD()
     {
         HttpServletRequest rq = ServletActionContext.getRequest();
-        String checkpwd = (String) rq.getSession().getAttribute("checkpwd");
-        String new_password = (String) rq.getSession().getAttribute("new_password");
-        if(this.getLoginService().check(xcz.getUser_name(),checkpwd) != null)
+        String checkpwd = (String) rq.getParameter("checkpwd");
+        String new_password = (String) rq.getParameter("new_password");
+        if(this.getLoginService().check(xcz.getId(),checkpwd) != null)
         {
-            this.getLoginService().changePassWord(xcz.getUser_name(),new_password);
+            this.getLoginService().changePassWord(xcz.getId(),new_password);
             System.out.print("success");
             return SUCCESS;
         }
         else
         {
-            System.out.print("worry");
+            System.out.print("wrong! Account is not exist");
             return ERROR;
         }
 
