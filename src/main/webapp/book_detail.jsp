@@ -73,40 +73,13 @@
                     <div class="select_title r_corners relative color_dark">All</div>
                     <ul class="select_list d_none"></ul>
                     <select name="find_code" id="find_code">
-                        <option value="WRD">所有字段</option>
-                        <option value="WTI" selected="">题名关键词</option>
-                        <option value="TIT">题名(精确匹配）</option>
-                        <option value="WAU">著者</option>
-                        <option value="WSU">主题词</option>
-                        <option value="WPU">出版社</option>
-                        <option value="ISS">ISSN</option>
+                        <option value="TIT">BookName</option>
+                        <option value="WAU">Author</option>
                         <option value="ISB">ISBN</option>
-                        <option value="CAL">索书号</option>
-                        <option value="SYS">系统号</option>
-                        <option value="BAR">条形码</option>
-                        <option value="TAG">用户标签</option>
                     </select>
                 </div>
                 <input autocomplete="off" class=" r_corners" style="width:30%; height:29px;" name="request" value="" id="cclterm" oninput="clearTimeout(tm);if(event.keyCode!=13)tm=setTimeout(getsug,500)" onkeydown="if(&#39;\v&#39;==&#39;v&#39;){clearTimeout(tm);if(event.keyCode!=13&amp;&amp;event.keyCode!=38&amp;&amp;event.keyCode!=40)tm=setTimeout(getsug,500)}" onkeyup="if(event.keyCode==38){shiftsug(sugno-1)}else if(event.keyCode==40){shiftsug(sugno+1)}else if(event.keyCode==13)this.blur()"> &nbsp;
-                        <span id="baselist">
-                        <!-- filename: base-list-include -->
-                        <div style="margin-top:1px" class="custom_select f_size_medium relative f_left">
-							<div class="select_title r_corners relative color_dark">All</div>
-                            <ul class="select_list d_none"></ul>
-                                <select name="local_base" id="localbase">
-                                     <option value=""></option>
-                                     <option value="XDU01" selected="">中文文献库</option>
-                                     <option value="XDU09">西文文献库</option>
-                                     <option value="LCL52">征订目录库</option>
-                                     <option value="UCS01F">国图联编中文文献库</option>
-                                     <option value="UCS09F">国图联编西文文献库</option>
-                                </select>
-						</div>
-
-                        </span>
-                <span id="refine"></span>
                 <input style="height:30px" class="button_type_9 r_corners t_align_c" id="lookup" value="  Search  " type="submit">
-                <input style="height:30px" class="button_type_9 r_corners" value="  Two times search  " type="submit" onclick="">
                 <script>
                     //document.write('<a id=rsslink href="/rss/newbookrss.php?base=XDU01&lib=XDU01&name='+document.getElementById("search_description").value+'&request=" target="_blank"><img border="0" width="24" src="/rss/style/pics/ico_rss.gif"></a>');
                 </script>
@@ -135,7 +108,7 @@
                     <hr class="divider_type_3 m_bottom_10">
                     <table width="700" border="20" bordercolor="black" cellspacing="20">
                         <tr height="30">
-                            <td>System number - Books</td>
+                            <td>Call No.</td>
                             <td>001</td>
                         </tr>
                         <tr height="30">
@@ -143,36 +116,32 @@
                             <td>978-7-201-09973-6 : CNY32.80</td>
                         </tr>
                         <tr height="30">
-                            <td>Work language</td>
+                            <td>Language</td>
                             <td>chi</td>
                         </tr>
                         <tr height="30">
-                            <td>Title</td>
-                            <td>《xxxxxx》</td>
+                            <td>Book Name</td>
+                            <td>疯狂java</td>
                         </tr>
                         <tr height="30">
-                            <td>Publication and distribution</td>
+                            <td>Publication</td>
                             <td>天津 : 天津人民出版社, 2016</td>
                         </tr>
                         <tr height="30">
-                            <td>Carrier form</td>
+                            <td>Descr.</td>
                             <td>241页 ; 24cm</td>
                         </tr>
                         <tr height="30">
-                            <td>Abstract</td>
-                            <td>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
-                        </tr>
-                        <tr height="30">
-                            <td>Personal author</td>
+                            <td>Author</td>
                             <td>郭现杰</td>
                         </tr>
                         <tr height="30">
-                            <td>Total collection</td>
-                            <td>所有单册</td>
+                            <td>Total Amount</td>
+                            <td></td>
                         </tr>
                         <tr height="30">
-                            <td>CD-ROM Database</td>
-                            <td>随书光盘下载</td>
+                            <td>Available Amount</td>
+                            <td></td>
                         </tr>
 
                     </table>

@@ -173,7 +173,7 @@ else
                                         <figcaption>
                                             <div class="clearfix">
                                                 <div class="f_left p_list_description f_sm_none w_sm_full m_xs_bottom_10">
-                                                    <h4 class="fw_medium"><a href="book_detail.html" class="color_dark">${xcz_tab.book_name}</a></h4>
+                                                    <h4 class="fw_medium"><a href="book_detail.jsp" class="color_dark">${xcz_tab.book_name}</a></h4>
 
                                                     <br>
                                                     <hr class="m_bottom_10">
@@ -183,7 +183,7 @@ else
                                                             Author: ${xcz_tab.author}
                                                         </li>
                                                         <li>
-                                                            Publisher: ${xcz_tab.press}
+                                                            Press: ${xcz_tab.press}
                                                         </li>
                                                         <li>
                                                             CallNumber: ${xcz_tab.call_no}

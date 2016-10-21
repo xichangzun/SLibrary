@@ -333,6 +333,7 @@ else if(session.getAttribute("error") != null)
                                                     <option data-filter="*" value="All">All</option>
                                                     <option data-filter=".fashion" value="Fashion">Book Name</option>
                                                     <option data-filter=".portraits" value="Portraits">Author</option>
+                                                    <option data-filter=".nature" value="Nature">ISBN</option>
                                                 </select>
                                             </ul>
                                         </div>
