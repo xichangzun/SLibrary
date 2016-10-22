@@ -91,16 +91,6 @@ else
                         <img src="images/logo.png" alt="">
                     </a>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
-                    <div class="row clearfix">
-                        <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
-                            <li id="LoginButton"><a href="#" data-popup="#login_popup">Log In</a></li>
-
-                            <li id="InfoButton"><a href="user_info.jsp" class="default_t_color">My Account</a></li>
-                            <li id="CheckOutButton"><a href="/User/logout" class="default_t_color">Checkout</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </section>
     </header>
@@ -113,7 +103,7 @@ else
                 <section >
                     <h2 class="tt_uppercase color_dark m_bottom_25">Search Result</h2>
                     <!--sort-->
-                    <div class="row clearfix m_bottom_10">
+                    <%--<div class="row clearfix m_bottom_10">
                         <div class="col-lg-7 col-md-8 col-sm-12 m_sm_bottom_10" style="padding:15px 15px 10px 10px;">
                             <p class="d_inline_middle f_size_medium">Sort by:</p>
                             <div class="clearfix d_inline_middle m_left_10">
@@ -149,17 +139,14 @@ else
                             <div style="position:relative; float:right; padding:15px 5px 10px 10px;width:200px;">
                                 <input  class="f_right f_size_medium relative d_inline_middle m_left_15 m_mxs_left_0 r_corners" style="height:30px" type="text" name="search">
                             </div>
-
-
                         </div>
-
-                    </div>
+                    </div>--%>
                     <hr class="m_bottom_10 divider_type_3">
                     <!--products list type-->
                     <div class="container page_content_offset">
                         <section class="row products_container clearfix m_bottom_5 m_left_0 m_right_0">
                             <!--product item-->
-                            <s:iterator value = "#attr.result" id = "xcz_tab">
+                            <s:iterator value = "#attr.result" id = "xcz_tab" status="status">
                                 <div style="width:580px;" class="col-lg-6 product_item full_width list_type hit m_left_0 m_right_0">
                                     <figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
                                         <!--product preview-->
@@ -173,8 +160,7 @@ else
                                         <figcaption>
                                             <div class="clearfix">
                                                 <div class="f_left p_list_description f_sm_none w_sm_full m_xs_bottom_10">
-                                                    <h4 class="fw_medium"><a href="book_detail.jsp" class="color_dark">${xcz_tab.book_name}</a></h4>
-
+                                                    <h4 class="fw_medium"><a href="book_detail.jsp?index=${status.index}" class="color_dark">${xcz_tab.book_name}</a></h4>
                                                     <br>
                                                     <hr class="m_bottom_10">
                                                     <p class="d_sm_none d_xs_block">
@@ -186,10 +172,13 @@ else
                                                             Press: ${xcz_tab.press}
                                                         </li>
                                                         <li>
-                                                            CallNumber: ${xcz_tab.call_no}
+                                                            Call No: ${xcz_tab.call_no}
                                                         </li>
                                                         <li>
-                                                            Publication Year: ${xcz_tab.pub_year}
+                                                            Year: ${xcz_tab.pub_year}
+                                                        </li>
+                                                        <li>
+                                                            ISBN: ${xcz_tab.ISBN}
                                                         </li>
                                                     </ul>
                                                     </p>

@@ -13,10 +13,9 @@ import java.util.List;
  * Created by root on 16-10-9.
  */
 public class SearchServiceImpl extends BaseService implements SearchService {
-    public Book[] search(String para)
+    public Book[] search(String keyword, String type)
     {
-        String a = para.replace(' ','%');
-        String sql = "SELECT * FROM BOOK WHERE book_name LIKE BINARY '%"+a+"%' ";
+        String sql = concatSql(keyword, type);
         List result = this.getHibernateDAO().findBySql(sql);
         if(result == null||result.isEmpty())
         {
@@ -35,7 +34,7 @@ public class SearchServiceImpl extends BaseService implements SearchService {
                 t2.setAuthor((String)temp[3]);
                 t2.setPress((String)temp[4]);
                 Timestamp trans = (Timestamp)temp[5];
-                t2.setPub_year(trans.toString());;
+                t2.setPub_year(trans.toString().substring(0,4));
                 t2.setAmount((Integer)temp[6]);
                 t2.setRes_amount((Integer)temp[7]);
                 t2.setTotal_amount((Integer)temp[8]);
@@ -49,6 +48,21 @@ public class SearchServiceImpl extends BaseService implements SearchService {
             fin = xcz.toArray(fin);
             return fin;
         }
+    }
 
+    private String concatSql(String keyword, String type){
+        String sql = null;
+        if (type.equals("Book Name")){
+            String k = keyword.replace(' ','%');
+            sql = "SELECT * FROM BOOK WHERE book_name LIKE BINARY '%" + k + "%' ORDER BY pub_year DESC";
+        } else if (type.equals("Author")){
+            String k = keyword.replace(' ','%');
+            sql = "SELECT * FROM BOOK WHERE author LIKE BINARY '%" + k + "%' ORDER BY pub_year DESC";
+        } else if (type.equals("ISBN")){
+            sql = "SELECT * FROM BOOK WHERE ISBN = '"+ keyword + "' ORDER BY pub_year DESC";
+        } else {
+            System.out.println("Undefined Type!");
+        }
+        return sql;
     }
 }

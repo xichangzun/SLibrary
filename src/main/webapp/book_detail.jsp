@@ -1,3 +1,5 @@
+<%@ page import="com.xcz.search.domain.Book" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: root
@@ -43,21 +45,20 @@
         <section class="h_bot_part container">
             <div class="clearfix row">
                 <div class="col-lg-8 col-md-6 col-sm-4 t_xs_align_c">
-                    <a href="index.html" class="logo m_xs_bottom_15 d_xs_inline_b">
+                    <a href="index.jsp" class="logo m_xs_bottom_15 d_xs_inline_b">
                         <img src="images/logo.png" alt="">
                     </a>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
+                <%--<div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
                     <div class="row clearfix">
                         <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
                             <li><a href="#" data-popup="#login_popup">Log In</a></li>
-
                             <li><a href="user_info.html" class="default_t_color">My Account</a></li>
                             <li><a href="index.html" class="default_t_color">Checkout</a></li>
                         </ul>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </section>
         <!--main menu container-->
@@ -65,20 +66,18 @@
     <!--breadcrumbs-->
     <section class="breadcrumbs">
         <div class="container">
-            <form name="cclform" method="get" action="http://al.lib.xidian.edu.cn/F/8FU9AMCBQLGV767VPYMJCJ9Q5N4N944P6ALHBV6PS53CTJVGJ8-33719" onsubmit="return presearch(this);">
-                <input type="hidden" id="search_description" value="&lt;A HREF=http://al.lib.xidian.edu.cn:80/F/8FU9AMCBQLGV767VPYMJCJ9Q5N4N944P6ALHBV6PS53CTJVGJ8-33720?func=full-set-set&amp;set_number=002730&amp;set_entry=000003&amp;format=999&gt;&lt;img src=http://al.lib.xidian.edu.cn:80/exlibris/aleph/u20_1/alephe/www_f_chi/icon/f-next-record.gif border=0 alt=&#39;Next Record&#39;&gt;&lt;/A&gt;">
-                <input name="func" id="func" value="find-b" type="hidden">
+            <form method="post" action="/Search/execute" >
                 <!-- filename: find-code-include -->
                 <div style="margin-top:1px" class="custom_select f_size_medium relative f_left">
-                    <div class="select_title r_corners relative color_dark">All</div>
+                    <div class="select_title r_corners relative color_dark">Book Name</div>
                     <ul class="select_list d_none"></ul>
-                    <select name="find_code" id="find_code">
-                        <option value="TIT">BookName</option>
-                        <option value="WAU">Author</option>
-                        <option value="ISB">ISBN</option>
+                    <select name="type">
+                        <option value="Book Name">Book Name</option>
+                        <option value="Author">Author</option>
+                        <option value="ISBN">ISBN</option>
                     </select>
                 </div>
-                <input autocomplete="off" class=" r_corners" style="width:30%; height:29px;" name="request" value="" id="cclterm" oninput="clearTimeout(tm);if(event.keyCode!=13)tm=setTimeout(getsug,500)" onkeydown="if(&#39;\v&#39;==&#39;v&#39;){clearTimeout(tm);if(event.keyCode!=13&amp;&amp;event.keyCode!=38&amp;&amp;event.keyCode!=40)tm=setTimeout(getsug,500)}" onkeyup="if(event.keyCode==38){shiftsug(sugno-1)}else if(event.keyCode==40){shiftsug(sugno+1)}else if(event.keyCode==13)this.blur()"> &nbsp;
+                <input autocomplete="off" class=" r_corners" style="width:30%; height:29px;" name="keyword"> &nbsp;
                 <input style="height:30px" class="button_type_9 r_corners t_align_c" id="lookup" value="  Search  " type="submit">
                 <script>
                     //document.write('<a id=rsslink href="/rss/newbookrss.php?base=XDU01&lib=XDU01&name='+document.getElementById("search_description").value+'&request=" target="_blank"><img border="0" width="24" src="/rss/style/pics/ico_rss.gif"></a>');
@@ -106,45 +105,48 @@
                         </div>
                     </article>
                     <hr class="divider_type_3 m_bottom_10">
-                    <table width="700" border="20" bordercolor="black" cellspacing="20">
-                        <tr height="30">
-                            <td>Call No.</td>
-                            <td>001</td>
-                        </tr>
-                        <tr height="30">
-                            <td>ISBN</td>
-                            <td>978-7-201-09973-6 : CNY32.80</td>
-                        </tr>
-                        <tr height="30">
-                            <td>Language</td>
-                            <td>chi</td>
-                        </tr>
-                        <tr height="30">
-                            <td>Book Name</td>
-                            <td>疯狂java</td>
-                        </tr>
-                        <tr height="30">
-                            <td>Publication</td>
-                            <td>天津 : 天津人民出版社, 2016</td>
-                        </tr>
-                        <tr height="30">
-                            <td>Descr.</td>
-                            <td>241页 ; 24cm</td>
-                        </tr>
-                        <tr height="30">
-                            <td>Author</td>
-                            <td>郭现杰</td>
-                        </tr>
-                        <tr height="30">
-                            <td>Total Amount</td>
-                            <td></td>
-                        </tr>
-                        <tr height="30">
-                            <td>Available Amount</td>
-                            <td></td>
-                        </tr>
-
-                    </table>
+                    <%
+                        Book[] books = (Book[])session.getAttribute("result");
+                        Book book = books[Integer.parseInt(request.getParameter("index"))];
+                    %>
+                        <table width="700" border="20" bordercolor="black" cellspacing="20">
+                            <tr height="30">
+                                <td>Call No.</td>
+                                <td><%=book.getCall_no()%></td>
+                            </tr>
+                            <tr height="30">
+                                <td>ISBN</td>
+                                <td><%=book.getISBN()%></td>
+                            </tr>
+                            <tr height="30">
+                                <td>Language</td>
+                                <td><%=book.getLang()%></td>
+                            </tr>
+                            <tr height="30">
+                                <td>Book Name</td>
+                                <td><%=book.getBook_name()%></td>
+                            </tr>
+                            <tr height="30">
+                                <td>Publication</td>
+                                <td><%=book.getPress()%> : <%=book.getPub_year()%></td>
+                            </tr>
+                            <tr height="30">
+                                <td>Descr.</td>
+                                <td><%=book.getPages()%>p ; <%=book.getSize()%>cm</td>
+                            </tr>
+                            <tr height="30">
+                                <td>Author</td>
+                                <td><%=book.getAuthor()%></td>
+                            </tr>
+                            <tr height="30">
+                                <td>Total Amount</td>
+                                <td><%=book.getTotal_amount()%></td>
+                            </tr>
+                            <tr height="30">
+                                <td>Available Amount</td>
+                                <td><%=book.getAmount()%></td>
+                            </tr>
+                        </table>
                     <hr class="divider_type_3 m_bottom_45">
 
                 </section>
@@ -153,8 +155,11 @@
                     <!--widgets-->
                     <figure class="widget shadow r_corners wrapper m_bottom_30"> </figure>
                     <!--banner-->
+                    <br>
+                    <br>
+                    <br>
                     <a href="#" class="d_block r_corners m_bottom_30">
-                        <img src="images/banner_img_6.png" alt="">
+                        <img src="<%=book.getCover()%>" alt="">
                     </a>
 
                 </aside>

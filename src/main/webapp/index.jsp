@@ -232,6 +232,7 @@
             width: 100%;
         }
     </style>
+
 </head>
 <%
     if(session.getAttribute("id") != null)
@@ -242,8 +243,9 @@
     function init()
     {
         document.getElementById("LoginButton").style.display = "none";
+        document.getElementById("ReButton").style.display = "none";
         document.getElementById("InfoButton").style.display = "inline";
-        document.getElementById("InfoButton").style.display = "inline";
+        document.getElementById("CheckOutButton").style.display = "inline";
     }
 </script>
 <%
@@ -297,7 +299,7 @@ else if(session.getAttribute("error") != null)
                     <div class="row clearfix">
                         <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
                             <li id="LoginButton"><a href="#" data-popup="#login_popup">Log In</a></li>
-
+                            <li id="ReButton"><a href="user_register.jsp" class="default_t_color">Register</a></li>
                             <li id="InfoButton"><a href="user_info.jsp" class="default_t_color">My Account</a></li>
                             <li id="CheckOutButton"><a href="/User/logout" class="default_t_color">Checkout</a></li>
                         </ul>
@@ -322,27 +324,26 @@ else if(session.getAttribute("error") != null)
                             </nav>
 
                             <div class="tabs-container">
-                                <!-- ¹Ý²ØÊé¿¯ start-->
+                                <!--Search book start-->
                                 <div class="tab-content" id="tab1">
-                                    <form class="form-horizontal" action="/Search/execute" method="post" id="cgSearch" onsubmit="return isSubmitToCG();">
-                                        <input type="search" class="kuang" id="search1" name="request">
+                                    <form id = "YOU" class="form-horizontal" action="/Search/execute" method="post" >
+                                        <input type="search" class="kuang" id="search1" name="keyword">
                                         <div style="float:left" class="custom_select relative color_dark portfolio_filter d_inline_b t_align_l downlist-tabs">
-                                            <div class="select_title type_2 r_corners relative mw_0">All</div>
-                                            <ul id="filter_portfolio" class="select_list d_none">
-                                                <select class="form-control" style="width: auto;position:relative; z-index:99999">
-                                                    <option data-filter="*" value="All">All</option>
-                                                    <option data-filter=".fashion" value="Fashion">Book Name</option>
-                                                    <option data-filter=".portraits" value="Portraits">Author</option>
-                                                    <option data-filter=".nature" value="Nature">ISBN</option>
+                                            <div class="select_title type_2 r_corners relative mw_0">Book Name</div>
+                                            <ul  class="select_list d_none">
+                                                <select  class="form-control" style="width: auto;position:relative; z-index:99999" name="type" >
+                                                    <option value="Book Name">Book Name</option>
+                                                    <option value="Author">Author</option>
+                                                    <option value="ISBN">ISBN</option>
                                                 </select>
                                             </ul>
                                         </div>
                                         <input style="float:left" type="submit" value="Search" class="butn butn-tabs r_corners">
                                     </form>
                                 </div><!--/ tab-content end-->
-                                <!-- ¹Ý²ØÊé¿¯ end-->
+                                <!-- end-->
 
-                                <!-- e¶ÁËÑË÷ start-->
+                                <!--Search E-Res start-->
                                 <div class="tab-content" id="tab2">
                                     <form action="" id="eduform" method="post" onsubmit="return isSubmitToE();">
 
@@ -574,7 +575,6 @@ else if(session.getAttribute("error") != null)
                     <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
                     <div class="f_right f_size_medium f_mxs_none">
                         <a href="#" class="color_dark">Forgot your password?</a><br>
-                        <a href="#" class="color_dark">Forgot your username?</a>
                     </div>
                 </li>
             </ul>
