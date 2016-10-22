@@ -12,5 +12,7 @@
         </action>
         <action name="borrow" class="borrowInfoAction" method="ajaxCallBack">
         </action>
+        <action name="BookReturn" class="borrowInfoAction" method="returnBook">
+        </action>
     </package>
 </struts>

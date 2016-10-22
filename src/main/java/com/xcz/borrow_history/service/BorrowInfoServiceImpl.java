@@ -122,4 +122,19 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
         return true;
 
     }
+    public String returnBook(String user_id,String ISBN)
+    {
+
+        String sql = "UPDATE BORROW_HISTORY SET actual_date = curdate() WHERE user_id = '"+user_id+"'AND ISBN = '"+ISBN+"'";
+        try
+        {
+            this.getHibernateDAO().executeBySql(sql);
+            return "return success";
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return "no record: wrong ISBN or ID";
+        }
+    }
 }
