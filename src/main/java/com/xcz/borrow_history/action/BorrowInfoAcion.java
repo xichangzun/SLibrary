@@ -173,7 +173,22 @@ public class BorrowInfoAcion extends BaseAction {
 
     public void returnBook()
     {
+        HttpServletRequest rq = ServletActionContext.getRequest();
+        String ISBN = rq.getParameter("ISBN");
+        String user_id = rq.getParameter("User_id");
+        String result_message = this.getBorrowInfoService().returnBook(user_id,ISBN);
+        JSONObject a = new JSONObject();
+        a.put("message",result_message);
 
+        HttpServletResponse rp = ServletActionContext.getResponse();
+        rp.setContentType("text/html;charset=UTF8");
+        try {
+            rp.getWriter().append(a.toJSONString());
+            rp.getWriter().close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return;
     }
 
 }
