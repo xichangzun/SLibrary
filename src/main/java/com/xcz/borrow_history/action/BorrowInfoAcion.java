@@ -1,5 +1,6 @@
 package com.xcz.borrow_history.action;
 
+import com.alibaba.fastjson.JSONObject;
 import com.xcz.borrow_history.domain.BorrowHistory;
 import com.xcz.borrow_history.domain.Reservation;
 import com.xcz.borrow_history.domain.resultForRecord;
@@ -10,6 +11,8 @@ import com.xcz.search.domain.Book;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -127,6 +130,50 @@ public class BorrowInfoAcion extends BaseAction {
             request.getSession().setAttribute("reserve_count", 0);
         }
         return SUCCESS;
+    }
+
+    public void ajaxCallBack(){
+        HttpServletRequest rq = ServletActionContext.getRequest();
+        String ISBN = rq.getParameter("ISBN");
+        String user_id = rq.getParameter("User_id");
+        String result_message;
+        Book temp = this.getBorrowInfoService().queryBook(ISBN);
+        if(temp == null)
+        {
+            result_message = "ISBN错误，没有该书";
+        }
+        else if(temp.getAmount()>temp.getRes_amount())
+        {
+            if(this.getBorrowInfoService().add(user_id,ISBN))
+            {
+
+                result_message = "borrow success";
+            }
+            else
+            {
+                result_message = "borrow failed,try later";
+            }
+        }
+        else
+        {
+            result_message = "this book has been reserved";
+        }
+        JSONObject a = new JSONObject();
+        a.put("message",result_message);
+        HttpServletResponse rp = ServletActionContext.getResponse();
+        rp.setContentType("text/html;charset=UTF8");
+        try {
+            rp.getWriter().append(a.toJSONString());
+            rp.getWriter().close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return;
+    }
+
+    public void returnBook()
+    {
+
     }
 
 }

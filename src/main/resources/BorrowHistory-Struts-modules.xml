@@ -10,5 +10,7 @@
             <result name="success" type="redirect">/circulation.jsp</result>
             <result name="error" type="redirect">/index.jsp</result>
         </action>
+        <action name="borrow" class="borrowInfoAction" method="ajaxCallBack">
+        </action>
     </package>
 </struts>

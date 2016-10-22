@@ -1,13 +1,19 @@
 package com.xcz.borrow_history.service;
 
+import com.mysql.jdbc.SQLError;
 import com.xcz.borrow_history.domain.BorrowHistory;
 import com.xcz.borrow_history.domain.Reservation;
 import com.xcz.common.BaseService;
 import com.xcz.search.domain.Book;
+import org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator;
 
+import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -93,5 +99,27 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
             data[i] = t;
         }
         return data;
+    }
+
+    public Boolean add(String user_id,String ISBN)
+    {
+        Calendar temp = Calendar.getInstance().getInstance();
+        temp.add(Calendar.MONTH,1);
+        String date  = "{0}-{1}-{2}";
+        date = date.replace("{0}",temp.get(Calendar.YEAR)+"");
+        date = date.replace("{1}",temp.get(Calendar.MONTH)+1+"");
+        date = date.replace("{2}",temp.get(Calendar.DAY_OF_MONTH)+"");
+        String sql = "INSERT INTO BORROW_HISTORY (user_id, ISBN, return_date) VALUES ('"+user_id+"', '"+ISBN+"','"+date+"' );";
+        try
+        {
+            this.getHibernateDAO().executeBySql(sql);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+
     }
 }

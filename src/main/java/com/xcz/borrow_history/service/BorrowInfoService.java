@@ -11,6 +11,7 @@ import java.util.ArrayList;
  */
 public interface BorrowInfoService {
     BorrowHistory[] check(String user_id);
+    Boolean add(String user_id,String ISBN);
     Book queryBook(String ISBN);
     ArrayList<Book> queryBooks(ArrayList<String> ISBNs);
     Reservation[] queryReserve(String user_id);
