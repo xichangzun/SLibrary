@@ -24,76 +24,76 @@ public class UserAction extends BaseAction {
         this.loginService = loginservice;
     }
 
-
-
-
-
-    public String login()
-    {
+    public String login() {
         HttpServletRequest rq = ServletActionContext.getRequest();
         String id = rq.getParameter("Username");
         String password = rq.getParameter("PWD");
-        xcz = this.getLoginService().check(id,password);
-        if(xcz == null)
-        {
-            rq.getSession().setAttribute("error","ao");
+        xcz = this.getLoginService().check(id, password);
+        if (xcz == null) {
+            rq.getSession().setAttribute("error", "ao");
             return ERROR;
         }
         System.out.print(SUCCESS);
         rq.getSession().setAttribute("user_name", xcz.getUser_name());
-        rq.getSession().setAttribute("id",xcz.getId());
-        rq.getSession().setAttribute("unit",xcz.getUnit());
-        rq.getSession().setAttribute("email",xcz.getEmail());
-        rq.getSession().setAttribute("tel",xcz.getTel());
+        rq.getSession().setAttribute("id", xcz.getId());
+        rq.getSession().setAttribute("unit", xcz.getUnit());
+        rq.getSession().setAttribute("email", xcz.getEmail());
+        rq.getSession().setAttribute("tel", xcz.getTel());
         return SUCCESS;
     }
-    public String logout()
-    {
+
+    public String logout() {
         HttpServletRequest rq = ServletActionContext.getRequest();
         HttpSession session = rq.getSession();
-
-        if(session.getAttribute("id")!=null)
-        {
+        if (session.getAttribute("id") != null) {
             session.removeAttribute("id");
         }
-        if(session.getAttribute("error") != null)
-        {
+        if (session.getAttribute("error") != null) {
             session.removeAttribute("error");
         }
-        if(session.getAttribute("user_name") != null)
-        {
+        if (session.getAttribute("user_name") != null) {
             session.removeAttribute("user_name");
         }
-        if(session.getAttribute("unit") != null)
-        {
+        if (session.getAttribute("unit") != null) {
             session.removeAttribute("unit");
         }
-        if(session.getAttribute("email") != null)
-        {
+        if (session.getAttribute("email") != null) {
             session.removeAttribute("email");
         }
-        if(session.getAttribute("tel") != null)
-        {
+        if (session.getAttribute("tel") != null) {
             session.removeAttribute("tel");
         }
         return SUCCESS;
     }
-    public String changePWD()
-    {
+
+    public String changePWD() {
         HttpServletRequest rq = ServletActionContext.getRequest();
         String checkpwd = (String) rq.getParameter("checkpwd");
         String new_password = (String) rq.getParameter("new_password");
-        if(this.getLoginService().check(xcz.getId(),checkpwd) != null)
-        {
-            this.getLoginService().changePassWord(xcz.getId(),new_password);
+        if (this.getLoginService().check(xcz.getId(), checkpwd) != null) {
+            this.getLoginService().changePassWord(xcz.getId(), new_password);
             System.out.print("success");
             return SUCCESS;
-        }
-        else
-        {
+        } else {
             System.out.print("wrong! Account is not exist");
             return ERROR;
         }
+    }
 
+    public String register(){
+        HttpServletRequest rq = ServletActionContext.getRequest();
+        String id = rq.getParameter("id");
+        String pwd = rq.getParameter("pwd");
+        String name = rq.getParameter("name");
+        String unit = rq.getParameter("unit");
+        String email = rq.getParameter("email");
+        String tel = rq.getParameter("tel");
+        UserInfo userInfo = new UserInfo(id, name, pwd, unit, email, tel);
+        boolean status = this.getLoginService().register(userInfo);
+        if (status){
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
     }
 }

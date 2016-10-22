@@ -28,7 +28,7 @@
 				<section class="h_bot_part container">
 					<div class="clearfix row">
 						<div class="col-lg-8 col-md-6 col-sm-4 t_xs_align_c">
-							<a href="index.html" class="logo m_xs_bottom_15 d_xs_inline_b">
+							<a href="index.jsp" class="logo m_xs_bottom_15 d_xs_inline_b">
 								<img src="images/logo.png" alt="">
 							</a>
 						</div>
@@ -47,7 +47,7 @@
 						<nav role="navigation" class="f_left f_xs_none d_xs_none">	
 							<ul class="horizontal_list main_menu clearfix">
 								<li class="relative f_xs_none m_xs_bottom_5"><a href="index.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Home</b></a></li>
-                                <li class="relative current f_xs_none m_xs_bottom_5"><a href="User_register.htm" class="tr_delay_hover color_light tt_uppercase"><b>Register</b></a></li>
+                                <li class="relative current f_xs_none m_xs_bottom_5"><a href="user_register.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Register</b></a></li>
                                 
 							</ul>
 						</nav>
@@ -72,8 +72,8 @@
 			<section class="breadcrumbs">
 				<div class="container">
 					<ul class="horizontal_list clearfix bc_list f_size_medium">
-						<li class="m_right_10 current"><a href="index.html" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-						<li><a href="user_info.html" class="default_t_color">Register</a></li>
+						<li class="m_right_10 current"><a href="index.jsp" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+						<li><a href="user_register.jsp" class="default_t_color">Register</a></li>
 					</ul>
 				</div>
 			</section>
@@ -94,107 +94,107 @@
                                     <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
 									<h2 class="tt_uppercase color_dark m_bottom_25">User Register</h2>
 									
-									<form id="contactform">
+									<form action="index.jsp" method="post">
                                     	
                                     	<table style="font-size:16px">
 											<tr class="m_bottom_25">
 												<td width="200" height="50" align="right" valign="middle">
-													<label for="cf_id" class="m_bottom_5 d_inline_b">Reader ID</label>&nbsp;
+													<label class="m_bottom_5 d_inline_b">Reader ID</label>&nbsp;
 												</td>
 												<td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
 													<label >*</label>
 												<td width="300" height="50" align="left" valign="middle">
-													<input id="Register__Reader_ID" type="text" name="Reader_ID" class="full_width r_corners" autocomplete="off" placeholder="Please set your Reader ID">
+													<input type="text" name="id" class="full_width r_corners" autocomplete="off" placeholder="Please set your Reader ID">
 												</td>
 											</tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="Register__pwd" id="pwd" class="m_bottom_5 d_inline_b">Password</label>&nbsp;
+                                            		<label class="m_bottom_5 d_inline_b">Password</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
                                                     <label >*</label>
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <input id="Register__pwd" type="password" name="userName" class="full_width r_corners" autocomplete="off" placeholder="Please set the password">
+	                                                <input type="password" name="pwd" class="full_width r_corners" autocomplete="off" placeholder="Please set the password">
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
-                                                    <label for="Register__clue1" id="Label3" class="m_bottom_5 d_inline_b">Password cannot be more than  20 characters</label>
+                                                    <label class="m_bottom_5 d_inline_b">Password cannot be more than  20 characters</label>
                                                 </td>
                                             </tr>
 											<tr class="m_bottom_45">
 												<td width="200" height="50" align="right" valign="middle">
-													<label for="Register__pwd" id="pwd" class="m_bottom_5 d_inline_b">Confirm Password</label>&nbsp;
+													<label class="m_bottom_5 d_inline_b">Confirm Password</label>&nbsp;
 												</td>
 												<td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
 													<label >*</label>
 												</td>
 												<td width="300" height="50" align="left" valign="middle">
-													<input id="Register__pwd" type="password" name="userName" class="full_width r_corners" autocomplete="off" placeholder="Please set the password">
+													<input type="password" name="cfpwd" class="full_width r_corners" autocomplete="off" placeholder="Please set the password">
 												</td>
 												<td width="40" height="50" align="right" valign="middle">
 												</td>
 												<td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
-													<label for="Register__clue1" id="Label3" class="m_bottom_5 d_inline_b">Password cannot be more than  20 characters</label>
+													<label class="m_bottom_5 d_inline_b">Password cannot be more than  20 characters</label>
 												</td>
 											</tr>
 											<tr class="m_bottom_45">
 												<td width="200" height="50" align="right" valign="middle">
-													<label for="Register__userName" id="Register__userNameLabel" class="m_bottom_5 d_inline_b">Name</label>&nbsp;
+													<label class="m_bottom_5 d_inline_b">Name</label>&nbsp;
 												</td>
 												<td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
 													<label >*</label>
 												</td>
 												<td width="300" height="50" align="left" valign="middle">
-													<input id="Register__userName" type="text" name="userName" class="full_width r_corners" autocomplete="off" placeholder="Please set the user name">
+													<input type="text" name="name" class="full_width r_corners" autocomplete="off" placeholder="Please set the user name">
 												</td>
 												<td width="40" height="50" align="right" valign="middle">
 												</td>
 												<td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
-													<label for="Register__clue1" id="Label1" class="m_bottom_5 d_inline_b">User name cannot be more than 7 Chinese characters or 14 characters</label>
+													<label class="m_bottom_5 d_inline_b">User name cannot be more than 7 Chinese characters or 14 characters</label>
 												</td>
 											</tr>
 
                                             <tr class="m_bottom_25">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                                	<label for="cf_name" class="m_bottom_5 d_inline_b color_dark">Work Unit</label>
+                                                	<label class="m_bottom_5 d_inline_b color_dark">Work Unit</label>
                                                 </td>
                                                 <td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
                                                     <label >*</label>
                                                 <td width="300" height="50" align="left" valign="middle">
-                                                	<input id="Register__Work_Unit" type="text" name="Reader_ID" class="full_width r_corners" autocomplete="off" placeholder="Please set your Work Unit">
+                                                	<input type="text" name="unit" class="full_width r_corners" autocomplete="off" placeholder="Please set your Work Unit">
                                                 </td>
 
                                             </tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_email"  class="m_bottom_5 d_inline_b">E-mail</label>&nbsp;
+                                            		<label class="m_bottom_5 d_inline_b">E-mail</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
                                                     <label >*</label>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <input id="Register__E-mail" type="text" name="Reader_ID" class="full_width r_corners" autocomplete="off" placeholder="Please set your E-mail">
+	                                                <input type="text" name="email" class="full_width r_corners" autocomplete="off" placeholder="Please set your E-mail">
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_tel"  class="m_bottom_5 d_inline_b">Tel</label>&nbsp;
+                                            		<label class="m_bottom_5 d_inline_b">Tel</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <input id="Register__Tel" type="text" name="Reader_ID" class="full_width r_corners" autocomplete="off" placeholder="Please set your Telephone">
+	                                                <input type="text" name="tel" class="full_width r_corners" autocomplete="off" placeholder="Please set your Telephone">
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle" style="color: #FF0000">
-                                                    <label for="Register__Att"  class="m_bottom_5 d_inline_b">Attention</label>&nbsp;
+                                                    <label class="m_bottom_5 d_inline_b">Attention</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
-                                                    <label for="Register__clues"  class="m_bottom_5 d_inline_b">* is required !</label>&nbsp;
+                                                    <label class="m_bottom_5 d_inline_b">* is required !</label>&nbsp;
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_25">
@@ -203,7 +203,7 @@
                                             </tr>
                                     	</table>
                                         <li class="t_align_c">
-												<button class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Register</button>
+												<button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Register</button>
 										</li>
                                     </form>
 								</div>

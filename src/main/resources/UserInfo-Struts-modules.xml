@@ -17,5 +17,8 @@
             <result name="success" type="redirect">/changepwd.jsp</result>
             <result name="error" type="redirect">/changepwd.jsp</result>
         </action>
+        <action name="register" class="loginAction" method="register">
+            <result></result>
+        </action>
     </package>
 </struts>
