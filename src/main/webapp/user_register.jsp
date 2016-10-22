@@ -94,7 +94,7 @@
                                     <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
 									<h2 class="tt_uppercase color_dark m_bottom_25">User Register</h2>
 									
-									<form action="index.jsp" method="post">
+									<form action="/User/register" method="post">
                                     	
                                     	<table style="font-size:16px">
 											<tr class="m_bottom_25">
