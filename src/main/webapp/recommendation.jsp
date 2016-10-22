@@ -115,7 +115,7 @@
                             <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
                             <h2 class="tt_uppercase color_dark m_bottom_25">Recommending Form</h2>
                             <p class="m_bottom_10">Please input the book information:</p>
-                            <form  action="/Recommend/add" method="post">
+                            <form action="/Recommend/add" method="post">
                                 <ul>
                                     <li class="clearfix m_bottom_15">
                                         <div class="f_left half_column">

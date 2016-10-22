@@ -8,4 +8,5 @@ import com.xcz.UserInfo.domain.UserInfo;
 public interface LoginService {
     UserInfo check(String user_name,String pwd);
     Boolean changePassWord(String user_name,String new_pwd);
+    Boolean register(UserInfo userInfo);
 }

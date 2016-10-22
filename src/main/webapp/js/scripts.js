@@ -775,7 +775,7 @@ $('#shopping_button').on('mouseenter',function(){
 			select.hide();
 
 			// open list
-			
+
 			title.on('click',function(){
 				list.slideToggle(400);
 				$(this).toggleClass('active');
@@ -788,6 +788,15 @@ $('#shopping_button').on('mouseenter',function(){
 				title.text(val);
 				list.slideUp(400);
 				select.val(val);
+				// var opts = select[0].options;
+				// for(var i = 0;i<opts.length;i++){
+				// 	if(opts[i].value == val)
+				// 	{
+				// 		select[0].selectedIndex = i;
+				// 		opts[i].selected  =true;
+				// 		break;
+				// 	}
+				// }
 				title.toggleClass('active');
 			});
 

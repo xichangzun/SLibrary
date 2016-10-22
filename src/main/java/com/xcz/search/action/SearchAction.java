@@ -24,8 +24,11 @@ public class SearchAction extends BaseAction {
     public String Search()
     {
         HttpServletRequest rq = ServletActionContext.getRequest();
-        String para = rq.getParameter("request");
-        Book[] result = this.getSearchService().search(para);
+        String keyword = rq.getParameter("keyword");
+        String type = rq.getParameter("type");
+        /*System.out.println("keyword is " + keyword);
+        System.out.println("type is " + type);*/
+        Book[] result = this.getSearchService().search(keyword, type);
         if(result == null || result.length == 0)
         {
             System.out.print("error");

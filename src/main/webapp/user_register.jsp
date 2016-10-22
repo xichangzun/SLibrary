@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
@@ -21,28 +22,15 @@
 	<body>
 		<!--wide layout-->
 		<div class="wide_layout relative">
-			<!--[if (lt IE 9) | IE 9]>
-				<div style="background:#fff;padding:8px 0 10px;">
-				<div class="container" style="width:1170px;"><div class="row wrapper"><div class="clearfix" style="padding:9px 0 0;float:left;width:83%;"><i class="fa fa-exclamation-triangle scheme_color f_left m_right_10" style="font-size:25px;color:#e74c3c;"></i><b style="color:#e74c3c;">Attention! This page may not display correctly.</b> <b>You are using an outdated version of Internet Explorer. For a faster, safer browsing experience.</b></div><div class="t_align_r" style="float:left;width:16%;"><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode" class="button_type_4 r_corners bg_scheme_color color_light d_inline_b t_align_c" target="_blank" style="margin-bottom:2px;">Update Now!</a></div></div></div></div>
-			<![endif]-->
 			<!--markup header-->
 			<header role="banner">
 				<!--header bottom part-->
 				<section class="h_bot_part container">
 					<div class="clearfix row">
 						<div class="col-lg-8 col-md-6 col-sm-4 t_xs_align_c">
-							<a href="index.html" class="logo m_xs_bottom_15 d_xs_inline_b">
+							<a href="index.jsp" class="logo m_xs_bottom_15 d_xs_inline_b">
 								<img src="images/logo.png" alt="">
 							</a>
-						</div>
-                        
-						<div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
-							<div class="row clearfix">
-										<ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
-											<li><a href="user_info.html" class="default_t_color">My Account</a></li>
-											<li><a href="index.html" class="default_t_color">Checkout</a></li>
-										</ul>
-							</div>
 						</div>
 					</div>
 				</section>
@@ -58,10 +46,9 @@
 						<!--main menu-->
 						<nav role="navigation" class="f_left f_xs_none d_xs_none">	
 							<ul class="horizontal_list main_menu clearfix">
-								<li class="relative current f_xs_none m_xs_bottom_5"><a href="index.html" class="tr_delay_hover color_light tt_uppercase"><b>My Information</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="circulation.html" class="tr_delay_hover color_light tt_uppercase"><b>Borrowing&Reservation</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="recommendation.html" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="changepwd.html" class="tr_delay_hover color_light tt_uppercase"><b>Change Password</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a href="index.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Home</b></a></li>
+                                <li class="relative current f_xs_none m_xs_bottom_5"><a href="user_register.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Register</b></a></li>
+                                
 							</ul>
 						</nav>
 						<button class="f_right search_button tr_all_hover f_xs_none d_xs_none">
@@ -85,8 +72,8 @@
 			<section class="breadcrumbs">
 				<div class="container">
 					<ul class="horizontal_list clearfix bc_list f_size_medium">
-						<li class="m_right_10 current"><a href="index.html" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-						<li><a href="user_info.html" class="default_t_color">My Information</a></li>
+						<li class="m_right_10 current"><a href="index.jsp" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+						<li><a href="user_register.jsp" class="default_t_color">Register</a></li>
 					</ul>
 				</div>
 			</section>
@@ -105,64 +92,109 @@
 								<div class="col-lg-10 col-md-8 col-sm-8 m_xs_bottom_30">
                                 	<br>
                                     <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
-									<h2 class="tt_uppercase color_dark m_bottom_25">Basic Information</h2>
+									<h2 class="tt_uppercase color_dark m_bottom_25">User Register</h2>
 									
-									<form id="contactform">
+									<form action="index.jsp" method="post">
                                     	
                                     	<table style="font-size:16px">
-                                        	<tr class="m_bottom_45">
-                                            	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_name"  class="m_bottom_5 d_inline_b">Name</label>&nbsp;
-                                                </td>
-                                                <td width="40" height="50" align="right" valign="middle">
-                                                </td>
-                                                <td width="300" height="50" align="left" valign="middle">
-	                                                <label for="cf_name" class="m_bottom_5 d_inline_b color_dark">Nobody</label>
-                                                </td>
-                                            </tr>
-                                            <tr class="m_bottom_25">
-                                            	<td width="200" height="50" align="right" valign="middle">
-                                                	<label for="cf_id" class="m_bottom_5 d_inline_b">Reader ID</label>&nbsp;
-                                                </td>
-                                                <td width="40" height="50" align="right" valign="middle">
-                                                </td>
-                                                <td width="300" height="50" align="left" valign="middle">
-                                               		<label for="cf_id" class="m_bottom_5 d_inline_b color_dark">13130130264</label>
-                                                </td>
-                                            </tr>
-                                            <tr class="m_bottom_25">
-                                            	<td width="200" height="50" align="right" valign="middle">
-                                                	<label for="cf_name" class="m_bottom_5 d_inline_b color_dark">Work Unit</label>
-                                                </td>
-                                                <td width="40" height="50" align="right" valign="middle">
-                                                </td>
-                                                <td width="300" height="50" align="left" valign="middle">
-                                                	<label for="cf_workUnit" class="m_bottom_5 d_inline_b color_dark">Strategic Homeland Intervention, Enforcement and Logistics Division</label>
-                                                </td>
-                                            </tr>
+											<tr class="m_bottom_25">
+												<td width="200" height="50" align="right" valign="middle">
+													<label class="m_bottom_5 d_inline_b">Reader ID</label>&nbsp;
+												</td>
+												<td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+													<label >*</label>
+												<td width="300" height="50" align="left" valign="middle">
+													<input type="text" name="id" class="full_width r_corners" autocomplete="off" placeholder="Please set your Reader ID">
+												</td>
+											</tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_email"  class="m_bottom_5 d_inline_b">E-mail</label>&nbsp;
+                                            		<label class="m_bottom_5 d_inline_b">Password</label>&nbsp;
+                                                </td>
+                                                <td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+                                                    <label >*</label>
+                                                </td>
+                                                <td width="300" height="50" align="left" valign="middle">
+	                                                <input type="password" name="pwd" class="full_width r_corners" autocomplete="off" placeholder="Please set the password">
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
-                                                <td width="300" height="50" align="left" valign="middle">
-	                                                <label for="cf_email" class="m_bottom_5 d_inline_b color_dark">123456@outlook.com</label>
+                                                <td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
+                                                    <label class="m_bottom_5 d_inline_b">Password cannot be more than  20 characters</label>
                                                 </td>
                                             </tr>
+											<tr class="m_bottom_45">
+												<td width="200" height="50" align="right" valign="middle">
+													<label class="m_bottom_5 d_inline_b">Confirm Password</label>&nbsp;
+												</td>
+												<td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+													<label >*</label>
+												</td>
+												<td width="300" height="50" align="left" valign="middle">
+													<input type="password" name="cfpwd" class="full_width r_corners" autocomplete="off" placeholder="Please set the password">
+												</td>
+												<td width="40" height="50" align="right" valign="middle">
+												</td>
+												<td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
+													<label class="m_bottom_5 d_inline_b">Password cannot be more than  20 characters</label>
+												</td>
+											</tr>
+											<tr class="m_bottom_45">
+												<td width="200" height="50" align="right" valign="middle">
+													<label class="m_bottom_5 d_inline_b">Name</label>&nbsp;
+												</td>
+												<td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+													<label >*</label>
+												</td>
+												<td width="300" height="50" align="left" valign="middle">
+													<input type="text" name="name" class="full_width r_corners" autocomplete="off" placeholder="Please set the user name">
+												</td>
+												<td width="40" height="50" align="right" valign="middle">
+												</td>
+												<td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
+													<label class="m_bottom_5 d_inline_b">User name cannot be more than 7 Chinese characters or 14 characters</label>
+												</td>
+											</tr>
 
+                                            <tr class="m_bottom_25">
+                                            	<td width="200" height="50" align="right" valign="middle">
+                                                	<label class="m_bottom_5 d_inline_b color_dark">Work Unit</label>
+                                                </td>
+                                                <td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+                                                    <label >*</label>
+                                                <td width="300" height="50" align="left" valign="middle">
+                                                	<input type="text" name="unit" class="full_width r_corners" autocomplete="off" placeholder="Please set your Work Unit">
+                                                </td>
+
+                                            </tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_tel"  class="m_bottom_5 d_inline_b">Tel</label>&nbsp;
+                                            		<label class="m_bottom_5 d_inline_b">E-mail</label>&nbsp;
+                                                </td>
+                                                <td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+                                                    <label >*</label>
+                                                <td width="300" height="50" align="left" valign="middle">
+	                                                <input type="text" name="email" class="full_width r_corners" autocomplete="off" placeholder="Please set your E-mail">
+                                                </td>
+                                            </tr>
+                                            <tr class="m_bottom_45">
+                                            	<td width="200" height="50" align="right" valign="middle">
+                                            		<label class="m_bottom_5 d_inline_b">Tel</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <label for="cf_tel" class="m_bottom_5 d_inline_b color_dark">6888-8888</label>
+	                                                <input type="text" name="tel" class="full_width r_corners" autocomplete="off" placeholder="Please set your Telephone">
                                                 </td>
                                             </tr>
-                                            <tr class="m_bottom_25">
-                                            	<td width="100" height="20" align="right" valign="middle">
+                                            <tr class="m_bottom_45">
+                                            	<td width="200" height="50" align="right" valign="middle" style="color: #FF0000">
+                                                    <label class="m_bottom_5 d_inline_b">Attention</label>&nbsp;
+                                                </td>
+                                                <td width="40" height="50" align="right" valign="middle">
+                                                </td>
+                                                <td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
+                                                    <label class="m_bottom_5 d_inline_b">* is required !</label>&nbsp;
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_25">
@@ -170,6 +202,9 @@
                                                 </td>
                                             </tr>
                                     	</table>
+                                        <li class="t_align_c">
+												<button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Register</button>
+										</li>
                                     </form>
 								</div>
 							</div>
