@@ -1,2 +1,0 @@
-showmytag({tags:[]});
-showtag({tags:[]});
