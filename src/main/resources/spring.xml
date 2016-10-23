@@ -43,6 +43,7 @@
                 <value>classpath:BorrowHistory.hbm.xml</value>
                 <value>classpath:Reservation.hbm.xml</value>
                 <value>classpath:Recommendation.hbm.xml</value>
+                <value>classpath:Admin.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -56,4 +57,5 @@
     <import resource="Search-Spring-module.xml"/>
     <import resource="BorrowHistory-Spring-module.xml"/>
     <import resource="recommend-Spring-module.xml"/>
+    <import resource="Admin-Spring-module.xml"/>
 </beans>
