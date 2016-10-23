@@ -1,8 +1,9 @@
+﻿<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
-		<title>Flatastic - Category No Products</title>
+		<title>Slibrary - UserInfo</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<!--meta info-->
@@ -12,6 +13,8 @@
 		<link rel="icon" type="image/ico" href="images/fav.ico">
 		<!--stylesheet include-->
 		<link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="all" href="css/jquery.custom-scrollbar.css">
+		<link rel="stylesheet" type="text/css" media="all" href="css/owl.carousel.css">
 		<link rel="stylesheet" type="text/css" media="all" href="css/style.css">
 		<!--font include-->
 		<link href="css/font-awesome.min.css" rel="stylesheet">
@@ -19,20 +22,27 @@
 	<body>
 		<!--wide layout-->
 		<div class="wide_layout relative">
-			
 			<!--markup header-->
 			<header role="banner">
 				<!--header bottom part-->
 				<section class="h_bot_part container">
 					<div class="clearfix row">
 						<div class="col-lg-8 col-md-6 col-sm-4 t_xs_align_c">
-							<a href="index.html" class="logo m_xs_bottom_15 d_xs_inline_b">
+							<a href="#" class="logo m_xs_bottom_15 d_xs_inline_b">
 								<img src="images/logo.png" alt="">
 							</a>
 						</div>
+                        
+						<!--<div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
+							<div class="row clearfix">
+								<ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
+									<li><a href="user_info.html" class="default_t_color">My Account</a></li>
+									<li><a href="index.html" class="default_t_color">Checkout</a></li>
+								</ul>
+							</div>
+						</div>-->
 					</div>
 				</section>
-				
 				<!--main menu container-->
 				<section class="menu_wrap relative">
 					<div class="container clearfix">
@@ -46,7 +56,7 @@
 						<nav role="navigation" class="f_left f_xs_none d_xs_none">	
 							<ul class="horizontal_list main_menu clearfix">
 								<li class="relative f_xs_none m_xs_bottom_5"><a href="borrow.html" class="tr_delay_hover color_light tt_uppercase"><b>Borrow And Return</b></a></li>
-								<li class="relative current f_xs_none m_xs_bottom_5"><a href="books_update.html" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a href="books_update.html" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>
 								<li class="relative f_xs_none m_xs_bottom_5"><a href="index.jsp" class="tr_delay_hover color_light tt_uppercase"><b>E-Resource</b></a></li>
 								<li class="relative f_xs_none m_xs_bottom_5"><a href="admin_newsManage.html" class="tr_delay_hover color_light tt_uppercase"><b>News Management</b></a></li>
 								<li class="relative f_xs_none m_xs_bottom_5"><a href="index.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
@@ -70,134 +80,79 @@
 				</section>
 			</header>
 			<!--breadcrumbs-->
-			<section class="breadcrumbs">
+			<!--<section class="breadcrumbs">
 				<div class="container">
 					<ul class="horizontal_list clearfix bc_list f_size_medium">
-						<li class="m_right_10 current"><a href="#" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-						<li><a href="#" class="default_t_color">Books Management</a></li>
+						<li class="m_right_10 current"><a href="index.html" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+						<li><a href="user_info.html" class="default_t_color">My Information</a></li>
 					</ul>
 				</div>
-			</section>
+			</section>-->
 			<!--content-->
 			<div class="page_content_offset">
 				<div class="container">
 					<div class="row clearfix">
-						<!--right column-->
-						<aside class="col-lg-3 col-md-3 col-sm-3">
-							<!--widgets-->
-							<figure class="widget shadow r_corners wrapper m_bottom_30">
-								<figcaption>
-									<h3 class="color_light">Menu</h3>
-								</figcaption>
-								<div class="widget_content">
-									<!--Categories list-->
-									<ul class="categories_list">
-										<li class="active">
-											<a href="books_add.html" class="f_size_large color_dark d_block relative">
-												<b>Add Books</b>
-											</a>
-										</li>
-										<li>
-											<a href="books_update.html" class="f_size_large scheme_color d_block relative">
-												<b>Delete Books</b>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</figure>
-						</aside>
 						<!--left content column-->
-
-						<section class="col-lg-9 col-md-9 col-sm-9">
+                        <section class="col-lg-1 col-md-1 col-sm-1">
+                        </section>
+						<section class="col-lg-10 col-md-9 col-sm-9">
 							
-							<div class="clearfix m_bottom_30">
-								<figure>
-									<div class="row clearfix r_corners photoframe  shadow m_bottom_45">
-										<h2 style="margin:20px 30px" class="tt_uppercase color_dark m_bottom_30">Delete Books</h2>
-										<hr style="margin:0px 30px" >
-                                        <div style="margin:0px 20px 30px 0px;">
-                                	    <br>
-											<div class="container">
-												<form method="post" action="/Search/execute" >
-													<!-- filename: find-code-include -->
-													<div style="margin-top:1px" class="custom_select f_size_medium relative f_left">
-														<div class="select_title r_corners relative color_dark">Book Name</div>
-														<ul class="select_list d_none"></ul>
-														<select name="type">
-															<option value="Book Name">Book Name</option>
-															<option value="Author">Author</option>
-															<option value="ISBN">ISBN</option>
-														</select>
-													</div>
-													<input autocomplete="off" class=" r_corners" style="width:45%; height:29px;" name="keyword"> &nbsp;
-													<input style="height:30px" class="button_type_9 r_corners t_align_c" id="lookup" value="  Search  " type="submit">
-													<script>
-														//document.write('<a id=rsslink href="/rss/newbookrss.php?base=XDU01&lib=XDU01&name='+document.getElementById("search_description").value+'&request=" target="_blank"><img border="0" width="24" src="/rss/style/pics/ico_rss.gif"></a>');
-													</script>
-													<div id="colorpanel" style="position:absolute;display:none;width:253px;height:177px;"></div>
-													<div id="details" style="display:none;font-size:14px;width:400px;position:absolute;z-index:10000;background:#fff;border:1px solid #aaa" onclick="this.style.display=&quot;none&quot;;if(g(&quot;format&quot;))g(&quot;format&quot;).style.display=&quot;&quot;"></div>
-												</form>
-											</div>
-										<!--<div>
-                                            <div style="position:relative; float:left; padding:15px 5px 10px 10px;">
-                                                <input  class="f_right f_size_medium relative d_inline_middle m_left_15 m_mxs_left_0 r_corners" placeholder="keyword" style="height:30px;width:700px;" type="text" name="search">
-												<select>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select>
-                                            </div> 
-                                            <div style="position:relative; float:left; padding:0px 15px 10px 0px;width:30px;">
-                                                <button class="search_button tr_all_hover f_xs_none d_xs_none"  >
-                                                    <i class="fa fa-search"></i>
-                                                </button>
-                                            </div>
-                                        </div>-->
-                                        <div  style="width:700px; margin:50px 50px 50px 30px;">
-										<!--product preview-->
-										<a href="#" class="d_block f_left relative pp_wrap m_right_30 m_xs_right_25">
-											<img style="height:130px;width:130px;" src="img/product_img_3.jpg" class="tr_all_hover" alt="">
-											<span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
-										</a>
-										<!--description and price of product-->
-										<figcaption >
-											<div>
-												<div class="f_left p_list_description f_sm_none w_sm_full m_xs_bottom_10">
-													<h3>Android和php开发最佳实践</h3>
-													<br>
-                                                    <hr class="m_bottom_10" style="width:350px;">
-													<p class="d_sm_none d_xs_block">
-                                                        <ul>
-                                                            <li>
-                                                                Author: 黄隽实
-                                                            </li>
-                                                            <li>
-                                                                Publisher: 机械工业出版社
-                                                            </li>
-                                                            <li>
-                                                                CallNumber: TP929.53/463=2
-                                                            </li>
-                                                            <li>
-                                                                Publication Year: 2006
-                                                            </li>
-                                                        </ul>
-                                                    </p>
-												</div>
-												<div class="f_right f_sm_none t_align_r t_sm_align_l">
-                                                    <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15 m_sm_bottom_0 d_sm_inline_middle">Delete</button>
-												</div>
-											</div>
-										</figcaption>
-								        </div>
-                                        </div>
-									</div>	
-								</figure>
+							<div class=" row clearfix r_corners photoframe  shadow m_bottom_45">
+                            	<div class="col-lg-1 col-md-8 col-sm-8 m_xs_bottom_30">
+                                </div>
+								<div class="col-lg-10 col-md-8 col-sm-8 m_xs_bottom_30">
+                                	<br>
+                                    <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
+									<h2 class="tt_uppercase color_dark m_bottom_25">Admin Login</h2>
+									
+									<form action="/Admin/login" method="post">
+                                    	<table style="font-size:16px">
+                                        	<tr class="m_bottom_45">
+                                            	<td width="200" height="50" align="right" valign="middle">
+                                            		<label class="m_bottom_5 d_inline_b">Admin ID</label>&nbsp;
+                                                </td>
+                                                <td width="40" height="50" align="left" valign="middle" >
+                                                    <label ></label>
+                                                </td>
+                                                <td width="300" height="50" align="left" valign="middle">
+	                                                <input type="text" name="id" class="full_width r_corners" autocomplete="off" placeholder="Please input the Admin ID">
+                                            </tr>
+                                            <tr class="m_bottom_45">
+                                            	<td width="200" height="50" align="right" valign="middle">
+                                            		<label class="m_bottom_5 d_inline_b">Admin PWD</label>&nbsp;
+                                                </td>
+                                                <td width="40" height="50" align="left" valign="middle" >
+                                                    <label ></label>
+                                                </td>
+                                                <td width="300" height="50" align="left" valign="middle">
+	                                                <input type="password" name="pwd" class="full_width r_corners" autocomplete="off" placeholder="Please input the Admin Password">
+                                            </tr>
+                                            <tr class="m_bottom_25">
+                                            	<td width="200" height="50" align="right" valign="middle">
+                                                </td>
+                                                <td width="40" height="50" align="right" valign="middle">
+                                                </td>
+                                                <td width="300" height="50" align="left" valign="middle">
+                                                </td>
+                                            </tr>
+
+                                    	</table>
+                                        <li class="t_align_c">
+												<button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Login</button>
+										</li>
+                                    </form>
+								</div>
+							</div>
+							<div class="row clearfix">
+								
+								
 							</div>
 						</section>
 						
 					</div>
 				</div>
 			</div>
+			
 			<!--markup footer-->
 			<footer id="footer" class="type_2">
 				<div style="height:30px" class="footer_top_part">
@@ -238,6 +193,7 @@
 				
 			</footer>
 		</div>
+		
 		
 		<!--login popup-->
 		<div class="popup_wrap d_none" id="login_popup">
@@ -281,3 +237,5 @@
 		<script src="js/scripts.js"></script>
 	</body>
 </html>
+
+    

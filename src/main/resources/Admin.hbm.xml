@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.xcz.admin_info.domain.Admin" table="ADMIN" schema="SLibrary">
+        <id name="id" type="string">
+            <column name="id" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="user_name" type="string">
+            <column name="user_name" length="20"/>
+        </property>
+        <property name="pwd" type="string">
+            <column name="pwd" length="20" />
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="35" />
+        </property>
+    </class>
+</hibernate-mapping>

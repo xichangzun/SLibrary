@@ -82,9 +82,6 @@
                 <script>
                     //document.write('<a id=rsslink href="/rss/newbookrss.php?base=XDU01&lib=XDU01&name='+document.getElementById("search_description").value+'&request=" target="_blank"><img border="0" width="24" src="/rss/style/pics/ico_rss.gif"></a>');
                 </script>
-                <!--
-                <input type="text" size="8" alt="clrDlg" style="border:none;background:transparent;" readonly>
-                -->
                 <div id="colorpanel" style="position:absolute;display:none;width:253px;height:177px;"></div>
                 <div id="details" style="display:none;font-size:14px;width:400px;position:absolute;z-index:10000;background:#fff;border:1px solid #aaa" onclick="this.style.display=&quot;none&quot;;if(g(&quot;format&quot;))g(&quot;format&quot;).style.display=&quot;&quot;"></div>
             </form>

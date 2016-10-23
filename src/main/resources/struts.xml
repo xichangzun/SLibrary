@@ -16,4 +16,5 @@
     <include file="Search-Struts-module.xml"/>
     <include file="BorrowHistory-Struts-modules.xml"/>
     <include file="Recommend-Struts-module.xml"/>
+    <include file="Admin-Struts-module.xml"/>
 </struts>
