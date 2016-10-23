@@ -14,6 +14,8 @@ $(function () {
             }
             else {
                 alert(mydata.message);
+                $("#ISBN").val("");
+                $("#UserID").val("");
             }
         })
         return false;
@@ -32,6 +34,8 @@ $(function () {
             }
             else {
                 alert(mydata.message);
+                $("#ISBN").val("");
+                $("#UserID").val("");
             }
         })
         return false;
