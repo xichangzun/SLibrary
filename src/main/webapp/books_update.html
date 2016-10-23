@@ -118,9 +118,9 @@
                                         <div style="margin:0px 20px 30px 0px;">
                                 	    <br>
 											<div class="container">
-												<form method="post" action="/Search/execute" >
+												<form  >
 													<!-- filename: find-code-include -->
-													<div style="margin-top:1px" class="custom_select f_size_medium relative f_left">
+													<div  class="custom_select f_size_medium relative f_left">
 														<div class="select_title r_corners relative color_dark">Book Name</div>
 														<ul class="select_list d_none"></ul>
 														<select name="type">
@@ -129,30 +129,12 @@
 															<option value="ISBN">ISBN</option>
 														</select>
 													</div>
-													<input autocomplete="off" class=" r_corners" style="width:45%; height:29px;" name="keyword"> &nbsp;
-													<input style="height:30px" class="button_type_9 r_corners t_align_c" id="lookup" value="  Search  " type="submit">
-													<script>
-														//document.write('<a id=rsslink href="/rss/newbookrss.php?base=XDU01&lib=XDU01&name='+document.getElementById("search_description").value+'&request=" target="_blank"><img border="0" width="24" src="/rss/style/pics/ico_rss.gif"></a>');
-													</script>
+													<input autocomplete="off" class=" r_corners" style="width:45%; height:30px;" name="keyword"> &nbsp;
+													<button style="height:30px" class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15 m_sm_bottom_0 d_sm_inline_middle" id="lookup" >Search</button>
 													<div id="colorpanel" style="position:absolute;display:none;width:253px;height:177px;"></div>
-													<div id="details" style="display:none;font-size:14px;width:400px;position:absolute;z-index:10000;background:#fff;border:1px solid #aaa" onclick="this.style.display=&quot;none&quot;;if(g(&quot;format&quot;))g(&quot;format&quot;).style.display=&quot;&quot;"></div>
+													<div id="details" style="display:none;font-size:14px;width:400px;position:absolute;z-index:10000;background:#fff;border:1px solid #aaa" ></div>
 												</form>
 											</div>
-										<!--<div>
-                                            <div style="position:relative; float:left; padding:15px 5px 10px 10px;">
-                                                <input  class="f_right f_size_medium relative d_inline_middle m_left_15 m_mxs_left_0 r_corners" placeholder="keyword" style="height:30px;width:700px;" type="text" name="search">
-												<select>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select>
-                                            </div> 
-                                            <div style="position:relative; float:left; padding:0px 15px 10px 0px;width:30px;">
-                                                <button class="search_button tr_all_hover f_xs_none d_xs_none"  >
-                                                    <i class="fa fa-search"></i>
-                                                </button>
-                                            </div>
-                                        </div>-->
                                         <div  style="width:700px; margin:50px 50px 50px 30px;">
 										<!--product preview-->
 										<a href="#" class="d_block f_left relative pp_wrap m_right_30 m_xs_right_25">
