@@ -15,7 +15,8 @@
     <context:property-placeholder location="classpath:database.properties"></context:property-placeholder>
     <context:component-scan base-package="com.xcz.UserInfo.action,com.xcz.UserInfo.domain,com.xcz.UserInfo.service,com.xcz.search.action,com.xcz.search.domain,com.xcz.search.service,
     com.xcz.borrow_history.action, com.xcz.borrow_history.domain, com.xcz.borrow_history.service,
-    com.xcz.recommendation.action, com.xcz.recommendation.domain,com.xcz.recommendation.service"/>
+    com.xcz.recommendation.action, com.xcz.recommendation.domain,com.xcz.recommendation.service,
+    com.xcz.book_management.action,com.xcz.book_management.service"/>
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driverClassName}"></property>
@@ -58,4 +59,5 @@
     <import resource="BorrowHistory-Spring-module.xml"/>
     <import resource="recommend-Spring-module.xml"/>
     <import resource="Admin-Spring-module.xml"/>
+    <import resource="BookManage-Spring-module.xml"/>
 </beans>

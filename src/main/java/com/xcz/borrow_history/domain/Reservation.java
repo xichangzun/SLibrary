@@ -4,16 +4,16 @@ package com.xcz.borrow_history.domain;
  * Created by yhq on 2016/10/9.
  */
 public class Reservation {
-    private Boolean status;
+    private String state;
 
     UionPK uionPK = new UionPK();
 
-    public Boolean getStatus() {
-        return status;
+    public String getState() {
+        return state;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public UionPK getUionPK() {
@@ -26,8 +26,8 @@ public class Reservation {
 
     public Reservation(){}
 
-    public Reservation(Boolean status, UionPK uionPK) {
-        this.status = status;
+    public Reservation(String state, UionPK uionPK) {
+        this.state = state;
         this.uionPK = uionPK;
     }
 }

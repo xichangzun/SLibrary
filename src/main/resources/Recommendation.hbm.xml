@@ -11,25 +11,25 @@
             <column name="book_name" length="40" not-null="true"/>
         </property>
         <property name="lang" type="java.lang.String">
-            <column name="lang" length="15" not-null="false"/>
+            <column name="lang" length="10" not-null="true"/>
         </property>
         <property name="author" type="java.lang.String">
-            <column name="author" length="20" not-null="true"/>
+            <column name="author" length="40" not-null="true"/>
         </property>
         <property name="press" type="java.lang.String">
-            <column name="press" length="20" not-null="true"/>
+            <column name="press" length="40" not-null="true"/>
         </property>
         <property name="price" type="java.lang.Float">
             <column name="price" length="5" precision="2" />
         </property>
         <property name="amount" type="java.lang.Integer">
-            <column name="amount" length="3" not-null="true"/>
+            <column name="amount" length="3" not-null="false"/>
         </property>
         <property name="reason" type="java.lang.String">
             <column name="reason" length="50" not-null="true"/>
         </property>
-        <property name="status" type="java.lang.Boolean">
-            <column name="status" length="1"/>
+        <property name="state" type="java.lang.String">
+            <column name="state" length="10"/>
         </property>
     </class>
 </hibernate-mapping>

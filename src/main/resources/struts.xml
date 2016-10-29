@@ -17,4 +17,5 @@
     <include file="BorrowHistory-Struts-modules.xml"/>
     <include file="Recommend-Struts-module.xml"/>
     <include file="Admin-Struts-module.xml"/>
+    <include file="BookManage-Struts-module.xml"/>
 </struts>

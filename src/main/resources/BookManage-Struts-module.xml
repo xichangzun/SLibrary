@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="BookManage" namespace="/BookManage" extends="struts-default">
+        <action name="Add" class="bookManageAction" method="addBook">
+            <result name="success" type="redirect">/books_add.html</result>
+            <result name="error" type="redirect">/wrong.html</result>
+        </action>
+        <action name="delete" class="bookManageAction" method="delBook">
+            <result name = "success" type="redirect">/books_add.html</result>
+            <result name="error" type="redirect">/wrong.html</result>
+        </action>
+    </package>
+</struts>

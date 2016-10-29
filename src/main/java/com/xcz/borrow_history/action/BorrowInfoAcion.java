@@ -115,14 +115,7 @@ public class BorrowInfoAcion extends BaseAction {
                 result[i] = new resultForReserve();
                 result[i].book_name = reserveBooks.get(i).getBook_name();
                 result[i].author = reserveBooks.get(i).getAuthor();
-                if(reservations[i].getStatus())
-                {
-                    result[i].status = "OK";
-                }
-                else
-                {
-                    result[i].status = "Waiting";
-                }
+                result[i].status = reservations[i].getState();
             }
             request.getSession().setAttribute("reserve_count", ISBNs.size());
             request.getSession().setAttribute("reserve_books", result);

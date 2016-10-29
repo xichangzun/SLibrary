@@ -42,7 +42,7 @@ public class RecommendAction extends BaseAction {
         recommendation.setPrice(Float.parseFloat(rq.getParameter("price")));
         recommendation.setAmount(Integer.parseInt(rq.getParameter("amount")));
         recommendation.setReason(rq.getParameter("reason"));
-        recommendation.setStatus(false);
+        recommendation.setState("waiting");
         return this.getService().addrecommend(recommendation)?SUCCESS:ERROR;
     }
 }

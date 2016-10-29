@@ -61,7 +61,7 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
         book.setAuthor((String)row[3]);
         book.setPress((String)row[4]);
         Timestamp timestamp = (Timestamp)row[5];
-        book.setPub_year(timestamp.toString());;
+        book.setPub_year(timestamp.toString().substring(0,4));
         book.setAmount((Integer)row[6]);
         book.setRes_amount((Integer)row[7]);
         book.setTotal_amount((Integer)row[8]);
@@ -95,7 +95,7 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
             Object[] objects = (Object[]) result.get(i);
             t.getUionPK().setUser_id((String)objects[0]);
             t.getUionPK().setISBN((String)objects[1]);
-            t.setStatus((Boolean) objects[2]);
+            t.setState((String) objects[2]);
             data[i] = t;
         }
         return data;

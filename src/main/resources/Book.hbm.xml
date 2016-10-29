@@ -12,13 +12,13 @@
             <column name="book_name" length="40" not-null="true" />
         </property>
         <property name="lang" type="string">
-            <column name="lang" length="15" />
+            <column name="lang" length="10" />
         </property>
         <property name="author" type="string">
-            <column name="author" length="20" />
+            <column name="author" length="40" />
         </property>
         <property name="press" type="string">
-            <column name="press" length="20"/>
+            <column name="press" length="40"/>
         </property>
         <property name="pub_year" type="string">
             <column name="pub_year" length="4"/>

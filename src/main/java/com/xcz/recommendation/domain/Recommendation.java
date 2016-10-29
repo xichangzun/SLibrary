@@ -17,7 +17,7 @@ public class Recommendation extends BaseBean implements Serializable {
     private Float price;
     private Integer amount;
     private String reason;
-    private Boolean status;
+    private String state;
 
 
     public String getBook_name() {
@@ -68,12 +68,12 @@ public class Recommendation extends BaseBean implements Serializable {
         this.amount = amount;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public String getState() {
+        return state;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public UionPK getUionPK() {
@@ -94,7 +94,7 @@ public class Recommendation extends BaseBean implements Serializable {
 
     public Recommendation() {}
 
-    public Recommendation(UionPK uionPK, String book_name, String lang, String author, String press, Float price, Integer amount, String reason, Boolean status) {
+    public Recommendation(UionPK uionPK, String book_name, String lang, String author, String press, Float price, Integer amount, String reason, String state) {
         this.uionPK = uionPK;
         this.book_name = book_name;
         this.lang = lang;
@@ -103,6 +103,6 @@ public class Recommendation extends BaseBean implements Serializable {
         this.price = price;
         this.amount = amount;
         this.reason = reason;
-        this.status = status;
+        this.state = state;
     }
 }

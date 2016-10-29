@@ -32,6 +32,7 @@ public class SearchAction extends BaseAction {
         if(result == null || result.length == 0)
         {
             System.out.print("error");
+            rq.getSession().removeAttribute("result");
             return ERROR;
         }
         for(int i = 0;i<result.length;i++)

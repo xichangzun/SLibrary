@@ -1,6 +1,6 @@
 <!doctype html>
-<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="zh-cn"><!--<![endif]-->
 	<head>
 		<title>Flatastic - Category No Products</title>
 		<meta charset="utf-8">
@@ -122,7 +122,7 @@
 										<hr style="margin:0px 30px" >
                                     <div style="margin:0px 30px">
                                 	<br>
-									<form id="contactform">
+									<form action="/BookManage/Add" method="post" id = "addBook">
 										<ul>
 											<li class="m_bottom_15">
                                             	<div class="f_left half_column">
@@ -136,7 +136,7 @@
 											</li>
                                             <li class="clearfix m_bottom_15">
 												<div class="f_left half_column">
-													<label for="author" class="required d_inline_b m_bottom_5">Book Author</label>
+													<label for="author" class="required d_inline_b m_bottom_5">Author</label>
 													<input name = "author" maxlength="20" class="full_width r_corners">
 												</div>
 												<div class="f_left half_column">
@@ -146,7 +146,7 @@
 											</li>
 											<li class="m_bottom_15">
                                                 <div class="f_left half_column">
-													<label for="press" class="required d_inline_b m_bottom_5">Publisher</label>
+													<label for="press" class="required d_inline_b m_bottom_5">Press</label>
 													<input name = "press" maxlength="20" class="full_width r_corners">
 												</div>
                                                 <div class="f_left half_column">
@@ -176,13 +176,13 @@
 											</li>
                                             <li>
                                                 <div>
-													<label for="cover" class="d_inline_b m_bottom_5">Cover</label>
-													<input <input type="file" name="cover" class="full_width r_corners">
-												</div>
+                                                    <label for="cover" class="d_inline_b m_bottom_5">Cover</label>
+                                                    <input type="file" name="cover" class="full_width r_corners">
+                                                </div>
                                             </li>
                                             <br>
                                             <li class="t_align_c">
-												<button class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Submit</button>
+												<button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Submit</button>
 											</li>
                                             <br>
 										</ul>

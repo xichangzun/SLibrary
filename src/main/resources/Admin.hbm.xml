@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="com.xcz.admin_info.domain.Admin" table="ADMIN" schema="SLibrary">
         <id name="id" type="string">
-            <column name="id" length="20" />
+            <column name="id" length="14" />
             <generator class="assigned" />
         </id>
         <property name="user_name" type="string">
@@ -15,7 +15,7 @@
             <column name="pwd" length="20" />
         </property>
         <property name="unit" type="string">
-            <column name="unit" length="35" />
+            <column name="unit" length="30" />
         </property>
     </class>
 </hibernate-mapping>

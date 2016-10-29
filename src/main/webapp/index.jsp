@@ -257,6 +257,10 @@ else if(session.getAttribute("error") != null)
     function init()
     {
         alert("username or password wrong");
+        document.getElementById("LoginButton").style.display = "inline";
+        document.getElementById("ReButton").style.display = "inline";
+        document.getElementById("InfoButton").style.display = "none";
+        document.getElementById("CheckOutButton").style.display = "none";
     }
 </script>
 <%

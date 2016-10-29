@@ -108,7 +108,7 @@
 						</aside>
 						<!--left content column-->
 
-						<section class="col-lg-9 col-md-9 col-sm-9">
+						<section class="col-lg-9 col-md-9 col-sm-9 ">
 							
 							<div class="clearfix m_bottom_30">
 								<figure>
@@ -116,9 +116,9 @@
 										<h2 style="margin:20px 30px" class="tt_uppercase color_dark m_bottom_30">Delete Books</h2>
 										<hr style="margin:0px 30px" >
                                         <div style="margin:0px 20px 30px 0px;">
-                                	    <br>
-											<div class="container">
-												<form  >
+                                	    	<br>
+											<div>
+												<form style="margin:30px 50px">
 													<!-- filename: find-code-include -->
 													<div  class="custom_select f_size_medium relative f_left">
 														<div class="select_title r_corners relative color_dark">Book Name</div>
@@ -129,48 +129,85 @@
 															<option value="ISBN">ISBN</option>
 														</select>
 													</div>
-													<input autocomplete="off" class=" r_corners" style="width:45%; height:30px;" name="keyword"> &nbsp;
-													<button style="height:30px" class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15 m_sm_bottom_0 d_sm_inline_middle" id="lookup" >Search</button>
+													<input autocomplete="off" class=" r_corners" style="width:65%; height:30px;" name="keyword"> &nbsp;
+													<button style="height:30px;vertical-align:middle;padding-top:5px;margin-top:-5px" class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_sm_bottom_0 d_sm_inline_middle" id="lookup" >Search</button>
 													<div id="colorpanel" style="position:absolute;display:none;width:253px;height:177px;"></div>
 													<div id="details" style="display:none;font-size:14px;width:400px;position:absolute;z-index:10000;background:#fff;border:1px solid #aaa" ></div>
 												</form>
+												<div style="margin:0 30px;padding-top:20px"class="products_container">
+													<div style="width:700px;margin-top:30px;padding-left:25px"class="product_item full_width list_type hit m_left_0 m_right_0" >
+														<!--product preview-->
+														<a href="#" class="d_block f_left relative pp_wrap m_right_30 m_xs_right_25">
+															<img style="height:130px;width:130px;" src="img/product_img_3.jpg" class="tr_all_hover" alt="">
+															<span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+														</a>
+														<!--description and price of product-->
+													
+														<div class="f_left p_list_description f_sm_none w_sm_full m_xs_bottom_10">
+															<h3>Android和php开发最佳实践</h3>
+															<br>
+		                                                    <hr class="m_bottom_10" style="width:350px;">
+															<p class="d_sm_none d_xs_block">
+		                                                        <ul>
+		                                                            <li>
+		                                                                Author: 黄隽实
+		                                                            </li>
+		                                                            <li>
+		                                                                Publisher: 机械工业出版社
+		                                                            </li>
+		                                                            <li>
+		                                                                CallNumber: TP929.53/463=2
+		                                                            </li>
+		                                                            <li>
+		                                                                Publication Year: 2006
+		                                                            </li>
+		                                                        </ul>
+		                                                    </p>
+														</div>
+														<div class="f_right f_sm_none t_align_r t_sm_align_l">
+		                                                    <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15 m_sm_bottom_0 d_sm_inline_middle">Delete</button>
+														</div>
+													</div>
+													
+													<div style="width:700px;margin-top:30px;padding-left:25px" class="product_item full_width list_type hit m_left_0 m_right_0" >
+														<!--product preview-->
+														<a href="#" class="d_block f_left relative pp_wrap m_right_30 m_xs_right_25">
+															<img style="height:130px;width:130px;" src="img/product_img_3.jpg" class="tr_all_hover" alt="">
+															<span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+														</a>
+														<!--description and price of product-->
+														
+														<div>
+															<div class="f_left p_list_description f_sm_none w_sm_full m_xs_bottom_10">
+																<h3>Android和php开发最佳实践</h3>
+																<br>
+			                                                    <hr class="m_bottom_10" style="width:350px;">
+																<p class="d_sm_none d_xs_block">
+			                                                        <ul>
+			                                                            <li>
+			                                                                Author: 黄隽实
+			                                                            </li>
+			                                                            <li>
+			                                                                Publisher: 机械工业出版社
+			                                                            </li>
+			                                                            <li>
+			                                                                CallNumber: TP929.53/463=2
+			                                                            </li>
+			                                                            <li>
+			                                                                Publication Year: 2006
+			                                                            </li>
+			                                                        </ul>
+			                                                    </p>
+															</div>
+															<div class="f_right f_sm_none t_align_r t_sm_align_l">
+			                                                    <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15 m_sm_bottom_0 d_sm_inline_middle">Delete</button>
+															</div>
+														</div>
+									        		</div>
+									      		</div>
 											</div>
-                                        <div  style="width:700px; margin:50px 50px 50px 30px;">
-										<!--product preview-->
-										<a href="#" class="d_block f_left relative pp_wrap m_right_30 m_xs_right_25">
-											<img style="height:130px;width:130px;" src="img/product_img_3.jpg" class="tr_all_hover" alt="">
-											<span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
-										</a>
-										<!--description and price of product-->
-										<figcaption >
-											<div>
-												<div class="f_left p_list_description f_sm_none w_sm_full m_xs_bottom_10">
-													<h3>Android和php开发最佳实践</h3>
-													<br>
-                                                    <hr class="m_bottom_10" style="width:350px;">
-													<p class="d_sm_none d_xs_block">
-                                                        <ul>
-                                                            <li>
-                                                                Author: 黄隽实
-                                                            </li>
-                                                            <li>
-                                                                Publisher: 机械工业出版社
-                                                            </li>
-                                                            <li>
-                                                                CallNumber: TP929.53/463=2
-                                                            </li>
-                                                            <li>
-                                                                Publication Year: 2006
-                                                            </li>
-                                                        </ul>
-                                                    </p>
-												</div>
-												<div class="f_right f_sm_none t_align_r t_sm_align_l">
-                                                    <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15 m_sm_bottom_0 d_sm_inline_middle">Delete</button>
-												</div>
-											</div>
-										</figcaption>
-								        </div>
+	                                        
+									        
                                         </div>
 									</div>	
 								</figure>
