@@ -159,13 +159,13 @@
 
                                         <div style="text-align:center; "class="table_sm_wrap r_corners wrapper shadow bg_light_color_1 m_bottom_30">
                                             <table id="lishijilu" style="display: none;margin:auto" align="center" class="table_type_8 full_width t_align_l">
-                                                <tbody >
+                                                <tbody>
                                                 <tr class="f_size_large">
                                                     <th>Book_Name</th>
                                                     <th>Author</th>
-                                                    <th>Publication Year</th>
+                                                    <th>Pub Year</th>
                                                     <th>Return Date</th>
-                                                    <th>Actual Return Date</th>
+                                                    <th>Actual Date</th>
                                                 </tr>
                                                 <s:iterator value="#attr.borrow_books" id ="book">
                                                     <tr>
@@ -182,7 +182,7 @@
                                             <table id="yuyue" style="display: none;margin:auto" align="center" class=" table_type_8 full_width t_align_l">
                                                 <tbody>
                                                 <tr class="f_size_large">
-                                                    <th>Book_Name</th>
+                                                    <th width="40%">Book_Name</th>
                                                     <th>Author</th>
                                                     <th>Request Status</th>
                                                 </tr>
@@ -200,13 +200,11 @@
                                             <table id="waijie" style="display: none;margin:auto" align="center" class=" table_type_2 full_width t_align_l">
                                                 <tbody>
                                                 <tr class="f_size_large">
-                                                    <th>Book_Name</th>
+                                                    <th width="40%">Book_Name</th>
                                                     <th>Author</th>
                                                     <th>Publication Year</th>
                                                     <th>ISBN</th>
                                                     <th>Call Number</th>
-                                                    <!-- <th>¡¤???</th> -->
-                                                    <!-- <th>??¡Á¡Â</th> -->
                                                 </tr>
                                                 <s:iterator value="#attr.cur_borrow_books" id = "book">
                                                     <tr >

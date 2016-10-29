@@ -3,7 +3,7 @@
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
-		<title>Slibrary - UserInfo</title>
+		<title>Slibrary - AdminLogin</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<!--meta info-->
@@ -32,63 +32,9 @@
 								<img src="images/logo.png" alt="">
 							</a>
 						</div>
-                        
-						<!--<div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
-							<div class="row clearfix">
-								<ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
-									<li><a href="user_info.html" class="default_t_color">My Account</a></li>
-									<li><a href="index.html" class="default_t_color">Checkout</a></li>
-								</ul>
-							</div>
-						</div>-->
 					</div>
 				</section>
-				<!--main menu container-->
-				<%--<section class="menu_wrap relative">--%>
-					<%--<div class="container clearfix">--%>
-						<%--<!--button for responsive menu-->--%>
-						<%--<button id="menu_button" class="r_corners centered_db d_none tr_all_hover d_xs_block m_bottom_10">--%>
-							<%--<span class="centered_db r_corners"></span>--%>
-							<%--<span class="centered_db r_corners"></span>--%>
-							<%--<span class="centered_db r_corners"></span>--%>
-						<%--</button>--%>
-						<%--<!--main menu-->--%>
-						<%--<nav role="navigation" class="f_left f_xs_none d_xs_none">	--%>
-							<%--<ul class="horizontal_list main_menu clearfix">--%>
-								<%--<li class="relative f_xs_none m_xs_bottom_5"><a href="borrow.html" class="tr_delay_hover color_light tt_uppercase"><b>Borrow And Return</b></a></li>--%>
-								<%--<li class="relative f_xs_none m_xs_bottom_5"><a href="books_update.html" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>--%>
-								<%--<li class="relative f_xs_none m_xs_bottom_5"><a href="index.jsp" class="tr_delay_hover color_light tt_uppercase"><b>E-Resource</b></a></li>--%>
-								<%--<li class="relative f_xs_none m_xs_bottom_5"><a href="admin_newsManage.html" class="tr_delay_hover color_light tt_uppercase"><b>News Management</b></a></li>--%>
-								<%--<li class="relative f_xs_none m_xs_bottom_5"><a href="index.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>--%>
-							<%--</ul>--%>
-						<%--</nav>--%>
-						<%--<button class="f_right search_button tr_all_hover f_xs_none d_xs_none">--%>
-							<%--<i class="fa fa-search"></i>--%>
-						<%--</button>--%>
-					<%--</div>--%>
-					<%--<!--search form-->--%>
-					<%--<div class="searchform_wrap tf_xs_none tr_all_hover">--%>
-						<%--<div class="container vc_child h_inherit relative">--%>
-							<%--<form role="search" class="d_inline_middle full_width">--%>
-								<%--<input type="text" name="search" placeholder="Type text and hit enter" class="f_size_large">--%>
-							<%--</form>--%>
-							<%--<button class="close_search_form tr_all_hover d_xs_none color_dark">--%>
-								<%--<i class="fa fa-times"></i>--%>
-							<%--</button>--%>
-						<%--</div>--%>
-					<%--</div>--%>
-				<%--</section>--%>
 			</header>
-			<!--breadcrumbs-->
-			<!--<section class="breadcrumbs">
-				<div class="container">
-					<ul class="horizontal_list clearfix bc_list f_size_medium">
-						<li class="m_right_10 current"><a href="index.html" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-						<li><a href="user_info.html" class="default_t_color">My Information</a></li>
-					</ul>
-				</div>
-			</section>-->
-			<!--content-->
 			<div class="page_content_offset">
 				<div class="container">
 					<div class="row clearfix">
