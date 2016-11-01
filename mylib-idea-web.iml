@@ -10,12 +10,33 @@
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
       </configuration>
+      <facet type="Struts2" name="Struts 2">
+        <configuration>
+          <fileset id="s2fileset2" name="My Fileset 2" removed="false">
+            <file>jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-convention-plugin/2.3.24/struts2-convention-plugin-2.3.24.jar!/struts-plugin.xml</file>
+            <file>jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.3.24/struts2-core-2.3.24.jar!/struts-default.xml</file>
+            <file>jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-spring-plugin/2.5-BETA2/struts2-spring-plugin-2.5-BETA2.jar!/struts-plugin.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/Admin-Struts-module.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/BookManage-Struts-module.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/BorrowHistory-Struts-modules.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/Recommend-Struts-module.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/Search-Struts-module.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/struts.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/UserInfo-Struts-modules.xml</file>
+          </fileset>
+          <propertiesKeys disabled="false" />
+        </configuration>
+      </facet>
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/BookManage-Spring-module.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/BorrowHistory-Spring-module.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/Admin-Spring-module.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/Search-Spring-module.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/recommend-Spring-module.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/UserInfo-Spring-module.xml</file>
         </fileset>
       </configuration>
     </facet>

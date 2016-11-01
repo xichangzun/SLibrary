@@ -18,6 +18,32 @@
 		<link rel="stylesheet" type="text/css" media="all" href="css/style.css">
 		<!--font include-->
 		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<style type="text/css">
+			.fuck{
+				width:200px ;
+				height:50px ;
+				text-align:right;
+				vertical-align:middle;
+			}
+			.fuck_2{
+				width:40px ;
+				height:50px ;
+				text-align:left;
+				vertical-align:middle;
+				color: #FF0000
+			}
+			.fuck_3_hidden,
+			.fuck_3{
+				width:300px ;
+				height:50px ;
+				text-align:left;
+				vertical-align:middle;
+			}
+			.fuck_3_hidden{
+				color: red;
+				visibility:hidden;
+			}
+		</style>
 	</head>
 	<body>
 		<!--wide layout-->
@@ -94,116 +120,110 @@
                                     <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
 									<h2 class="tt_uppercase color_dark m_bottom_25">User Register</h2>
 									
-									<form action="/User/register" method="post">
+									<form action="/User/register"  id = "reg_form">
                                     	
                                     	<table style="font-size:16px">
 											<tr class="m_bottom_25">
-												<td width="200" height="50" align="right" valign="middle">
+												<td class="fuck">
 													<label class="m_bottom_5 d_inline_b">Reader ID</label>&nbsp;
 												</td>
-												<td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+												<td class="fuck_2">
 													<label >*</label>
-												<td width="300" height="50" align="left" valign="middle">
-													<input type="text" name="id" class="full_width r_corners" autocomplete="off" placeholder="Please set your Reader ID">
+												<td class="fuck_3">
+													<input type="text" name="id" class="full_width r_corners" autocomplete="off" >
+												</td>
+												<td class="fuck_3_hidden">
+													<label class="m_bottom_5 d_inline_b"></label>
 												</td>
 											</tr>
                                             <tr class="m_bottom_45">
-                                            	<td width="200" height="50" align="right" valign="middle">
+                                            	<td class="fuck">
                                             		<label class="m_bottom_5 d_inline_b">Password</label>&nbsp;
                                                 </td>
-                                                <td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+                                                <td class="fuck_2">
                                                     <label >*</label>
                                                 </td>
-                                                <td width="300" height="50" align="left" valign="middle">
-	                                                <input type="password" name="pwd" class="full_width r_corners" autocomplete="off" placeholder="Please set the password">
+                                                <td class="fuck_3">
+	                                                <input type="password" name="pwd" class="full_width r_corners" autocomplete="off" placeholder="number or chars,max length 20">
                                                 </td>
-                                                <td width="40" height="50" align="right" valign="middle">
-                                                </td>
-                                                <td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
-                                                    <label class="m_bottom_5 d_inline_b">Password cannot be more than  20 characters</label>
+                                                <td class="fuck_3_hidden">
+                                                    <label class="m_bottom_5 d_inline_b"></label>
                                                 </td>
                                             </tr>
 											<tr class="m_bottom_45">
-												<td width="200" height="50" align="right" valign="middle">
+												<td class="fuck">
 													<label class="m_bottom_5 d_inline_b">Confirm Password</label>&nbsp;
 												</td>
-												<td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+												<td class="fuck_2">
 													<label >*</label>
 												</td>
-												<td width="300" height="50" align="left" valign="middle">
-													<input type="password" name="cfpwd" class="full_width r_corners" autocomplete="off" placeholder="Please set the password">
+												<td class="fuck_3">
+													<input type="password" name="cfpwd" class="full_width r_corners" autocomplete="off" >
 												</td>
-												<td width="40" height="50" align="right" valign="middle">
-												</td>
-												<td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
-													<label class="m_bottom_5 d_inline_b">Password cannot be more than  20 characters</label>
+												<td class="fuck_3_hidden">
+													<label class="m_bottom_5 d_inline_b"></label>
 												</td>
 											</tr>
 											<tr class="m_bottom_45">
-												<td width="200" height="50" align="right" valign="middle">
+												<td class="fuck">
 													<label class="m_bottom_5 d_inline_b">Name</label>&nbsp;
 												</td>
-												<td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+												<td class="fuck_2">
 													<label >*</label>
 												</td>
-												<td width="300" height="50" align="left" valign="middle">
-													<input type="text" name="name" class="full_width r_corners" autocomplete="off" placeholder="Please set the user name">
+												<td class="fuck_3">
+													<input type="text" name="name" class="full_width r_corners" autocomplete="off" >
 												</td>
-												<td width="40" height="50" align="right" valign="middle">
-												</td>
-												<td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
+												<td class="fuck_3_hidden">
 													<label class="m_bottom_5 d_inline_b">User name cannot be more than 7 Chinese characters or 14 characters</label>
 												</td>
 											</tr>
 
-                                            <tr class="m_bottom_25">
-                                            	<td width="200" height="50" align="right" valign="middle">
-                                                	<label class="m_bottom_5 d_inline_b color_dark">Work Unit</label>
+                                            <tr class="m_bottom_45">
+                                            	<td class="fuck">
+                                                	<label class="m_bottom_5 d_inline_b ">Work Unit</label>
                                                 </td>
-                                                <td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+                                                <td class="fuck_2">
                                                     <label >*</label>
-                                                <td width="300" height="50" align="left" valign="middle">
-                                                	<input type="text" name="unit" class="full_width r_corners" autocomplete="off" placeholder="Please set your Work Unit">
+                                                <td class="fuck_3">
+                                                	<input type="text" name="unit" class="full_width r_corners" autocomplete="off" >
                                                 </td>
-
+												<td class="fuck_3_hidden">
+													<label class="m_bottom_5 d_inline_b"></label>
+												</td>
                                             </tr>
                                             <tr class="m_bottom_45">
-                                            	<td width="200" height="50" align="right" valign="middle">
+                                            	<td class="fuck">
                                             		<label class="m_bottom_5 d_inline_b">E-mail</label>&nbsp;
                                                 </td>
-                                                <td width="40" height="50" align="left" valign="middle" style="color: #FF0000">
+                                                <td class="fuck_2">
                                                     <label >*</label>
-                                                <td width="300" height="50" align="left" valign="middle">
-	                                                <input type="text" name="email" class="full_width r_corners" autocomplete="off" placeholder="Please set your E-mail">
+                                                <td class="fuck_3">
+	                                                <input type="text" name="email" class="full_width r_corners" autocomplete="off" >
                                                 </td>
+												<td class="fuck_3_hidden">
+													<label class="m_bottom_5 d_inline_b"></label>
+												</td>
                                             </tr>
                                             <tr class="m_bottom_45">
-                                            	<td width="200" height="50" align="right" valign="middle">
+                                            	<td class="fuck">
                                             		<label class="m_bottom_5 d_inline_b">Tel</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
-                                                <td width="300" height="50" align="left" valign="middle">
-	                                                <input type="text" name="tel" class="full_width r_corners" autocomplete="off" placeholder="Please set your Telephone">
+                                                <td width = "300" height=50" text-align = "left" vertical-align = "middle">
+	                                                <input type="text" name="tel" class="full_width r_corners" autocomplete="off" >
                                                 </td>
-                                            </tr>
-                                            <tr class="m_bottom_45">
-                                            	<td width="200" height="50" align="right" valign="middle" style="color: #FF0000">
-                                                    <label class="m_bottom_5 d_inline_b">Attention</label>&nbsp;
-                                                </td>
-                                                <td width="40" height="50" align="right" valign="middle">
-                                                </td>
-                                                <td width="300" height="50" align="left" valign="middle" style="color: #FF0000">
-                                                    <label class="m_bottom_5 d_inline_b">* is required !</label>&nbsp;
-                                                </td>
+												<td class="fuck_3_hidden">
+													<label class="m_bottom_5 d_inline_b"></label>
+												</td>
                                             </tr>
                                             <tr class="m_bottom_25">
-                                            	<td width="100" height="20" align="right" valign="middle">
-                                                </td>
                                             </tr>
                                     	</table>
+										<br/>
                                         <li class="t_align_c">
-												<button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Register</button>
+												<button class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Register</button>
 										</li>
                                     </form>
 								</div>
@@ -300,6 +320,7 @@
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/jquery.custom-scrollbar.js"></script>
 		<script src="js/scripts.js"></script>
+		<script src="js/myscripts.js"></script>
 	</body>
 </html>
 
