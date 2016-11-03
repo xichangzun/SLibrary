@@ -7,6 +7,15 @@
 <struts>
     <package name="BookManage" namespace="/BookManage" extends="struts-default">
         <action name="Add" class="bookManageAction" method="addBook">
+            <!-- 配置名字为fileUpload的拦截器 -->
+            <interceptor-ref name="fileUpload">
+                <!-- 配置允许上传的文件类型 -->
+                <param name="allowedTypes">image/bmp,image/png,image/gif,
+                    image/jpeg,image/pjpeg,image/x-png</param>
+                <!-- 配置允许上传文件的大小(单位字节) -->
+                <param name="maximumSize">10485760</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
             <result name="success" type="redirect">/books_add.html</result>
             <result name="error" type="redirect">/wrong.html</result>
         </action>

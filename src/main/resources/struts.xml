@@ -12,6 +12,9 @@
     <!-- 字符集编码 -->
     <constant name="struts.i18n.encoding" value="UTF-8" />
 
+    <!-- 存储地址 -->
+    <constant name="struts.multipart.saveDir" value="/home/temp" />
+
     <include file="UserInfo-Struts-modules.xml"/>
     <include file="Search-Struts-module.xml"/>
     <include file="BorrowHistory-Struts-modules.xml"/>

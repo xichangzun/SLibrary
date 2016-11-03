@@ -54,7 +54,7 @@ $(function () {
             return false;
         }
     })
-})
+});
 
 $(function () {
     $("#reg_form .fuck_3").each(function () {
@@ -72,4 +72,4 @@ $(function () {
             }
         })
     })
-})
+});

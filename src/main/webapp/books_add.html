@@ -119,61 +119,61 @@
 										<hr style="margin:0px 30px" >
                                     <div style="margin:0px 30px">
                                 	<br>
-									<form action="/BookManage/Add" method="post" id = "addBook">
+									<form action="/BookManage/Add" method="post" id = "addBook" enctype="multipart/form-data">
 										<ul>
 											<li class="m_bottom_15">
                                             	<div class="f_left half_column">
-													<label for="ISBN" class="required d_inline_b m_bottom_5">ISBN</label>
-													<input name = "ISBN" maxlength="25" class="full_width r_corners">
+													<label class="required d_inline_b m_bottom_5">ISBN</label>
+													<input name = "ISBN" maxlength="14" class="full_width r_corners">
 												</div>
                                                 <div class="f_left half_column">
-													<label for="Book_name" class="required d_inline_b m_bottom_5">Book Name</label>
+													<label class="required d_inline_b m_bottom_5">Book Name</label>
 													<input name = "Book_name" maxlength="40" class="full_width r_corners">
 												</div>
 											</li>
                                             <li class="clearfix m_bottom_15">
 												<div class="f_left half_column">
-													<label for="author" class="required d_inline_b m_bottom_5">Author</label>
+													<label class="required d_inline_b m_bottom_5">Author</label>
 													<input name = "author" maxlength="20" class="full_width r_corners">
 												</div>
 												<div class="f_left half_column">
-													<label for="lang" class="required d_inline_b m_bottom_5">Language</label>
+													<label class="required d_inline_b m_bottom_5">Language</label>
 													<input name = "lang" maxlength="15" class="full_width r_corners">
 												</div>
 											</li>
 											<li class="m_bottom_15">
                                                 <div class="f_left half_column">
-													<label for="press" class="required d_inline_b m_bottom_5">Press</label>
+													<label class="required d_inline_b m_bottom_5">Press</label>
 													<input name = "press" maxlength="20" class="full_width r_corners">
 												</div>
                                                 <div class="f_left half_column">
-													<label for="pub_year" class="required d_inline_b m_bottom_5">Publish Year</label>
+													<label class="required d_inline_b m_bottom_5">Publish Year</label>
 													<input name = "pub_year" maxlength="4" size="4" class="full_width r_corners">
 												</div>
 											</li>
                                              <li class="m_bottom_15">
                                                 <div class="f_left half_column">
-													<label for="total_amount" class="required d_inline_b m_bottom_5">Total Amount</label>
-													<input name = "total_amount"class="full_width r_corners">
+													<label  class="required d_inline_b m_bottom_5">Total Amount</label>
+													<input name = "total_amount" maxlength="3" class="full_width r_corners">
 												</div>
                                                 <div class="f_left half_column">
-													<label for="call_no" class="required d_inline_b m_bottom_5">Call Number</label>
+													<label  class="required d_inline_b m_bottom_5">Call Number</label>
 													<input name = "call_no" maxlength="20" class="full_width r_corners">
 												</div>
 											</li>
                                             <li class="m_bottom_15">
                                                 <div class="f_left half_column">
-													<label for="pages" class="d_inline_b m_bottom_5">Book Pages</label>
+													<label  class="d_inline_b m_bottom_5">Book Pages</label>
 													<input name = "pages" class="full_width r_corners">
 												</div>
                                                 <div class="f_left half_column">
-													<label for="size" class="d_inline_b m_bottom_5">Book Size</label>
+													<label  class="d_inline_b m_bottom_5">Book Size</label>
 													<input name = "size" class="full_width r_corners">
 												</div>
 											</li>
                                             <li>
                                                 <div>
-                                                    <label for="cover" class="d_inline_b m_bottom_5">Cover</label>
+                                                    <label class="d_inline_b m_bottom_5">Cover</label>
                                                     <input type="file" name="cover" class="full_width r_corners">
                                                 </div>
                                             </li>
@@ -272,6 +272,6 @@
 		<script src="js/jquery.tweet.min.js"></script>
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/jquery.custom-scrollbar.js"></script>
-		<script src="js/scripts.js"></script>
+		<script src="js/book_add.js"></script>
 	</body>
 </html>
