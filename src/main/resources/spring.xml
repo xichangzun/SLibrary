@@ -16,7 +16,8 @@
     <context:component-scan base-package="com.xcz.UserInfo.action,com.xcz.UserInfo.domain,com.xcz.UserInfo.service,com.xcz.search.action,com.xcz.search.domain,com.xcz.search.service,
     com.xcz.borrow_history.action, com.xcz.borrow_history.domain, com.xcz.borrow_history.service,
     com.xcz.recommendation.action, com.xcz.recommendation.domain,com.xcz.recommendation.service,
-    com.xcz.book_management.action,com.xcz.book_management.service"/>
+    com.xcz.book_management.action,com.xcz.book_management.service,com.xcz.News.action,
+    com.xcz.News.Service,com.xcz.News.domain"/>
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driverClassName}"></property>
@@ -45,6 +46,7 @@
                 <value>classpath:Reservation.hbm.xml</value>
                 <value>classpath:Recommendation.hbm.xml</value>
                 <value>classpath:Admin.hbm.xml</value>
+                <value>classpath:News.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -60,4 +62,5 @@
     <import resource="recommend-Spring-module.xml"/>
     <import resource="Admin-Spring-module.xml"/>
     <import resource="BookManage-Spring-module.xml"/>
+    <import resource="News-Spring-module.xml"/>
 </beans>

@@ -21,4 +21,5 @@
     <include file="Recommend-Struts-module.xml"/>
     <include file="Admin-Struts-module.xml"/>
     <include file="BookManage-Struts-module.xml"/>
+    <include file="News-Struts-module.xml"/>
 </struts>
