@@ -8,7 +8,9 @@ import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by root on 16-11-4.
@@ -50,8 +52,7 @@ public class NewsAction extends BaseAction {
 
     public void update(){
         HttpServletRequest rq = ServletActionContext.getRequest();
-        News temp = new News();
-        temp.setId((Integer) rq.getSession().getAttribute("new_id"));
+        News temp = (News) rq.getSession().getAttribute("news_item");
         temp.setTitle(rq.getParameter("title"));
         temp.setSummary(rq.getParameter("summary"));
         temp.setContent(rq.getParameter("content"));
@@ -73,5 +74,27 @@ public class NewsAction extends BaseAction {
             e.printStackTrace();
         }
 
+    }
+
+    public String query(){
+        News[] xcz = this.getMynewservice().query();
+        HttpServletRequest rq = ServletActionContext.getRequest();
+        rq.getSession().setAttribute("news_array",xcz);
+        return SUCCESS;
+    }
+
+    public String detail(){
+        HttpServletRequest rq = ServletActionContext.getRequest();
+        int id = Integer.parseInt(rq.getParameter("index")) ;
+        News[] xcz= (News[]) rq.getSession().getAttribute("news_array");
+        for(News news_item : xcz){
+            int temp = news_item.getId();
+            if(temp == id ){
+                rq.getSession().setAttribute("news_item",news_item);
+                return SUCCESS;
+            }
+            return ERROR;
+        }
+        return ERROR;
     }
 }

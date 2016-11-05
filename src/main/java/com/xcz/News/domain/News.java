@@ -41,11 +41,11 @@ public class News extends BaseBean implements Serializable {
         this.content = content;
     }
 
-    public Date getAdd_time() {
+    public String getAdd_time() {
         return add_time;
     }
 
-    public void setAdd_time(Date add_time) {
+    public void setAdd_time(String add_time) {
         this.add_time = add_time;
     }
 
@@ -53,12 +53,12 @@ public class News extends BaseBean implements Serializable {
     private String title;
     private String summary;
     private String content;
-    private Date add_time;
+    private String add_time;
 
     public News() {
     }
 
-    public News(Integer id, String title, String summary, String content, Date add_time) {
+    public News(Integer id, String title, String summary, String content, String add_time) {
         this.id = id;
         this.title = title;
         this.summary = summary;

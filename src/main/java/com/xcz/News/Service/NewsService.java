@@ -8,4 +8,5 @@ import com.xcz.News.domain.News;
 public interface NewsService {
     Boolean addNews(News a);
     Boolean updateNews(News a);
+    News[] query();
 }

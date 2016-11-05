@@ -10,5 +10,11 @@
         </action>
         <action name="update" class="newsAction" method="update">
         </action>
+        <action name="detail" class="newsAction" method="detail">
+            <result name="success" type="redirect" >/admin_news_update.jsp</result>
+        </action>
+        <action name="query" class="newsAction" method="query">
+            <result name="success" type="redirect">/admin_newsManage.jsp</result>
+        </action>
     </package>
 </struts>

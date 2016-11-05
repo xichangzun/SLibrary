@@ -1,11 +1,11 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: root
-  Date: 16-11-5
-  Time: 下午5:25
+  Date: 16-11-6
+  Time: 上午12:07
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
@@ -90,7 +90,7 @@
     <div class="page_content_offset">
         <div class="container">
             <div class="row clearfix">
-                <!--right column-->
+                <!--left column-->
                 <aside class="col-lg-3 col-md-3 col-sm-3">
                     <!--widgets-->
                     <figure class="widget shadow r_corners wrapper m_bottom_30">
@@ -100,13 +100,13 @@
                         <div class="widget_content">
                             <!--Categories list-->
                             <ul class="categories_list">
-                                <li class="active">
+                                <li>
                                     <a href="admin_newsManage.html" class="f_size_large scheme_color d_block relative">
                                         <b>Update News</b>
                                     </a>
                                 </li>
-                                <li >
-                                    <a href="admin_news_add.html" class="f_size_large  color_dark d_block relative">
+                                <li class="active">
+                                    <a href="admin_news_add.html" class="f_size_large color_dark d_block relative">
                                         <b>Add News</b>
                                     </a>
                                 </li>
@@ -114,32 +114,35 @@
                         </div>
                     </figure>
                 </aside>
-                <!--left content column-->
+                <!--right content column-->
 
-                <section style="margin-top:-1.3%"class="col-lg-9 col-md-9 col-sm-9">
-
+                <section class="col-lg-9 col-md-9 col-sm-9">
                     <div class="clearfix m_bottom_30">
-                        <s:iterator value="#attr.news_array" id="news_item" status="status">
-                        <div class="product_item full_width list_type hit m_left_0 m_right_0">
-                            <figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
-                                <!--description and price of product-->
-                                <figcaption>
-                                    <div class="clearfix">
-                                        <div style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
-                                            <h4 class="fw_medium"><a href="#" class="color_dark">${news_item.title}</a></h4>
-                                            <hr class="m_bottom_10">
-                                            <p class="d_sm_none d_xs_block">${news_item.summary}</p>
-                                        </div>
-                                        <div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
-                                            <button class="button_type_4 bg_light_color_2 tr_all_hover f_right m_left_5 r_corners color_dark mw_0 p_hr_0 d_sm_inline_middle f_sm_none" onClick="delcfm()"><i class="fa fa-trash-o"></i></button>
-                                            <a href="/News/detail?index=${news_item.id}"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-pencil"></i></button></a>
+                        <div style="padding:40px 20px"class="row clearfix r_corners photoframe shadow m_bottom_45">
+                            <!--add news-->
+                            <h2 class="tt_uppercase color_dark m_bottom_30">Update News</h2>
+                            <hr>
+                            <form class="bs_inner_offsets full_width bg_light_color_3 r_corners m_xs_bottom_30" id="news_update">
+                                <ul>
+                                    <li class="m_bottom_15">
+                                        <label for="name" class="required  d_inline_b m_bottom_5">Title</label><br>
+                                        <input type="text" id="name" name="title" class="r_corners full_width" value="${news_item.title}">
+                                    </li>
+                                    <li class="m_bottom_15">
+                                        <label for="shortcut" class="required  d_inline_b m_bottom_5">Summary</label><br>
+                                        <input type="text" id="shortcut" name="summary" class="r_corners full_width" value="${news_item.summary}">
+                                    </li>
+                                    <li class="m_bottom_15">
+                                        <label for="comments" class="required  d_inline_b m_bottom_5">Content</label><br>
+                                        <textarea id="comments" name="content" class="r_corners full_width"> ${news_item.content}</textarea>
+                                    </li>
+                                    <li class="m_bottom_10" align="center" valign="middle">
+                                        <button class="r_corners button_type_4 bg_scheme_color f_mxs_none m_mxs_bottom_15 color_light tr_all_hover">Submit</button>
 
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
+                                    </li>
+                                </ul>
+                            </form>
                         </div>
-                        </s:iterator>
                     </div>
                 </section>
 
@@ -196,7 +199,7 @@
             <ul>
                 <li class="m_bottom_15">
                     <label for="username" class="m_bottom_5 d_inline_b">Username</label><br>
-                    <input type="text" name="" id="username" class="r_corners full_width">
+                    <input type="text" name="" id="username" class="r_corners full_width" >
                 </li>
                 <li class="m_bottom_25">
                     <label for="password" class="m_bottom_5 d_inline_b">Password</label><br>
@@ -217,14 +220,6 @@
     </section>
 </div>
 <button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
-
-<script language="javascript">
-    function delcfm() {
-        if (!confirm("Are you sure to delete this news?")) {
-            window.event.returnValue = false;
-        }
-    }
-</script>
 <!--scripts include-->
 <script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
@@ -235,5 +230,6 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.custom-scrollbar.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/news_update.js"></script>
 </body>
 </html>
