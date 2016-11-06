@@ -114,15 +114,19 @@
 									<!--add news-->
 									<h2 class="tt_uppercase color_dark m_bottom_30">Add News</h2>
 									<hr>
-									<form class="bs_inner_offsets full_width bg_light_color_3 r_corners m_xs_bottom_30">
+									<form id="news_add" class="bs_inner_offsets full_width bg_light_color_3 r_corners m_xs_bottom_30" >
 										<ul>
 											<li class="m_bottom_15">
 												<label for="name" class="required  d_inline_b m_bottom_5">Title</label><br>
-												<input type="text" id="name" name="" class="r_corners full_width">
+												<input type="text" id="name" name="title" class="r_corners full_width">
+											</li>
+											<li class="m_bottom_15">
+												<label for="shortcut" class="required  d_inline_b m_bottom_5">Summary</label><br>
+												<input type="text" id="shortcut" name="summary" class="r_corners full_width">
 											</li>
 											<li class="m_bottom_15">
 												<label for="comments" class="required  d_inline_b m_bottom_5">Content</label><br>
-												<textarea id="comments" name="" class="r_corners full_width"></textarea>
+												<textarea id="comments" name="content" class="r_corners full_width"></textarea>
 											</li>
 											<li class="m_bottom_10" align="center" valign="middle">
 												<button class="r_corners button_type_4 bg_scheme_color f_mxs_none m_mxs_bottom_15 color_light tr_all_hover">Submit</button>
@@ -218,5 +222,6 @@
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/jquery.custom-scrollbar.js"></script>
 		<script src="js/scripts.js"></script>
+		<script src="js/news_add.js"></script>
 	</body>
 </html>
