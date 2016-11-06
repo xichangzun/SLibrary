@@ -62,9 +62,6 @@
     <import resource="recommend-Spring-module.xml"/>
     <import resource="Admin-Spring-module.xml"/>
     <import resource="BookManage-Spring-module.xml"/>
-<<<<<<< HEAD
     <import resource="EBook-Spring-module.xml"/>
-=======
     <import resource="News-Spring-module.xml"/>
->>>>>>> 2934f42e139a9072154e909a821d92721fd447e6
 </beans>
