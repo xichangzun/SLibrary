@@ -330,7 +330,7 @@ else if(session.getAttribute("error") != null)
                             <div class="tabs-container">
                                 <!--Search book start-->
                                 <div class="tab-content" id="tab1">
-                                    <form id = "YOU" class="form-horizontal" action="/Search/execute" method="post" >
+                                    <form class="form-horizontal" action="/Search/execute" method="post" >
                                         <input type="search" class="kuang" id="search1" name="keyword">
                                         <div style="float:left" class="custom_select relative color_dark portfolio_filter d_inline_b t_align_l downlist-tabs">
                                             <div class="select_title type_2 r_corners relative mw_0">Book Name</div>
@@ -349,24 +349,19 @@ else if(session.getAttribute("error") != null)
 
                                 <!--Search E-Res start-->
                                 <div class="tab-content" id="tab2">
-                                    <form action="" id="eduform" method="post" onsubmit="return isSubmitToE();">
-
-                                        <input type="search" name="svalue" id="search3" class="kuang" >
+                                    <form action="/EBook/search"  method="post">
+                                        <input type="search" name="keyword" id="search2" class="kuang" >
                                         <div style="float:left" class="custom_select relative color_dark portfolio_filter d_inline_b t_align_l  downlist-tabs">
-                                            <div class="select_title type_2 r_corners relative mw_0">All Type</div>
-                                            <ul id="filter_portfolio" class="select_list d_none"></ul>
-                                            <select class="form-control" style="width: auto;position:relative; z-index:99999">
-                                                <option data-filter="*" value="All">All Type</option>
-                                                <option data-filter=".fashion" value="Fashion">ChineseBook</option>
-                                                <option data-filter=".portraits" value="Portraits">EnglishBook</option>
-                                                <option data-filter=".people" value="People">Paper</option>
-                                                <option data-filter=".cities" value="Cities">Periodicals</option>
-                                            </select>
-                                        </div>
+                                        <div class="select_title type_2 r_corners relative mw_0">E-Res Name</div>
+                                        <ul id="filter_portfolio" class="select_list d_none"></ul>
+                                        <select class="form-control" style="width: auto;position:relative; z-index:99999" name="type">
+                                            <option value="E-Res Name">E-Res Name</option>
+                                            <option value="Author">Author</option>
+                                        </select>
+                                    </div>
                                         <input style="float:left" type="submit" value="Search" class="butn butn-tabs r_corners">
                                     </form>
                                 </div>
-                                <!-- e¶ÁËÑË÷ end-->
                             </div><!--/ .tabs-container -->
                         </div><!--/ tab search end-->
                     </div><!--container end-->
@@ -380,130 +375,78 @@ else if(session.getAttribute("error") != null)
             <!--banners-->
             <section class="row clearfix">
                 <div class="col-lg-6 col-md-6 col-sm-6 m_bottom_50 m_sm_bottom_35">
-                    <div class="tabs">
-                        <!--tabs navigation-->
-                        <nav>
-                            <ul class="tabs_nav horizontal_list clearfix">
-                                <li class="f_xs_none"><a href="#tab-1" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;News&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-                                <li class="f_xs_none"><a href="#tab-2" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block">New Resources</a></li>
-                            </ul>
-                        </nav>
-                        <!--tabs content-->
-                        <div id="tab-1">
-                            <figure class="widget animate_ftr shadow r_corners wrapper m_bottom_30">
-                                <div class="widget_content">
+                    <figure class="widget animate_ftr shadow r_corners wrapper m_bottom_30">
+                       	<figcaption>
+                            <h3 class="color_light">News</h3>
+                        </figcaption>
+                        <div style="min-height:400px" class="widget_content">
+                            <div class="clearfix m_bottom_15">
+                                <a href="#" class="color_dark d_block bt_link">Title 1.</a>
+                                <p>Summary 1.</p>
+                            </div>
+                            <hr class="m_bottom_15">
+                            <div class="clearfix m_bottom_15">
+                                <a href="#" class="color_dark d_block bt_link">Title 2.</a>
+                                <p>Summary 2.</p>
+                            </div>
+                            <hr class="m_bottom_15">
+                            <div class="clearfix m_bottom_5">
+                                <a href="#" class="color_dark d_block bt_link">Title 3.</a>
+                                <p>Summary 3.</p>
+                            </div>
+                            <hr class="m_bottom_15">
+                            <div class="clearfix m_bottom_5">
+                                <a href="#" class="color_dark d_block bt_link">Title 4.</a>
+                                <p>Summary 4.</p>
+                            </div>
+                            <hr class="m_bottom_15">
+                            <div class="clearfix m_bottom_5">
 
-                                    <div class="clearfix m_bottom_15">
-
-                                        <a href="#" class="color_dark d_block bt_link">Arrangement of National Day.</a>
-                                        <p>We have seven days off.</p>
-                                    </div>
-                                    <hr class="m_bottom_15">
-                                    <div class="clearfix m_bottom_15">
-
-                                        <a href="#" class="color_dark d_block bt_link">New system has updated.</a>
-                                        <p>Now you can borrow or return books.</p>
-                                    </div>
-                                    <hr class="m_bottom_15">
-                                    <div class="clearfix m_bottom_5">
-
-                                        <a href="#" class="color_dark d_block bt_link">Closing time update. </a>
-                                        <p>Please read the new time arrangement to adjust your schedule.</p>
-                                    </div>
-                                </div>
-                            </figure>
+                                <a href="#" class="color_dark d_block bt_link">Title 5.</a>
+                                <p>Summary 5.</p>
+                            </div>
                         </div>
-
-                        <div id="tab-2">
-                            <figure class="widget animate_ftr shadow r_corners wrapper m_bottom_30">
-                                <div class="widget_content">
-                                    <div class="clearfix m_bottom_15">
-                                        <a href="#" class="color_dark d_block bt_link">Introduction to algorithms</a>
-                                        <p>We have update the newest edition.</p>
-                                    </div>
-                                    <hr class="m_bottom_15">
-                                    <div class="clearfix m_bottom_15">
-                                        <a href="#" class="color_dark d_block bt_link">Introduction to algorithms</a>
-                                        <p>We have update the newest edition.</p>
-                                    </div>
-                                    <hr class="m_bottom_15">
-                                    <div class="clearfix m_bottom_15">
-                                        <a href="#" class="color_dark d_block bt_link">Introduction to algorithms</a>
-                                        <p>We have update the newest edition.</p>
-                                    </div>
-                                    <hr class="m_bottom_15">
-                                    <div class="clearfix m_bottom_15">
-                                        <a href="#" class="color_dark d_block bt_link">Introduction to algorithms</a>
-                                        <p>We have update the newest edition.</p>
-                                    </div>
-
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
+                    	
+                    </figure>
                 </div>
+
                 <div class="col-lg-6 col-md-6 col-sm-6 m_bottom_50 m_sm_bottom_35">
                     <!--Bestsellers-->
-                    <figure class="widget animate_ftr shadow r_corners wrapper m_bottom_30">
+                    <figure  class="widget animate_ftr shadow r_corners wrapper m_bottom_30">
                         <figcaption>
-                            <h3 class="color_light">Top Books</h3>
+                            <h3 class="color_light">New Resource</h3>
                         </figcaption>
-                        <div class="widget_content">
+                        <div style="min-height:400px" class="widget_content">
                             <div class="clearfix m_bottom_0">
                                 <table>
                                     <tr>
-                                        <td width="400" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">1.</span>The art of computer programming</a>
-                                        </td>
-                                        <td width="100" height="50" align="left" valign="middle">
-                                            <p>Donald.E.Knuth</p>
-                                        </td>
-                                        <td width="100" height="50" align="right" valign="middle">
-                                            <p class="scheme_color">Lendable</p>
+                                        <td width="600" height="50" align="left" valign="middle">
+                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width="400" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">2.</span>Data struture&Algorithm Analysis in C</a>
-                                        </td>
-                                        <td width="100" height="50" align="left" valign="middle">
-                                            <p>Mark.Allen.Weiss</p>
-                                        </td>
-                                        <td width="100" height="50" align="right" valign="middle">
-                                            <p class="scheme_color">Lendable</p>
+                                        <td width="600" height="50" align="left" valign="middle">
+                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width="400" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">3.</span>Data struture&Algorithm Analysis in C</a>
-                                        </td>
-                                        <td width="100" height="50" align="left" valign="middle">
-                                            <p>Mark.Allen.Weiss</p>
-                                        </td>
-                                        <td width="100" height="50" align="right" valign="middle">
-                                            <p class="scheme_color">Lendable</p>
+                                        <td width="600" height="50" align="left" valign="middle">
+                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width="400" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">4.</span>Data struture&Algorithm Analysis in C</a>
-                                        </td>
-                                        <td width="100" height="50" align="left" valign="middle">
-                                            <p>Mark.Allen.Weiss</p>
-                                        </td>
-                                        <td width="100" height="50" align="right" valign="middle">
-                                            <p class="scheme_color">Lendable</p>
+                                        <td width="600" height="50" align="left" valign="middle">
+                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New E-Res:</span>Resource Name</a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width="400" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">5.</span>The art of computer programming</a>
+                                        <td width="600" height="50" align="left" valign="middle">
+                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New E-Res:</span>Resource Name</a>
                                         </td>
-                                        <td width="100" height="50" align="left" valign="middle">
-                                            <p>Donald.E.Knuth</p>
-                                        </td>
-                                        <td width="100" height="50" align="right" valign="middle">
-                                            <p class="scheme_color">Lendable</p>
+                                    </tr>
+                                    <tr>
+                                        <td width="600" height="50" align="left" valign="middle">
+                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New E-Res:</span>Resource Name</a>
                                         </td>
                                     </tr>
                                 </table>
@@ -585,7 +528,7 @@ else if(session.getAttribute("error") != null)
         </form>
     </section>
 </div>
-<button class="t_align_c r_corners type_2 tr_all_hover animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
+<%--<button class="t_align_c r_corners type_2 tr_all_hover animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>--%>
 <!--scripts include-->
 <script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/retina.js"></script>

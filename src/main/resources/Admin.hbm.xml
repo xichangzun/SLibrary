@@ -3,7 +3,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.xcz.admin_info.domain.Admin" table="ADMIN" schema="SLibrary">
+    <class name="com.xcz.admin_info.domain.Admin" table="ADMIN" schema="slibrary">
         <id name="id" type="string">
             <column name="id" length="14" />
             <generator class="assigned" />

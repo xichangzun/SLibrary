@@ -3,7 +3,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.xcz.borrow_history.domain.BorrowHistory" table="BORROW_HISTORY" schema="SLibrary">
+    <class name="com.xcz.borrow_history.domain.BorrowHistory" table="BORROW_HISTORY" schema="slibrary">
         <composite-id name="uionPK" class="com.xcz.borrow_history.domain.BorrowUionPK">
             <key-property name="user_id" />
             <key-property name="ISBN" />

@@ -60,4 +60,5 @@
     <import resource="recommend-Spring-module.xml"/>
     <import resource="Admin-Spring-module.xml"/>
     <import resource="BookManage-Spring-module.xml"/>
+    <import resource="EBook-Spring-module.xml"/>
 </beans>

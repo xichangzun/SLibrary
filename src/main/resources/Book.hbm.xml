@@ -3,7 +3,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.xcz.search.domain.Book" table="BOOK" schema="SLibrary">
+    <class name="com.xcz.search.domain.Book" table="BOOK" schema="slibrary">
         <id name="ISBN" type="string">
             <column name="ISBN" length="25" />
             <generator class="assigned" />

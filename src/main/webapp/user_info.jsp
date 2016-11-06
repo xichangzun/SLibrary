@@ -164,6 +164,17 @@
 
                                     <tr class="m_bottom_45">
                                         <td width="200" height="50" align="right" valign="middle">
+                                            <label for="cf_tel"  class="m_bottom_5 d_inline_b">Fine</label>&nbsp;
+                                        </td>
+                                        <td width="40" height="50" align="right" valign="middle">
+                                        </td>
+                                        <td width="300" height="50" align="left" valign="middle">
+                                            <label for="cf_tel" class="m_bottom_5 d_inline_b color_dark"></label>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="m_bottom_45">
+                                        <td width="200" height="50" align="right" valign="middle">
                                             <label for="cf_tel"  class="m_bottom_5 d_inline_b">Tel</label>&nbsp;
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
