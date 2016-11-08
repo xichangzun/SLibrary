@@ -379,7 +379,7 @@ else if(session.getAttribute("error") != null)
                        	<figcaption>
                             <h3 class="color_light">News</h3>
                         </figcaption>
-                        <div style="min-height:400px" class="widget_content">
+                        <div style="min-height:400px" class="widget_content" id="news">
                             <div class="clearfix m_bottom_15">
                                 <a href="#" class="color_dark d_block bt_link">Title 1.</a>
                                 <p>Summary 1.</p>
@@ -541,8 +541,7 @@ else if(session.getAttribute("error") != null)
 <script src="js/scripts.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jackbox-packed.min.js"></script>
-
-
+<script src="js/index.js"></script>
 
 </body>
 </html>

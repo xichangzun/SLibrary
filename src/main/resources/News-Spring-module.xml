@@ -8,7 +8,7 @@
             <ref bean="hibernateDAO"/>
         </property>
     </bean>
-    <bean id="newsAction" class="com.xcz.News.action.NewsAction">
+    <bean id="newsAction" class="com.xcz.News.action.NewsAction" >
         <property name="mynewservice">
             <ref bean="newsServiceTarget"/>
         </property>

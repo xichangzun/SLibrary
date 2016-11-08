@@ -1,5 +1,6 @@
 package com.xcz.News.action;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.xcz.News.Service.NewsService;
 import com.xcz.News.domain.News;
@@ -77,8 +78,9 @@ public class NewsAction extends BaseAction {
     }
 
     public String query(){
-        News[] xcz = this.getMynewservice().query();
         HttpServletRequest rq = ServletActionContext.getRequest();
+        if(rq.getSession().getAttribute("news_array")!=null) return SUCCESS;
+        News[] xcz = this.getMynewservice().query();
         rq.getSession().setAttribute("news_array",xcz);
         return SUCCESS;
     }
@@ -93,8 +95,31 @@ public class NewsAction extends BaseAction {
                 rq.getSession().setAttribute("news_item",news_item);
                 return SUCCESS;
             }
-            return ERROR;
         }
         return ERROR;
     }
+
+    public void callback(){
+        query();
+        News[] xcz= (News[]) ServletActionContext.getRequest().getSession().getAttribute("news_array");
+        JSONArray result = new JSONArray();
+        if(xcz != null){
+            for(News news_item :xcz){
+                JSONObject a = new JSONObject();
+                a.put("id",news_item.getId());
+                a.put("title",news_item.getTitle());
+                a.put("summary",news_item.getSummary());
+                result.add(a);
+            }
+        }
+        HttpServletResponse rp = ServletActionContext.getResponse();
+        rp.setContentType("application/json;charset=UTF8");
+        try {
+            rp.getWriter().append(result.toJSONString());
+            rp.getWriter().close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
