@@ -49,16 +49,6 @@
                         <img src="images/logo.png" alt="">
                     </a>
                 </div>
-
-                <%--<div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
-                    <div class="row clearfix">
-                        <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
-                            <li><a href="#" data-popup="#login_popup">Log In</a></li>
-                            <li><a href="user_info.html" class="default_t_color">My Account</a></li>
-                            <li><a href="index.html" class="default_t_color">Checkout</a></li>
-                        </ul>
-                    </div>
-                </div>--%>
             </div>
         </section>
         <!--main menu container-->

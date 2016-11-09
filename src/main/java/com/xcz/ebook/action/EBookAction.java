@@ -31,7 +31,7 @@ public class EBookAction extends BaseAction{
         /*System.out.println("keyword is " + keyword);
         System.out.println("type is " + type);*/
         ArrayList<EBook> result = this.geteBookService().search(type, keyword);
-        if(result.size()==0 || result== null) {
+        if(result== null || result.size()==0) {
             System.out.print("error");
             rq.getSession().removeAttribute("ebook_result");
             return ERROR;

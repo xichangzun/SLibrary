@@ -9,8 +9,16 @@
 </style>
 <script type="text/javascript" src="js/pdfobject.min.js" ></script>
 <div id="pdf"></div>
-<script type="text/javascript"> 
-	PDFObject.embed("pdf/SpringFramework.pdf", "#pdf");
+<script type="text/javascript">
+	var pdf = getQueryString("pdf");
+	PDFObject.embed(pdf, "#pdf");
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r!=null)
+			return  unescape(r[2]);
+		return null;
+	}
 </script> 
 </head >
 <body >

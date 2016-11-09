@@ -12,8 +12,11 @@ public class EBook {
     private String ISBN;
     private String pub_year;
     private Integer pages;
+    private String pdf;
 
-    public EBook(String ebook_name, String author, String lang, String press, String cover, String ISBN, String pub_year, Integer pages) {
+    public EBook(){}
+
+    public EBook(String ebook_name, String author, String lang, String press, String cover, String ISBN, String pub_year, Integer pages, String pdf) {
         this.ebook_name = ebook_name;
         this.author = author;
         this.lang = lang;
@@ -22,9 +25,16 @@ public class EBook {
         this.ISBN = ISBN;
         this.pub_year = pub_year;
         this.pages = pages;
+        this.pdf = pdf;
     }
 
-    public EBook(){}
+    public String getPdf() {
+        return pdf;
+    }
+
+    public void setPdf(String pdf) {
+        this.pdf = pdf;
+    }
 
     public String getEbook_name() {
 

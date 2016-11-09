@@ -29,5 +29,8 @@
         <property name="cover" type="string">
             <column name="cover" length="50" not-null="false" />
         </property>
+        <property name="pdf" type="string">
+            <column name="pdf" length="50" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

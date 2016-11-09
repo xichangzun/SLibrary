@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿<%@ page import="com.xcz.recommendation.domain.Recommendation" %>
+<%@ page import="java.util.ArrayList" %>
+<!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
@@ -95,107 +97,105 @@
                                 </div>
 								<div class="col-lg-9 col-md-8 col-sm-8 m_xs_bottom_30">
                                 	<br>
-                                    
-									
-									<form id="contactform">
-                                    	
+
+									<%
+										ArrayList<Recommendation> list = (ArrayList<Recommendation>) session.getAttribute("recom_result");
+										int index = Integer.parseInt(request.getParameter("index"));
+										Recommendation recom = list.get(index);
+									%>
+									<%--Infomation--%>
+									<form>
                                     	<table style="font-size:16px">
                                         	<tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_bookName"  class="m_bottom_5 d_inline_b">Book Name</label>&nbsp;
+                                            		<label class="m_bottom_5 d_inline_b">Book Name</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <label for="cf_bookName" class="m_bottom_5 d_inline_b color_dark">The Man Who Sold the World</label>
+	                                                <label class="m_bottom_5 d_inline_b color_dark"><%=recom.getBook_name()%></label>
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_25">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                                	<label for="cf_lang" class="m_bottom_5 d_inline_b">Language</label>&nbsp;
+                                                	<label class="m_bottom_5 d_inline_b">Language</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-                                               		<label for="cf_lang" class="m_bottom_5 d_inline_b color_dark">English</label>
+                                               		<label class="m_bottom_5 d_inline_b color_dark"><%=recom.getLang()%></label>
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_25">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                                	<label for="cf_writer" class="m_bottom_5 d_inline_b">Writer</label>
+                                                	<label class="m_bottom_5 d_inline_b">Author</label>
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-                                                	<label for="cf_writer" class="m_bottom_5 d_inline_b color_dark">Nirvana</label>
+                                                	<label class="m_bottom_5 d_inline_b color_dark"><%=recom.getAuthor()%></label>
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_publisher"  class="m_bottom_5 d_inline_b">Publisher</label>&nbsp;
+                                            		<label  class="m_bottom_5 d_inline_b">Press</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <label for="cf_publisher" class="m_bottom_5 d_inline_b color_dark">Oh My My</label>
+	                                                <label class="m_bottom_5 d_inline_b color_dark"><%=recom.getPress()%></label>
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_ISBN"  class="m_bottom_5 d_inline_b">ISBN/ISSN</label>&nbsp;
+                                            		<label  class="m_bottom_5 d_inline_b">ISBN</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <label for="cf_ISBN" class="m_bottom_5 d_inline_b color_dark">20660607</label>
+	                                                <label class="m_bottom_5 d_inline_b color_dark"><%=recom.getUionPK().getISBN()%></label>
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_price"  class="m_bottom_5 d_inline_b">Price</label>&nbsp;
+                                            		<label  class="m_bottom_5 d_inline_b">Price</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <label for="cf_price" class="m_bottom_5 d_inline_b color_dark">40.00 RMB</label>
+	                                                <label class="m_bottom_5 d_inline_b color_dark"><%=recom.getPrice()%></label>
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_amount"  class="m_bottom_5 d_inline_b">Expected Amount</label>&nbsp;
+                                            		<label  class="m_bottom_5 d_inline_b">Expected Amount</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <label for="cf_amount" class="m_bottom_5 d_inline_b color_dark">5</label>
+	                                                <label class="m_bottom_5 d_inline_b color_dark"><%=recom.getAmount()%></label>
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label for="cf_reason"  class="m_bottom_5 d_inline_b">Recommending Reason</label>&nbsp;
+                                            		<label  class="m_bottom_5 d_inline_b">Recommending Reason</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <label for="cf_reason" class="m_bottom_5 d_inline_b color_dark">An amazing book, you deserve to read it.<br>An amazing book, you deserve to read it.<br>An amazing book, you deserve to read it.<br>An amazing book, you deserve to read it.<br>An amazing book, you deserve to read it.<br>An amazing book, you deserve to read it.<br>An amazing book, you deserve to read it.<br></label>
+	                                                <label class="m_bottom_5 d_inline_b color_dark"><%=recom.getReason()%></label>
                                                 </td>
                                             </tr>
-                                            <tr class="m_bottom_25">
-                                            	<td width="100" height="20" align="right" valign="middle">
-                                                </td>
-                                            </tr>
-                                            <tr class="m_bottom_25">
-                                            	
-                                                <td width="40" height="50" align="right" valign="middle">
-                                                	<button class="button_type_4 tr_all_hover r_corners bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Adopt</button>
-                                                </td>
-                                                <td width="100" height="50" align="right" valign="middle">
-                                                </td>
-                                            	<td width="300" height="50"  valign="middle">
-                                            		<button class="button_type_4 tr_all_hover r_corners bg_dark_color bg_cs_hover color_light f_mxs_none m_mxs_bottom_15">Reject</button>
-                                                </td>
-                                            </tr>
-                                            
+											<tr class="m_bottom_45">
+												<td width="200" height="50" align="right" valign="middle">
+													<label  class="m_bottom_5 d_inline_b">Treatment</label>&nbsp;
+												</td>
+												<td width="40" height="50" align="right" valign="middle">
+												</td>
+												<td width="300" height="50" align="left" valign="middle">
+													<label class="m_bottom_5 d_inline_b color_dark"><%=recom.getState()%></label>
+												</td>
+											</tr>
                                             <tr class="m_bottom_25">
                                             	<td width="100" height="20" align="right" valign="middle">
                                                 </td>
@@ -205,8 +205,6 @@
 								</div>
 							</div>
 							<div class="row clearfix">
-								
-								
 							</div>
 						</section>
 						

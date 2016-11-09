@@ -31,6 +31,7 @@ public class EBookServiceImpl extends BaseService implements EBookService {
                 ebook.setPub_year(timestamp.toString().substring(0,4));
                 ebook.setPages((Integer)row[6]);
                 ebook.setCover((String)row[7]);
+                ebook.setPdf((String)row[8]);
                 ebooks.add(ebook);
             }
             return ebooks;

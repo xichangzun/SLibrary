@@ -16,7 +16,6 @@
 		<link rel="stylesheet" type="text/css" media="all" href="css/style.css">
 		<!--font include-->
 		<link href="css/font-awesome.min.css" rel="stylesheet">
-
 		<script src="js/jquery-2.1.0.min.js"></script>
 	</head>
 	<body>
@@ -95,13 +94,13 @@
 								<div class="widget_content">
 									<!--Categories list-->
 									<ul class="categories_list">
-										<li>
-											<a href="admin_recommendation.html" class="f_size_large  color_dark d_block relative">
+										<li class="active">
+											<a href="admin_recommendation.html" class="f_size_large scheme_color d_block relative">
 												<b>Pending</b>
 											</a>
 										</li>
-										<li class="active">
-											<a href="admin_recom_history.html" class="f_size_large scheme_color d_block relative">
+										<li>
+											<a href="admin_recom_history.html" class="f_size_large color_dark d_block relative">
 												<b>Processed</b>
 											</a>
 										</li>
@@ -113,108 +112,93 @@
 						<section style="margin-top:-1.3%" class="col-lg-9 col-md-9 col-sm-9">
 							
 							<div id="recContainer" class="clearfix m_bottom_30">
-								<div class="product_item full_width list_type hit m_left_0 m_right_0">
-									<figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
-										<figcaption>
-											<div class="clearfix">
-												<div style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
-													<h4 class="fw_medium"><a href="admin_recom_detail.html" class="color_dark">Book Name1</a></h4>
-													<hr class="m_bottom_10">
-													<p class="d_sm_none d_xs_block">Recommending reasons here.</p>
-												</div>
-												<div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
-													<button class="button_type_4 bg_light_color_2 tr_all_hover f_right m_left_5 r_corners color_dark mw_0 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-trash-o"></i></button>
-
-
-													<a href="admin_recom_detail.html"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
-
-												</div>
-												<!--<div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
-
-													<a href="admin_recom_detail.html"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
-
-												</div>-->
-											</div>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="product_item full_width list_type hit m_left_0 m_right_0">
-									<figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
-										<span class="hot_stripe"><img src="images/rec_reject.png" alt=""></span>
-										<!--description and price of product-->
-										<figcaption>
-											<div class="clearfix">
-												<div style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
-													<h4 class="fw_medium"><a href="admin_recom_detail.html" class="color_dark">Book Name1</a></h4>
-													<hr class="m_bottom_10">
-													<p class="d_sm_none d_xs_block">Recommending reasons here.</p>
-												</div>
-												<div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
-													
-
-													
-													<a href="admin_recom_detail.html"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
-													
-												</div>
-											</div>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="product_item full_width list_type hit m_left_0 m_right_0">
+								 <!--form start here!-->
+								<div id="rec1" class="product_item full_width list_type hit m_left_0 m_right_0">
 									<figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
 										<span class="hot_stripe"><img src="images/rec_pass.png" alt=""></span>
 										<!--description and price of product-->
 										<figcaption>
 											<div class="clearfix">
-												<div style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
-													<h4 class="fw_medium"><a href="admin_recom_detail.html" class="color_dark">Book Name1</a></h4>
+												<div id="rec0" style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
+													<h4 class="fw_medium"><a href="admin_recom_handle.jsp?index=0" class="color_dark" id="book1"></a></h4>
 													<hr class="m_bottom_10">
-													<p class="d_sm_none d_xs_block">Recommending reasons here.</p>
+													<p class="d_sm_none d_xs_block" id="reason1"></p>
+													<input type="hidden" value="PASS" id="state1" />
 												</div>
 												<div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
-													
-													<a href="admin_recom_detail.html"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
-													
+													<a href="admin_recom_handle.jsp?index=0" id="href1"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
 												</div>
 											</div>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="product_item full_width list_type hit m_left_0 m_right_0">
+
+								<div id="rec2" class="product_item full_width list_type hit m_left_0 m_right_0">
 									<figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
-										<span class="hot_stripe"><img src="images/rec_reject.png" alt=""></span>
 										<!--description and price of product-->
 										<figcaption>
 											<div class="clearfix">
 												<div style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
-													<h4 class="fw_medium"><a href="admin_recom_detail.html" class="color_dark">Book Name1</a></h4>
+													<h4 class="fw_medium"><a href="admin_recom_handle.jsp?index=1" class="color_dark" id="book2"></a></h4>
 													<hr class="m_bottom_10">
-													<p class="d_sm_none d_xs_block">Recommending reasons here.</p>
+													<p class="d_sm_none d_xs_block" id="reason2"></p>
 												</div>
 												<div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
-													
-													<a href="admin_recom_detail.html"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
-													
+													<a href="admin_recom_handle.jsp?index=1" id="href2"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
 												</div>
 											</div>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="product_item full_width list_type hit m_left_0 m_right_0">
+
+								<div id="rec3" class="product_item full_width list_type hit m_left_0 m_right_0">
 									<figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
-										<span class="hot_stripe"><img src="images/rec_pass.png" alt=""></span>
 										<!--description and price of product-->
 										<figcaption>
 											<div class="clearfix">
 												<div style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
-													<h4 class="fw_medium"><a href="admin_recom_detail.html" class="color_dark">Book Name1</a></h4>
+													<h4 class="fw_medium"><a href="admin_recom_handle.jsp?index=2" class="color_dark" id="book3"></a></h4>
 													<hr class="m_bottom_10">
-													<p class="d_sm_none d_xs_block">Recommending reasons here.</p>
+													<p class="d_sm_none d_xs_block" id="reason3"></p>
 												</div>
 												<div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
-													
-													<a href="admin_recom_detail.html"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
-													
+													<a href="admin_recom_handle.jsp?index=2" id="href3"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+
+								<div id="rec4" class="product_item full_width list_type hit m_left_0 m_right_0">
+									<figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
+										<!--description and price of product-->
+										<figcaption>
+											<div class="clearfix">
+												<div style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
+													<h4 class="fw_medium"><a href="admin_recom_handle.jsp?index=3" class="color_dark" id="book4"></a></h4>
+													<hr class="m_bottom_10">
+													<p class="d_sm_none d_xs_block" id="reason4"></p>
+												</div>
+												<div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
+													<a href="admin_recom_handle.jsp?index=3" id="href4"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+
+								<div id="rec5" class="product_item full_width list_type hit m_left_0 m_right_0">
+									<figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
+										<!--description and price of product-->
+										<figcaption>
+											<div class="clearfix">
+												<div style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
+													<h4 class="fw_medium"><a href="admin_recom_handle.jsp?index=4" class="color_dark" id="book5"></a></h4>
+													<hr class="m_bottom_10">
+													<p class="d_sm_none d_xs_block" id="reason5"></p>
+												</div>
+												<div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
+													<a href="admin_recom_handle.jsp?index=4" id="href5"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-eye"></i></button></a>
 												</div>
 											</div>
 										</figcaption>
@@ -224,14 +208,14 @@
 								<hr class="m_bottom_10 divider_type_3">
 								<div class="row clearfix m_xs_bottom_30">
 									<div class="col-lg-7 col-md-7 col-sm-7 col-xs-5">
-										<p class="d_inline_middle f_size_medium">Results 1 - 5 of 45</p>
+										<p class="d_inline_middle f_size_medium"></p>
 									</div>
 									<div class="col-lg-5 col-md-5 col-sm-5 col-xs-7 t_align_r">
 										<!--pagination-->
 										<a role="button" href="#" class="f_size_large button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-left"></i></a>
 										<ul class="horizontal_list clearfix d_inline_middle f_size_medium m_left_10">
-											<li class="m_right_10"><a class="scheme_color" href="#">1</a></li>
-											<li class="m_right_10"><a class="color_dark" href="#">2</a></li>
+											<li class="m_right_10"><a class="scheme_color" href="#" onclick="getData(1)">1</a></li>
+											<li class="m_right_10"><a class="color_dark" href="#" onclick="getData(2)">2</a></li>
 											<li class="m_right_10"><a class="color_dark" href="#">3</a></li>
 										</ul>
 										<a role="button" href="#" class="f_size_large button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-right"></i></a>
@@ -315,8 +299,30 @@
 		</div>
 		<button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 
+
 		<script type="text/javascript">
-			$(document).ready(function(){ 
+			var $btn = $('#recContainer button .fa-trash-o');
+			//confirm(this.className)
+			$btn.click(function(event) {
+				$this=$(this); 
+		        if (confirm("Are you sure to reject this recommendation?")) {   
+		          	var $rec = $this.parents('#recContainer div');
+		          	$rec.remove();
+		        }else{
+		        	window.event.returnValue = false;
+		        }
+			});
+
+			/* Ajax */
+			$(document).ready(function () {
+				var page = getQueryString("page");
+				if (page == null)
+					getData(1, "handled");
+				else
+					getData(page, "handled");
+			});
+
+			$(document).ready(function(){
 				$recContainer = $('#recContainer figure');
 				//换成你们的判断条件
 				var test = 2;
@@ -332,6 +338,10 @@
 
 		<!--scripts include-->
 		
+		<script type="text/javascript">   
+			
+		</script>
+
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/retina.js"></script>
 		<script src="js/recom.js"></script>

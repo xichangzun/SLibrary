@@ -111,7 +111,7 @@ else
                                 <div style="width:580px;" class="col-lg-6 product_item full_width list_type hit m_left_0 m_right_0">
                                     <figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
                                         <!--product preview-->
-                                        <a href="#" class="d_block f_left relative pp_wrap m_right_30 m_xs_right_25">
+                                        <a href="read_online.html?pdf=${ebook.pdf}" class="d_block f_left relative pp_wrap m_right_30 m_xs_right_25">
                                             <!--hot product-->
                                             <!--<span class="hot_stripe"><img src="images/hot_product.png" alt=""></span>-->
                                             <img src="${ebook.cover}" class="tr_all_hover" alt="">
@@ -121,7 +121,7 @@ else
                                         <figcaption>
                                             <div class="clearfix">
                                                 <div class="f_left p_list_description f_sm_none w_sm_full m_xs_bottom_10">
-                                                    <h4 class="fw_medium"><a href="book_detail.jsp?index=${status.index}" class="color_dark">${ebook.ebook_name}</a></h4>
+                                                    <h4 class="fw_medium"><a href="read_online.html?pdf=${ebook.pdf}" class="color_dark">${ebook.ebook_name}</a></h4>
                                                     <br>
                                                     <hr class="m_bottom_10">
                                                     <p class="d_sm_none d_xs_block">
