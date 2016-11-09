@@ -12,5 +12,6 @@
         </action>
         <action name="get" class="recommendAction" method="queryByAjax"></action>
         <action name="updateState" class="recommendAction" method="updateState"></action>
+        <action name="delete" class="recommendAction" method="delete"></action>
     </package>
 </struts>

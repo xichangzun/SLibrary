@@ -85,7 +85,12 @@ public class recommendServiceImpl extends BaseService implements recommendServic
     @Override
     public Boolean handleRecom(String id, String isbn, String state) {
         String sql = "UPDATE RECOMMENDATION SET state = '" + state + "' WHERE user_id = '" + id + "' AND ISBN = '" + isbn + "'";
-        System.out.println(sql);
+        return this.getHibernateDAO().executeBySql(sql);
+    }
+
+    @Override
+    public Boolean delete(String id, String isbn) {
+        String sql = "DELETE FROM RECOMMENDATION WHERE user_id = '"+id+"' AND ISBN = '"+isbn+"'";
         return this.getHibernateDAO().executeBySql(sql);
     }
 

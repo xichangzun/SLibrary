@@ -19,6 +19,12 @@ function getData(page, type) {
                 var v = mydata[i];
                 $("#book" + i).html(v["book_name"]);
                 $("#reason" + i).html(v["reason"]);
+                $("#isbn" + i).val(v["ISBN"]);
+                $("#user_id" + i).val(v["user_id"]);
+                if (v["state"] == "adopt")
+                    $("#f" + i).append('<span class="hot_stripe"><img src="images/rec_pass.png" alt=""></span>');
+                else
+                    $("#f" + i).append('<span class="hot_stripe"><img src="images/rec_reject.png" alt=""></span>');
                 $("#rec" + i).show();
             }
             $("#pagination").show();
@@ -29,8 +35,35 @@ function getData(page, type) {
                 $("#rec" + i).hide();
             $("#pagination").hide();
         }
-
     });
+}
+
+function deleteData(no, id, isbn) {
+    $.ajax({
+        url: "/Recommend/delete",
+        type: "POST",
+        data:{
+            "user_id": id,
+            "ISBN": isbn
+        },
+        success: function () {
+            $("#rec" + no).hide();
+            alert("Delete Success!")
+        },
+        error: function () {
+           alert("Delete Failed!");
+        }
+    });
+}
+
+function deleteRequest(no) {
+    if (confirm("Are you sure to reject this recommendation?")) {
+        var id = $("#user_id" + no).val();
+        var isbn = $("#isbn" + no).val();
+        deleteData(no, id, isbn);
+    }else{
+        window.event.returnValue = false;
+    }
 }
 
 function getQueryString(name) {
@@ -42,7 +75,7 @@ function getQueryString(name) {
 }
 
 function jump(page){
-    window.location.href="admin_recom.html?page=" + page + "";
+    window.location.href="admin_recom_history.html?page=" + page + "";
 }
 
 function nextPage() {

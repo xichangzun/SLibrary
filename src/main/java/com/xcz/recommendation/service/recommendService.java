@@ -12,4 +12,5 @@ public interface recommendService  {
     int getPageCount(int pagesize, String type);
     ArrayList<Recommendation> get(int page, int pagesize, String type);
     Boolean handleRecom(String id, String isbn, String state);
+    Boolean delete(String id, String isbn);
 }

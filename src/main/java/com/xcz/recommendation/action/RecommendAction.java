@@ -101,4 +101,11 @@ public class RecommendAction extends BaseAction {
         String state = rq.getParameter("state");
         return service.handleRecom(id, isbn, state) ? SUCCESS: ERROR;
     }
+
+    public String delete(){
+        HttpServletRequest rq = ServletActionContext.getRequest();
+        String id = rq.getParameter("user_id");
+        String isbn = rq.getParameter("ISBN");
+        return service.delete(id, isbn) ? SUCCESS: ERROR;
+    }
 }

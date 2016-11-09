@@ -48,11 +48,11 @@
 						<!--main menu-->
 						<nav role="navigation" class="f_left f_xs_none d_xs_none">
 							<ul class="horizontal_list main_menu clearfix">
-								<li class="relative current f_xs_none m_xs_bottom_5"><a href="borrow.html" class="tr_delay_hover color_light tt_uppercase"><b>Borrow And Return</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="books_update.html" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="index.jsp" class="tr_delay_hover color_light tt_uppercase"><b>E-Resource</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="admin_newsManage.html" class="tr_delay_hover color_light tt_uppercase"><b>News Management</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="admin_recommendation.html" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav1" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Borrow And Return</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav2" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav3" href="#" class="tr_delay_hover color_light tt_uppercase"><b>E-Resource</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav4" href="#" class="tr_delay_hover color_light tt_uppercase"><b>News Management</b></a></li>
+								<li class="relative current f_xs_none m_xs_bottom_5"><a id="nav5" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
 							</ul>
 						</nav>
 						<button class="f_right search_button tr_all_hover f_xs_none d_xs_none">
@@ -286,6 +286,7 @@
 		<button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 		<!--scripts include-->
 		<script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/navigation.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/retina.js"></script>
 		<script src="js/waypoints.min.js"></script>
