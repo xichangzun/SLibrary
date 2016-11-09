@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
-<%@taglib prefix="s" uri="/struts-tags" %>
+
 <!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
@@ -152,20 +152,24 @@
                                                 <th>Reservation Requests</th>
                                                 <td><a href="javascript:show_yuyue()">${reserve_count}</a></td>
                                             </tr>
+                                            <tr>
+                                                <th>Recommendation Requests</th>
+                                                <td><a href="javascript:show_recom()">${reserve_count}</a></td>
+                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     <figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
 
                                         <div style="text-align:center; "class="table_sm_wrap r_corners wrapper shadow bg_light_color_1 m_bottom_30">
-                                            <table id="lishijilu" style="display: none;margin:auto" align="center" class="table_type_8 full_width t_align_l">
+                                            <table id="lishijilu" style="display: none;padding:0 50px" class="table_type_8 full_width">
                                                 <tbody>
                                                 <tr class="f_size_large">
-                                                    <th>Book_Name</th>
-                                                    <th>Author</th>
-                                                    <th>Pub Year</th>
-                                                    <th>Return Date</th>
-                                                    <th>Actual Date</th>
+                                                    <th style="width:350px">Book_Name</th>
+                                                    <th style="width:250px">Author</th>
+                                                    <th style="width:150px">Pub Year</th>
+                                                    <th style="width:150px">Return Date</th>
+                                                    <th style="width:150px">Actual Date</th>
                                                 </tr>
                                                 <s:iterator value="#attr.borrow_books" id ="book">
                                                     <tr>
@@ -179,12 +183,12 @@
                                                 </tbody>
                                             </table>
                                             <!-- add yujie -->
-                                            <table id="yuyue" style="display: none;margin:auto" align="center" class=" table_type_8 full_width t_align_l">
+                                            <table id="yuyue" style="display: none;padding:0 100px" class=" table_type_8 full_width">
                                                 <tbody>
                                                 <tr class="f_size_large">
-                                                    <th width="40%">Book_Name</th>
-                                                    <th>Author</th>
-                                                    <th>Request Status</th>
+                                                    <th style="width:350px">Book_Name</th>
+                                                    <th style="width:300px">Author</th>
+                                                    <th style="width:250px">Request Status</th>
                                                 </tr>
                                                 <s:iterator value="#attr.reserve_books" id = "book">
                                                     <tr>
@@ -197,14 +201,14 @@
                                             </table>
                                             <!--  end-->
                                             <!-- chencunxiang add -->
-                                            <table id="waijie" style="display: none;margin:auto" align="center" class=" table_type_2 full_width t_align_l">
+                                            <table id="waijie" style="display: none;padding:0 50px" class=" table_type_2 full_width">
                                                 <tbody>
                                                 <tr class="f_size_large">
-                                                    <th width="40%">Book_Name</th>
-                                                    <th>Author</th>
-                                                    <th>Publication Year</th>
-                                                    <th>ISBN</th>
-                                                    <th>Call Number</th>
+                                                    <th style="width:350px">Book_Name</th>
+                                                    <th style="width:250px">Author</th>
+                                                    <th style="width:150px">Publication Year</th>
+                                                    <th style="width:150px">ISBN</th>
+                                                    <th style="width:150px">Call Number</th>
                                                 </tr>
                                                 <s:iterator value="#attr.cur_borrow_books" id = "book">
                                                     <tr >
@@ -219,6 +223,20 @@
                                                 </tbody>
                                             </table>
                                             <!-- add end -->
+                                            <table id="recom" style="display: none;padding:0 100px" class=" table_type_8 full_width">
+								                <tbody>
+							                      	<tr class="f_size_large">
+	                                                    <th style="width:350px">Book_Name</th>
+	                                                    <th style="width:300px">ISBN</th>
+	                                                    <th style="width:250px">Status</th>
+	                                                </tr>
+                                                    <tr >
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+							                    </tbody>
+						                  	</table>
                                         </div>
                                     </figure>
 
@@ -325,10 +343,16 @@
         hidden();
         var myTable= document.getElementById("yuyue"); myTable.style.display="block";
     }
+    function show_recom(){
+        //var myTable= document.getElementById("lishijilu"); myTable.style.display ="none";
+        hidden();
+        var myTable= document.getElementById("recom"); myTable.style.display="block";
+    }
     function hidden(){
         var myTable= document.getElementById("lishijilu"); myTable.style.display ="none";
         var myTable1= document.getElementById("waijie"); myTable1.style.display ="none";
         var myTable1= document.getElementById("yuyue"); myTable1.style.display ="none";
+        var myTable1= document.getElementById("recom"); myTable1.style.display ="none";
     }
 
 </script>

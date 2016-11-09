@@ -36,3 +36,7 @@ function getQueryString(name) {
         return  unescape(r[2]);
     return null;
 }
+
+function jump(page){
+    
+}
