@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <title>Wrong</title>
     <script language="JavaScript">
-        function ah()
-        {
-            window.setTimeout('window.open("/books_add.html")',3000);
-            window.setTimeout('window.close()',3000);
+        function jump() {
+            window.setTimeout("window.location.href='books_add.html'", 3000);
         }
     </script>
 </head>
-<body onload="ah()">
-    <h1>Update Book Failed;auto jumping</h1>
+<body onload="jump()">
+    <h2>Update Book Failed.<br>Please wait for auto jumping!</h2>
     <a href="books_add.html">back</a>
 </body>
 </html>

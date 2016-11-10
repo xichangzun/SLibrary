@@ -3,6 +3,7 @@ package com.xcz.ebook.service;
 import com.xcz.common.BaseService;
 import com.xcz.ebook.domain.EBook;
 
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,4 +52,17 @@ public class EBookServiceImpl extends BaseService implements EBookService {
         }
         return sql;
     }
+
+    @Override
+    public Boolean add(EBook eBook){
+        String sql = "INSERT INTO EBOOK(ebook_name, author, ISBN, lang, press, pub_year, pages, cover, pdf) VALUES ('"+eBook.getEbook_name()+"', '"+eBook.getAuthor()+"', " +
+                "'"+eBook.getISBN()+"', '"+eBook.getLang()+"', '"+eBook.getPress()+"', "+eBook.getPub_year()+", "+eBook.getPages()+", '"+eBook.getCover()+"', '"+eBook.getPdf()+"')";
+        return this.getHibernateDAO().executeBySql(sql);
+    }
+
+    public Boolean delete(String isbn){
+        String sql = "DELETE FROM EBOOK WHERE ISBN = '"+ isbn +"'";
+        return this.getHibernateDAO().updateBySql(sql)!=0;
+    }
+
 }

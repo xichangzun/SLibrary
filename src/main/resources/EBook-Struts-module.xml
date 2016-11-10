@@ -5,10 +5,24 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="EBook" namespace="/EBook" extends="struts-default">
+    <package name="eBook" namespace="/EBook" extends="struts-default">
         <action name="search" class="eBookAction" method="search">
             <result name="success" type="redirect">/ebook_search_result.jsp</result>
             <result name="error" type="redirect">/ebook_search_result.jsp</result>
+        </action>
+        <action name="delete" class="eBookAction" method="delete"></action>
+        <action name="add" class="eBookAction" method="add">
+            <!--<result name="success" type="redirect">/ebook_add.html</result>
+            <result name="error" type="redirect">/ebook_add_wrong.html</result>-->
+            <!-- 配置名字为fileUpload的拦截器 -->
+            <interceptor-ref name="fileUpload">
+                <!-- 配置允许上传的文件类型 -->
+                <param name="allowedTypes">image/bmp,image/png,image/gif,
+                    image/jpeg,image/pjpeg,image/x-png,pdf,application/pdf</param>
+                <!-- 配置允许上传文件的大小(单位字节) -->
+                <param name="maximumSize">10485760</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
         </action>
     </package>
 </struts>

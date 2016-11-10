@@ -9,4 +9,6 @@ import java.util.ArrayList;
  */
 public interface EBookService {
     ArrayList<EBook> search(String type, String keyword);
+    Boolean add(EBook eBook);
+    Boolean delete(String isbn);
 }

@@ -5,7 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="recommemd" namespace="/Recommend" extends="struts-default">
+    <package name="recommend" namespace="/Recommend" extends="struts-default">
         <action name="add" class="recommendAction" method="add">
             <result name="success" type="redirect">/recommendation.jsp</result>
             <result name="error" type="redirect">/recommendation.jsp</result>

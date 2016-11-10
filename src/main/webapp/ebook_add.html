@@ -45,11 +45,11 @@
 						<!--main menu-->
 						<nav role="navigation" class="f_left f_xs_none d_xs_none">
 							<ul class="horizontal_list main_menu clearfix">
-								<li class="relative current f_xs_none m_xs_bottom_5"><a href="borrow.html" class="tr_delay_hover color_light tt_uppercase"><b>Borrow or Return</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="books_update.html" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="index.jsp" class="tr_delay_hover color_light tt_uppercase"><b>E-Resource</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="admin_newsManage.html" class="tr_delay_hover color_light tt_uppercase"><b>News Management</b></a></li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="admin_recommendation.html" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav1" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Borrow And Return</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav2" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>
+								<li class="relative current f_xs_none m_xs_bottom_5"><a id="nav3" href="#" class="tr_delay_hover color_light tt_uppercase"><b>E-Resource</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav4" href="#" class="tr_delay_hover color_light tt_uppercase"><b>News Management</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav5" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
 							</ul>
 						</nav>
 					</div>
@@ -71,7 +71,7 @@
 				<div class="container">
 					<ul class="horizontal_list clearfix bc_list f_size_medium">
 						<li class="m_right_10 current"><a href="#" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-						<li><a href="#" class="default_t_color">Books Management</a></li>
+						<li><a href="#" class="default_t_color">E-Resource Management</a></li>
 					</ul>
 				</div>
 			</section>
@@ -90,20 +90,15 @@
 									<!--Categories list-->
 									<ul class="categories_list">
 										<li class="active">
-											<a href="books_add.html" class="f_size_large scheme_color d_block relative">
-												<b>Add</b>
+											<a href="#" class="f_size_large scheme_color d_block relative">
+												<b>Add E-Res</b>
 											</a>
 										</li>
 										<li>
-											<a href="books_update.html" class="f_size_large color_dark d_block relative">
-												<b>Delete</b>
+											<a href="ebook_delete.html" class="f_size_large color_dark d_block relative">
+												<b>Delete E-Res</b>
 											</a>
 										</li>
-										<!--<li>
-											<a href="books_delete.html" class="f_size_large color_dark d_block relative">
-												<b>Delete Books</b>
-											</a>
-										</li>-->
 									</ul>
 								</div>
 							</figure>
@@ -115,11 +110,11 @@
 							<div class="clearfix m_bottom_30">
 								<figure>
 									<div class="row clearfix r_corners photoframe  shadow m_bottom_45">
-										<h2 style="margin:20px 30px" class="tt_uppercase color_dark m_bottom_30">Add E-Res</h2>
+										<h2 style="margin:20px 30px" class="tt_uppercase color_dark m_bottom_30">Add E-Resource</h2>
 										<hr style="margin:0px 30px" >
                                     <div style="margin:0px 30px">
                                 	<br>
-									<form action="/BookManage/Add" method="post" id = "addBook" enctype="multipart/form-data">
+									<form action="/EBook/add" method="post" id="form" enctype="multipart/form-data">
 										<ul>
 											<li class="m_bottom_15">
                                             	<div class="f_left half_column">
@@ -127,8 +122,8 @@
 													<input name = "ISBN" maxlength="14" class="full_width r_corners">
 												</div>
                                                 <div class="f_left half_column">
-													<label class="required d_inline_b m_bottom_5">Book Name</label>
-													<input name = "Book_name" maxlength="40" class="full_width r_corners">
+													<label class="required d_inline_b m_bottom_5">E-Res Name</label>
+													<input name = "name" maxlength="40" class="full_width r_corners">
 												</div>
 											</li>
                                             <li class="clearfix m_bottom_15">
@@ -137,7 +132,7 @@
 													<input name = "author" maxlength="20" class="full_width r_corners">
 												</div>
 												<div class="f_left half_column">
-													<label class="required d_inline_b m_bottom_5">Language</label>
+													<label class="d_inline_b m_bottom_5">Language</label>
 													<input name = "lang" maxlength="15" class="full_width r_corners">
 												</div>
 											</li>
@@ -147,28 +142,19 @@
 													<input name = "press" maxlength="20" class="full_width r_corners">
 												</div>
                                                 <div class="f_left half_column">
-													<label class="required d_inline_b m_bottom_5">Publish Year</label>
+													<label class="required d_inline_b m_bottom_5">Pub Year</label>
 													<input name = "pub_year" maxlength="4" size="4" class="full_width r_corners">
-												</div>
-											</li>
-                                             <li class="m_bottom_15">
-                                                <div class="f_left half_column">
-													<label  class="required d_inline_b m_bottom_5">Total Amount</label>
-													<input name = "total_amount" maxlength="3" class="full_width r_corners">
-												</div>
-                                                <div class="f_left half_column">
-													<label  class="required d_inline_b m_bottom_5">Call Number</label>
-													<input name = "call_no" maxlength="20" class="full_width r_corners">
 												</div>
 											</li>
                                             <li class="m_bottom_15">
                                                 <div class="f_left half_column">
-													<label  class="d_inline_b m_bottom_5">Book Pages</label>
+													<label class="d_inline_b m_bottom_5">Pages</label>
 													<input name = "pages" class="full_width r_corners">
 												</div>
-                                                <div class="f_left half_column">
-													<label  class="d_inline_b m_bottom_5">Book Size</label>
-													<input name = "size" class="full_width r_corners">
+												<!--for UI-->
+												<div style="visibility:hidden" class="f_left half_column">
+													<label class="required d_inline_b m_bottom_5"></label>
+													<input maxlength="4" size="4" class="full_width r_corners">
 												</div>
 											</li>
                                             <li>
@@ -177,9 +163,15 @@
                                                     <input type="file" name="cover" class="full_width r_corners">
                                                 </div>
                                             </li>
+                                            <li>
+                                                <div>
+                                                    <label class="d_inline_b m_bottom_5">PDF</label>
+                                                    <input type="file" name="pdf" class="full_width r_corners">
+                                                </div>
+                                            </li>
                                             <br>
                                             <li class="t_align_c">
-												<button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Submit</button>
+												<button type="button" onclick="submitByAjax()" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Submit</button>
 											</li>
                                             <br>
 										</ul>
@@ -263,8 +255,12 @@
 			</section>
 		</div>
 		<button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
+
 		<!--scripts include-->
 		<script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/navigation.js"></script>
+		<script src="js/ebook_add.js"></script>
+		<script src="js/jquery.form.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/retina.js"></script>
 		<script src="js/waypoints.min.js"></script>
@@ -272,6 +268,5 @@
 		<script src="js/jquery.tweet.min.js"></script>
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/jquery.custom-scrollbar.js"></script>
-		<script src="js/book_add.js"></script>
 	</body>
 </html>

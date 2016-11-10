@@ -99,13 +99,25 @@ public class RecommendAction extends BaseAction {
         String id = rq.getParameter("user_id");
         String isbn = rq.getParameter("ISBN");
         String state = rq.getParameter("state");
-        return service.handleRecom(id, isbn, state) ? SUCCESS: ERROR;
+        try{
+            service.handleRecom(id, isbn, state);
+        } catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+        return SUCCESS;
     }
 
     public String delete(){
         HttpServletRequest rq = ServletActionContext.getRequest();
         String id = rq.getParameter("user_id");
         String isbn = rq.getParameter("ISBN");
-        return service.delete(id, isbn) ? SUCCESS: ERROR;
+        try{
+            service.delete(id, isbn);
+        } catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+        return SUCCESS;
     }
 }

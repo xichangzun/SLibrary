@@ -3,7 +3,6 @@ package com.xcz.book_management.action;
 import com.xcz.book_management.service.BookManageService;
 import com.xcz.common.BaseAction;
 import com.xcz.search.domain.Book;
-import org.apache.commons.collections.bag.SynchronizedBag;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
@@ -36,29 +35,26 @@ public class BookManageAction extends BaseAction {
         this.bookManageService = bookManageService;
     }
 
-    private String SavePhoto(String ISBN)
-    {
-        if(cover == null)
-            return "/pictures/default.jpg";
+    private String SavePhoto(String ISBN) {
+        if (cover == null)
+            return "pictures/default.jpg";
         else {
             String path = ServletActionContext.getServletContext().getRealPath("/pictures");
             System.out.println(path);
-            String fileName = ISBN+".jpg";
-            try
-            {
-                FileUtils.copyFile(cover,new File(path,fileName));
-                FileUtils.copyFile(cover,new File("/home/xichangzun/SLibrary/SLibrary/src/main/webapp/pictures",fileName));
+            String fileName = ISBN + ".jpg";
+            try {
+                FileUtils.copyFile(cover, new File(path, fileName));
+                FileUtils.copyFile(cover, new File("/home/xichangzun/SLibrary/SLibrary/src/main/webapp/pictures", fileName));
 
-            }catch (IOException e)
-            {
+            } catch (IOException e) {
                 return "false";
             }
 
-            return "pictures/"+fileName;
+            return "pictures/" + fileName;
         }
     }
-    public String addBook()
-    {
+
+    public String addBook() {
         HttpServletRequest rq = ServletActionContext.getRequest();
         Book a = new Book();
         a.setISBN(rq.getParameter("ISBN"));
@@ -70,7 +66,7 @@ public class BookManageAction extends BaseAction {
         a.setTotal_amount(Integer.parseInt(rq.getParameter("total_amount")));
         a.setCall_no(rq.getParameter("call_no"));
         String aa = rq.getParameter("pages");
-        if(!aa.isEmpty())
+        if (!aa.isEmpty())
             a.setPages(Integer.parseInt(aa));
         aa = rq.getParameter("size");
         if (!aa.isEmpty())
@@ -78,17 +74,17 @@ public class BookManageAction extends BaseAction {
         a.setRes_amount(0);
         a.setAmount(a.getTotal_amount());
         aa = SavePhoto(a.getISBN());
-        if(aa.contentEquals("false")) return ERROR;
+        if (aa.contentEquals("false")) return ERROR;
         a.setCover(aa);
-        if(this.getBookManageService().addBook(a))
+        if (this.getBookManageService().addBook(a))
             return SUCCESS;
         else
             return ERROR;
     }
-    public String delBook()
-    {
+
+    public String delBook() {
         HttpServletRequest rq = ServletActionContext.getRequest();
-        if(this.getBookManageService().delBook(rq.getParameter("keyword")))
+        if (this.getBookManageService().delBook(rq.getParameter("keyword")))
             return SUCCESS;
         else
             return ERROR;
