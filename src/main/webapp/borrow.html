@@ -2,7 +2,7 @@
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
-		<title>Borrow Books</title>
+		<title>Borrow Book</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<!--meta info-->
@@ -53,25 +53,14 @@
 							</ul>
 						</nav>
 					</div>
-					<!--search form-->
-					<div class="searchform_wrap tf_xs_none tr_all_hover">
-						<div class="container vc_child h_inherit relative">
-							<form role="search" class="d_inline_middle full_width">
-								<input type="text" name="search" placeholder="Type text and hit enter" class="f_size_large">
-							</form>
-							<button class="close_search_form tr_all_hover d_xs_none color_dark">
-								<i class="fa fa-times"></i>
-							</button>
-						</div>
-					</div>
 				</section>
 			</header>
 			<!--breadcrumbs-->
 			<section class="breadcrumbs">
 				<div class="container">
 					<ul class="horizontal_list clearfix bc_list f_size_medium">
-						<li class="m_right_10 current"><a href="#" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-						<li><a href="#" class="default_t_color">Borrow And Return</a></li>
+						<li class="m_right_10 current"><a href="admin_info.jsp" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+						<li><a href="#" class="default_t_color">Borrow</a></li>
 					</ul>
 				</div>
 			</section>
@@ -90,13 +79,13 @@
 									<!--Categories list-->
 									<ul class="categories_list">
 										<li class="active">
-											<a href="borrow.html" class="f_size_large scheme_color d_block relative">
-												<b>Borrow Books</b>
+											<a href="#" class="f_size_large scheme_color d_block relative">
+												<b>Borrow</b>
 											</a>
 										</li>
 										<li>
 											<a href="return.html" class="f_size_large color_dark d_block relative">
-												<b>Return Books</b>
+												<b>Return</b>
 											</a>
 										</li>
 										<li>
@@ -116,7 +105,7 @@
 							<div class="clearfix m_bottom_30">
 								<figure>
 									<div class="row clearfix r_corners photoframe  shadow m_bottom_45">
-										<h2 style="margin:40px 40px" class="tt_uppercase color_dark m_bottom_30">Borrow Books</h2>
+										<h2 style="margin:40px 40px" class="tt_uppercase color_dark m_bottom_30">Borrow Book</h2>
 										<hr style="margin:0px 40px" >
 									  <div css="col-lg-10 col-md-8 col-sm-8 m_xs_bottom_30">
                                 	<br>
@@ -127,12 +116,12 @@
                                     	<table style="font-size:16px">
                                         	<tr class="m_bottom_25">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                                	<label  class="required d_inline_b m_bottom_5">ISBN</label>
+                                                	<label class="required d_inline_b m_bottom_5">Book ID</label>
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-                                                	<input type="text" id="ISBN" name="cf_name" class="full_width r_corners">
+                                                	<input type="text" id="id" name="cf_name" class="full_width r_corners">
                                                 </td>
                                             </tr>
                                             <tr class="m_bottom_25">
