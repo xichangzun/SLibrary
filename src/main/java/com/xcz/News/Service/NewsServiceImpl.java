@@ -75,4 +75,29 @@ public class NewsServiceImpl extends BaseService implements NewsService {
             return fin;
         }
     }
+
+    public News[] res_query(){
+        String sql = "SELECT * FROM UPRECORD ORDER BY add_time DESC LIMIT 6";
+        List result = this.getHibernateDAO().findBySql(sql);
+        if(result == null||result.isEmpty())
+        {
+            return null;
+        }
+        else
+        {
+            ArrayList<News> xcz =new ArrayList<News>();
+            for(int i = 0;i<result.size();i++)
+            {
+                Object[] temp = (Object[]) result.get(i);
+                News t2 = new News();
+                t2.setId((Integer)temp[0]);
+                t2.setSummary((String)temp[1]);
+                t2.setTitle((String)temp[2]);
+                xcz.add(t2);
+            }
+            News[] fin = new News[xcz.size()];
+            fin = xcz.toArray(fin);
+            return fin;
+        }
+    }
 }

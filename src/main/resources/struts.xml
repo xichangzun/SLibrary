@@ -15,6 +15,9 @@
     <!-- 存储地址 -->
     <constant name="struts.multipart.saveDir" value="/home/temp" />
 
+    <!-- 存储大小-->
+    <constant name="struts.multipart.maxSize" value="50000000"/>
+
     <include file="UserInfo-Struts-modules.xml"/>
     <include file="Search-Struts-module.xml"/>
     <include file="BorrowHistory-Struts-module.xml"/>

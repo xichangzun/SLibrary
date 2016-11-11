@@ -20,7 +20,7 @@
                 <param name="allowedTypes">image/bmp,image/png,image/gif,
                     image/jpeg,image/pjpeg,image/x-png,pdf,application/pdf</param>
                 <!-- 配置允许上传文件的大小(单位字节) -->
-                <param name="maximumSize">10485760</param>
+                <param name="maximumSize">41000000</param>
             </interceptor-ref>
             <interceptor-ref name="defaultStack" />
         </action>

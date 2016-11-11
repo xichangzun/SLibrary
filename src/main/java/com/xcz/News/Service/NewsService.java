@@ -9,4 +9,5 @@ public interface NewsService {
     Boolean addNews(News a);
     Boolean updateNews(News a);
     News[] query();
+    News[] res_query();
 }
