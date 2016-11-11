@@ -64,7 +64,7 @@
     <section class="breadcrumbs">
         <div class="container">
             <ul class="horizontal_list clearfix bc_list f_size_medium">
-                <li class="m_right_10"><a href="admin_basic.html" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+                <li class="m_right_10"><a href="index.jsp" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
                 <li><a href="news_detail.html" class="current default_t_color">News Detail</a></li>
             </ul>
         </div>

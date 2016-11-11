@@ -10,5 +10,7 @@
             <result name="error" type="redirect">/search_result.jsp</result>
             <result name="success" type="redirect">/search_result.jsp</result>
         </action>
+        <action name="query" class="searchAction" method="SearchForAjax">
+        </action>
     </package>
 </struts>

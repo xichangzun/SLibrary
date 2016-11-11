@@ -196,8 +196,6 @@
                         </div>
                     </div>
                     <div class="row clearfix">
-
-
                     </div>
                 </section>
 
@@ -246,36 +244,6 @@
     </footer>
 </div>
 
-
-<!--login popup-->
-<div class="popup_wrap d_none" id="login_popup">
-    <section class="popup r_corners shadow">
-        <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
-        <h3 class="m_bottom_20 color_dark">Log In</h3>
-        <form>
-            <ul>
-                <li class="m_bottom_15">
-                    <label for="username" class="m_bottom_5 d_inline_b">Username</label><br>
-                    <input type="text" name="" id="username" class="r_corners full_width">
-                </li>
-                <li class="m_bottom_25">
-                    <label for="password" class="m_bottom_5 d_inline_b">Password</label><br>
-                    <input type="password" name="" id="password" class="r_corners full_width">
-                </li>
-                <li class="m_bottom_15">
-                    <input type="checkbox" class="d_none" id="checkbox_10"><label for="checkbox_10">Remember me</label>
-                </li>
-                <li class="clearfix m_bottom_30">
-                    <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
-                    <div class="f_right f_size_medium f_mxs_none">
-                        <a href="#" class="color_dark">Forgot your password?</a><br>
-                        <a href="#" class="color_dark">Forgot your username?</a>
-                    </div>
-                </li>
-            </ul>
-        </form>
-    </section>
-</div>
 <button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 <!--scripts include-->
 <script src="js/jquery-2.1.0.min.js"></script>

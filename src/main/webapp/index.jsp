@@ -515,14 +515,8 @@ else if(session.getAttribute("error") != null)
                     <label for="password" class="m_bottom_5 d_inline_b">Password</label><br>
                     <input type="password" name="PWD" id="password" class="r_corners full_width">
                 </li>
-                <li class="m_bottom_15">
-                    <input type="checkbox" class="d_none" id="checkbox_10"><label for="checkbox_10">Remember me</label>
-                </li>
                 <li class="clearfix m_bottom_30">
                     <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
-                    <div class="f_right f_size_medium f_mxs_none">
-                        <a href="#" class="color_dark">Forgot your password?</a><br>
-                    </div>
                 </li>
             </ul>
         </form>
