@@ -7,7 +7,7 @@
 <struts>
     <package name="BorrowHistory" namespace="/BorrowHistory" extends="struts-default">
         <action name="queryBorrowInfo" class="borrowInfoAction" method="queryBorrow">
-            <result name="success" type="redirect">/circulation.jsp</result>
+            <result name="success" type="redirect">/user_forms.jsp</result>
             <result name="error" type="redirect">/index.jsp</result>
         </action>
         <action name="borrow" class="borrowInfoAction" method="ajaxCallBack">

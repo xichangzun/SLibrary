@@ -12,7 +12,7 @@
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 <head>
-    <title>Slibrary - Book Detail</title>
+    <title>Book Detail</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--meta info-->
@@ -69,11 +69,6 @@
                 </div>
                 <input autocomplete="off" class=" r_corners" style="width:30%; height:29px;" name="keyword"> &nbsp;
                 <input style="height:30px" class="button_type_9 r_corners t_align_c" id="lookup" value="  Search  " type="submit">
-                <script>
-                    //document.write('<a id=rsslink href="/rss/newbookrss.php?base=XDU01&lib=XDU01&name='+document.getElementById("search_description").value+'&request=" target="_blank"><img border="0" width="24" src="/rss/style/pics/ico_rss.gif"></a>');
-                </script>
-                <div id="colorpanel" style="position:absolute;display:none;width:253px;height:177px;"></div>
-                <div id="details" style="display:none;font-size:14px;width:400px;position:absolute;z-index:10000;background:#fff;border:1px solid #aaa" onclick="this.style.display=&quot;none&quot;;if(g(&quot;format&quot;))g(&quot;format&quot;).style.display=&quot;&quot;"></div>
             </form>
         </div>
     </section>
@@ -193,38 +188,11 @@
 
     </footer>
 </div>
-
-<!--login popup-->
-<div class="popup_wrap d_none" id="login_popup">
-    <section class="popup r_corners shadow">
-        <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
-        <h3 class="m_bottom_20 color_dark">Log In</h3>
-        <form>
-            <ul>
-                <li class="m_bottom_15">
-                    <label for="username" class="m_bottom_5 d_inline_b">Username</label><br>
-                    <input type="text" name="" id="username" class="r_corners full_width">
-                </li>
-                <li class="m_bottom_25">
-                    <label for="password" class="m_bottom_5 d_inline_b">Password</label><br>
-                    <input type="password" name="" id="password" class="r_corners full_width">
-                </li>
-                <li class="m_bottom_15">
-                    <input type="checkbox" class="d_none" id="checkbox_10"><label for="checkbox_10">Remember me</label>
-                </li>
-                <li class="clearfix m_bottom_30">
-                    <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
-                    <div class="f_right f_size_medium f_mxs_none">
-                        <a href="#" class="color_dark">Forgot your password?</a><br>
-                        <a href="#" class="color_dark">Forgot your username?</a>
-                    </div>
-                </li>
-            </ul>
-        </form>
-
-    </section>
-</div>
 <button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
+
+<script>
+
+</script>
 <!--scripts include-->
 <script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/retina.js"></script>

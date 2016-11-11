@@ -11,7 +11,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 
 <head>
-    <title>Slibrary - UserInfo</title>
+    <title>UserInfo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--meta info-->
@@ -69,26 +69,12 @@
                 <!--main menu-->
                 <nav role="navigation" class="f_left f_xs_none d_xs_none">
                     <ul class="horizontal_list main_menu clearfix">
-                        <li class="relative current f_xs_none m_xs_bottom_5"><a href="user_info.jsp" class="tr_delay_hover color_light tt_uppercase"><b>My Information</b></a></li>
-                        <li class="relative f_xs_none m_xs_bottom_5"><a href="/BorrowHistory/queryBorrowInfo" class="tr_delay_hover color_light tt_uppercase"><b>Borrowing&Reservation</b></a></li>
-                        <li class="relative f_xs_none m_xs_bottom_5"><a href="recommendation.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
-                        <li class="relative f_xs_none m_xs_bottom_5"><a href="changepwd.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Change Password</b></a></li>
+                        <li class="relative current f_xs_none m_xs_bottom_5"><a id="nav1" href="#" class="tr_delay_hover color_light tt_uppercase"><b>My Information</b></a></li>
+                        <li class="relative f_xs_none m_xs_bottom_5"><a id="nav2" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Borrowing&Reservation</b></a></li>
+                        <li class="relative f_xs_none m_xs_bottom_5"><a id="nav3" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
+                        <li class="relative f_xs_none m_xs_bottom_5"><a id="nav4" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Change Password</b></a></li>
                     </ul>
                 </nav>
-                <button class="f_right search_button tr_all_hover f_xs_none d_xs_none">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
-            <!--search form-->
-            <div class="searchform_wrap tf_xs_none tr_all_hover">
-                <div class="container vc_child h_inherit relative">
-                    <form role="search" class="d_inline_middle full_width">
-                        <input type="text" name="search" placeholder="Type text and hit enter" class="f_size_large">
-                    </form>
-                    <button class="close_search_form tr_all_hover d_xs_none color_dark">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
             </div>
         </section>
     </header>
@@ -97,7 +83,7 @@
         <div class="container">
             <ul class="horizontal_list clearfix bc_list f_size_medium">
                 <li class="m_right_10 current"><a href="index.jsp" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-                <li><a href="user_info.jsp" class="default_t_color">My Information</a></li>
+                <li><a href="#" class="default_t_color">My Information</a></li>
             </ul>
         </div>
     </section>
@@ -247,6 +233,7 @@
 <button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 <!--scripts include-->
 <script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/user_nav.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/retina.js"></script>
 <script src="js/waypoints.min.js"></script>

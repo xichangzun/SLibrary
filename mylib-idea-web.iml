@@ -19,7 +19,7 @@
             <file>jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-spring-plugin/2.5-BETA2/struts2-spring-plugin-2.5-BETA2.jar!/struts-plugin.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/Admin-Struts-module.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/BookManage-Struts-module.xml</file>
-            <file>file://$MODULE_DIR$/src/main/resources/BorrowHistory-Struts-modules.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/BorrowHistory-Struts-module.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/Recommend-Struts-module.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/Search-Struts-module.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/struts.xml</file>

@@ -11,7 +11,7 @@
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 <head>
-    <title>Slibrary - Search Results</title>
+    <title>E-Res Search Result</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--meta info-->
@@ -148,20 +148,20 @@ else
                         </section>
                     </div>
 
-                    <div class="row clearfix m_bottom_15 m_xs_bottom_30">
-                        <div class="col-lg-7 col-md-7 col-sm-8 m_xs_bottom_10">
-                            <p class="d_inline_middle f_size_medium d_xs_block m_xs_bottom_5">Results 1 - 5 of 45</p>
-
+                    <div class="row clearfix m_xs_bottom_30">
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-5">
+                            <p class="d_inline_middle f_size_medium"></p>
                         </div>
-                        <div class="col-lg-5 col-md-5 col-sm-4 t_align_r t_xs_align_l">
+                        <div id="pagination" class="col-lg-5 col-md-5 col-sm-4 t_align_r t_xs_align_l">
                             <!--pagination-->
-                            <a role="button" href="#" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-left"></i></a>
+                            <a role="button" onclick="prePage()" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-left"></i></a>
                             <ul class="horizontal_list clearfix d_inline_middle f_size_medium m_left_10">
-                                <li class="m_right_10"><a class="color_dark" href="#">1</a></li>
-                                <li class="m_right_10"><a class="scheme_color" href="#">2</a></li>
-                                <li class="m_right_10"><a class="color_dark" href="#">3</a></li>
+                                <li class="m_right_10"><a class="scheme_color" href="#" id="cur_page">1</a></li>
+                                <li class="m_right_10 color_dark" id="page_cnt">/ 3 </li>
                             </ul>
-                            <a role="button" href="#" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-right"></i></a>
+                            <a role="button" onclick="nextPage()" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-right"></i></a>
+                            <a role="button" onclick="jumpToInput()" class="f_right button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><span style="margin:4px">go</span></a>
+                            <input id="page" style="width:50px;margin:0 6px 0 15px;height:23px" type="text" class="r_corners f_right type_2" >
                         </div>
                     </div>
                 </section>

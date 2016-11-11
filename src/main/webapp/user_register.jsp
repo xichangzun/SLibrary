@@ -3,7 +3,7 @@
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
-		<title>Slibrary - UserInfo</title>
+		<title>Register</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<!--meta info-->
@@ -19,27 +19,27 @@
 		<!--font include-->
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<style type="text/css">
-			.fuck{
+			.mycss{
 				width:200px ;
 				height:50px ;
 				text-align:right;
 				vertical-align:middle;
 			}
-			.fuck_2{
+			.mycss_2{
 				width:40px ;
 				height:50px ;
 				text-align:left;
 				vertical-align:middle;
 				color: #FF0000
 			}
-			.fuck_3_hidden,
-			.fuck_3{
+			.mycss_3_hidden,
+			.mycss_3{
 				width:300px ;
 				height:50px ;
 				text-align:left;
 				vertical-align:middle;
 			}
-			.fuck_3_hidden{
+			.mycss_3_hidden{
 				color: red;
 				visibility:hidden;
 			}
@@ -73,24 +73,10 @@
 						<nav role="navigation" class="f_left f_xs_none d_xs_none">	
 							<ul class="horizontal_list main_menu clearfix">
 								<li class="relative f_xs_none m_xs_bottom_5"><a href="index.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Home</b></a></li>
-                                <li class="relative current f_xs_none m_xs_bottom_5"><a href="user_register.jsp" class="tr_delay_hover color_light tt_uppercase"><b>Register</b></a></li>
+                                <li class="relative current f_xs_none m_xs_bottom_5"><a href="#" class="tr_delay_hover color_light tt_uppercase"><b>Register</b></a></li>
                                 
 							</ul>
 						</nav>
-						<button class="f_right search_button tr_all_hover f_xs_none d_xs_none">
-							<i class="fa fa-search"></i>
-						</button>
-					</div>
-					<!--search form-->
-					<div class="searchform_wrap tf_xs_none tr_all_hover">
-						<div class="container vc_child h_inherit relative">
-							<form role="search" class="d_inline_middle full_width">
-								<input type="text" name="search" placeholder="Type text and hit enter" class="f_size_large">
-							</form>
-							<button class="close_search_form tr_all_hover d_xs_none color_dark">
-								<i class="fa fa-times"></i>
-							</button>
-						</div>
 					</div>
 				</section>
 			</header>
@@ -122,91 +108,87 @@
 									
 									<form action="/User/register"  id = "reg_form">
                                     	
-                                    	<table style="font-size:16px">
+                                    	<table style="font-size:16px" class="m_bottom_45">
 											<tr class="m_bottom_25">
-												<td class="fuck">
+												<td class="mycss">
 													<label class="m_bottom_5 d_inline_b">Reader ID</label>&nbsp;
 												</td>
-												<td class="fuck_2">
+												<td class="mycss_2">
 													<label >*</label>
-												<td class="fuck_3">
+												<td class="mycss_3">
 													<input type="text" name="id" class="full_width r_corners" autocomplete="off" >
 												</td>
-												<td class="fuck_3_hidden">
+												<td class="mycss_3_hidden">
 													<label class="m_bottom_5 d_inline_b"></label>
 												</td>
 											</tr>
                                             <tr class="m_bottom_45">
-                                            	<td class="fuck">
+                                            	<td class="mycss">
                                             		<label class="m_bottom_5 d_inline_b">Password</label>&nbsp;
                                                 </td>
-                                                <td class="fuck_2">
+                                                <td class="mycss_2">
                                                     <label >*</label>
                                                 </td>
-                                                <td class="fuck_3">
+                                                <td class="mycss_3">
 	                                                <input type="password" name="pwd" class="full_width r_corners" autocomplete="off" placeholder="number or chars,max length 20">
                                                 </td>
-                                                <td class="fuck_3_hidden">
+                                                <td class="mycss_3_hidden">
                                                     <label class="m_bottom_5 d_inline_b"></label>
                                                 </td>
                                             </tr>
 											<tr class="m_bottom_45">
-												<td class="fuck">
+												<td class="mycss">
 													<label class="m_bottom_5 d_inline_b">Confirm Password</label>&nbsp;
 												</td>
-												<td class="fuck_2">
+												<td class="mycss_2">
 													<label >*</label>
 												</td>
-												<td class="fuck_3">
+												<td class="mycss_3">
 													<input type="password" name="cfpwd" class="full_width r_corners" autocomplete="off" >
 												</td>
-												<td class="fuck_3_hidden">
+												<td class="mycss_3_hidden">
 													<label class="m_bottom_5 d_inline_b"></label>
 												</td>
 											</tr>
 											<tr class="m_bottom_45">
-												<td class="fuck">
+												<td class="mycss">
 													<label class="m_bottom_5 d_inline_b">Name</label>&nbsp;
 												</td>
-												<td class="fuck_2">
+												<td class="mycss_2">
 													<label >*</label>
 												</td>
-												<td class="fuck_3">
+												<td class="mycss_3">
 													<input type="text" name="name" class="full_width r_corners" autocomplete="off" >
 												</td>
-												<td class="fuck_3_hidden">
+												<td class="mycss_3_hidden">
 													<label class="m_bottom_5 d_inline_b">User name cannot be more than 7 Chinese characters or 14 characters</label>
 												</td>
 											</tr>
-
                                             <tr class="m_bottom_45">
-                                            	<td class="fuck">
+                                            	<td class="mycss">
                                                 	<label class="m_bottom_5 d_inline_b ">Work Unit</label>
                                                 </td>
-                                                <td class="fuck_2">
+                                                <td class="mycss_2">
                                                     <label >*</label>
-                                                <td class="fuck_3">
+                                                <td class="mycss_3">
                                                 	<input type="text" name="unit" class="full_width r_corners" autocomplete="off" >
                                                 </td>
-												<td class="fuck_3_hidden">
+												<td class="mycss_3_hidden">
 													<label class="m_bottom_5 d_inline_b"></label>
 												</td>
                                             </tr>
-                                            <tr class="m_bottom_45">
-                                            	<td class="fuck">
-                                            		<label class="m_bottom_5 d_inline_b">E-mail</label>&nbsp;
-                                                </td>
-                                                <td class="fuck_2">
-                                                    <label >*</label>
-                                                <td class="fuck_3">
-	                                                <input type="text" name="email" class="full_width r_corners" autocomplete="off" >
-                                                </td>
-												<td class="fuck_3_hidden">
-													<label class="m_bottom_5 d_inline_b"></label>
+											<tr class="m_bottom_45">
+												<td class="mycss">
+													<label class="m_bottom_5 d_inline_b">E-mail</label>&nbsp;
 												</td>
-                                            </tr>
+												<td width="40" height="50" align="right" valign="middle">
+												</td>
+												<td width = "300" height=50" text-align = "left" vertical-align = "middle">
+													<input type="text" name="email" class="full_width r_corners" autocomplete="off" >
+												</td>
+											</tr>
                                             <tr class="m_bottom_45">
-                                            	<td class="fuck">
+                                            	<td class="mycss">
                                             		<label class="m_bottom_5 d_inline_b">Tel</label>&nbsp;
                                                 </td>
                                                 <td width="40" height="50" align="right" valign="middle">
@@ -214,23 +196,22 @@
                                                 <td width = "300" height=50" text-align = "left" vertical-align = "middle">
 	                                                <input type="text" name="tel" class="full_width r_corners" autocomplete="off" >
                                                 </td>
-												<td class="fuck_3_hidden">
-													<label class="m_bottom_5 d_inline_b"></label>
+                                            </tr>
+											<tr class="m_bottom_25">
+												<td width="100" height="20" align="right" valign="middle"></td>
+											</tr>
+											<tr  class="t_align_c">
+												<td></td>
+												<td></td>
+												<td>
+													<button class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Register</button>
 												</td>
-                                            </tr>
-                                            <tr class="m_bottom_25">
-                                            </tr>
-                                    	</table>
-										<br/>
-                                        <li class="t_align_c">
-												<button class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Register</button>
-										</li>
+											</tr>
+										</table>
                                     </form>
 								</div>
 							</div>
 							<div class="row clearfix">
-								
-								
 							</div>
 						</section>
 						
@@ -278,37 +259,7 @@
 				
 			</footer>
 		</div>
-		
-		
-		<!--login popup-->
-		<div class="popup_wrap d_none" id="login_popup">
-			<section class="popup r_corners shadow">
-				<button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
-				<h3 class="m_bottom_20 color_dark">Log In</h3>
-				<form>
-					<ul>
-						<li class="m_bottom_15">
-							<label for="username" class="m_bottom_5 d_inline_b">Username</label><br>
-							<input type="text" name="" id="username" class="r_corners full_width">
-						</li>
-						<li class="m_bottom_25">
-							<label for="password" class="m_bottom_5 d_inline_b">Password</label><br>
-							<input type="password" name="" id="password" class="r_corners full_width">
-						</li>
-						<li class="m_bottom_15">
-							<input type="checkbox" class="d_none" id="checkbox_10"><label for="checkbox_10">Remember me</label>
-						</li>
-						<li class="clearfix m_bottom_30">
-							<button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
-							<div class="f_right f_size_medium f_mxs_none">
-								<a href="#" class="color_dark">Forgot your password?</a><br>
-								<a href="#" class="color_dark">Forgot your username?</a>
-							</div>
-						</li>
-					</ul>
-				</form>
-			</section>
-		</div>
+
 		<button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 		<!--scripts include-->
 		<script src="js/jquery-2.1.0.min.js"></script>
