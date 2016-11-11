@@ -4,7 +4,7 @@
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
-		<title>Slibrary - UserInfo</title>
+		<title>Handled Recom Detail</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<!--meta info-->
@@ -55,20 +55,6 @@
 								<li class="relative current f_xs_none m_xs_bottom_5"><a id="nav5" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
 							</ul>
 						</nav>
-						<button class="f_right search_button tr_all_hover f_xs_none d_xs_none">
-							<i class="fa fa-search"></i>
-						</button>
-					</div>
-					<!--search form-->
-					<div class="searchform_wrap tf_xs_none tr_all_hover">
-						<div class="container vc_child h_inherit relative">
-							<form role="search" class="d_inline_middle full_width">
-								<input type="text" name="search" placeholder="Type text and hit enter" class="f_size_large">
-							</form>
-							<button class="close_search_form tr_all_hover d_xs_none color_dark">
-								<i class="fa fa-times"></i>
-							</button>
-						</div>
 					</div>
 				</section>
 			</header>

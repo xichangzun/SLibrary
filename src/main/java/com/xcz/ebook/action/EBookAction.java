@@ -159,17 +159,6 @@ public class EBookAction extends BaseAction{
         }
     }
 
-    private void setAjaxResponse(String contentType, String data){
-        HttpServletResponse rp = ServletActionContext.getResponse();
-        rp.setContentType(contentType);
-        try{
-            rp.getWriter().append(data);
-            rp.getWriter().close();
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
     private String getSuffix(String name){
         return name.substring(name.indexOf("."), name.length());
     }

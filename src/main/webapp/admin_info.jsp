@@ -1,8 +1,10 @@
-﻿<!doctype html>
+﻿<%@ page import="com.xcz.admin_info.domain.Admin" %>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
-		<title>Admin Login</title>
+		<title>Admin Info</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<!--meta info-->
@@ -17,6 +19,7 @@
 		<link rel="stylesheet" type="text/css" media="all" href="css/style.css">
 		<!--font include-->
 		<link href="css/font-awesome.min.css" rel="stylesheet">
+		
 	</head>
 	<body>
 		<!--wide layout-->
@@ -43,10 +46,27 @@
 							<span class="centered_db r_corners"></span>
 						</button>
 						<!--main menu-->
+						<nav role="navigation" class="f_left f_xs_none d_xs_none">
+							<ul class="horizontal_list main_menu clearfix">
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav1" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Borrow And Return</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav2" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav3" href="#" class="tr_delay_hover color_light tt_uppercase"><b>E-Resource</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav4" href="#" class="tr_delay_hover color_light tt_uppercase"><b>News Management</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav5" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
+							</ul>
+						</nav>
 					</div>
 				</section>
 			</header>
-
+			<!--breadcrumbs-->
+			<section class="breadcrumbs">
+				<div class="container">
+					<ul class="horizontal_list clearfix bc_list f_size_medium">
+						<li class="m_right_10 current"><a href="#" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+					</ul>
+				</div>
+			</section>
+			<!--content-->
 			<div class="page_content_offset">
 				<div class="container">
 					<div class="row clearfix">
@@ -61,48 +81,54 @@
 								<div class="col-lg-10 col-md-8 col-sm-8 m_xs_bottom_30">
                                 	<br>
                                     <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
-									<h2 class="tt_uppercase color_dark m_bottom_25">Admin Login</h2>
+									<h2 class="tt_uppercase color_dark m_bottom_25">Basic Information</h2>
 
-									<form id="form" action="/Admin/login" method="post">
-                                    	<table style="font-size:16px" class="m_bottom_25">
+									<%
+										Admin admin = (Admin) session.getAttribute("admin");
+									%>
+									<form>
+                                    	<table style="font-size:16px">
                                         	<tr class="m_bottom_45">
                                             	<td width="200" height="50" align="right" valign="middle">
-                                            		<label class="m_bottom_5 d_inline_b">Admin ID</label>&nbsp;
+                                            		<label class="m_bottom_5 d_inline_b">Name</label>&nbsp;
                                                 </td>
-                                                <td width="40" height="50" align="left" valign="middle" >
-                                                    <label></label>
-                                                </td>
-                                                <td width="300" height="50" align="left" valign="middle">
-	                                                <input type="text" name="id" class="full_width r_corners" autocomplete="off">
-                                            </tr>
-                                            <tr class="m_bottom_45">
-                                            	<td width="200" height="50" align="right" valign="middle">
-                                            		<label class="m_bottom_5 d_inline_b">Admin PWD</label>&nbsp;
-                                                </td>
-                                                <td width="40" height="50" align="left" valign="middle" >
-                                                    <label ></label>
+                                                <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-	                                                <input type="password" name="pwd" class="full_width r_corners" autocomplete="off">
-                                            </tr>
-                                            <tr class="">
-                                            	<td width="200" height="20" align="right" valign="middle"></td>
-                                                <td width="40" height="20" align="right" valign="middle"></td>
-                                                <td width="300" height="20" align="left" valign="middle"></td>
+	                                                <label id="name" class="m_bottom_5 d_inline_b color_dark"><%=admin.getUser_name()%></label>
+                                                </td>
                                             </tr>
                                             <tr class="m_bottom_25">
-                                            	<td width="200" height="50" align="right" valign="middle"></td>
-                                                <td width="40" height="50" align="right" valign="middle"></td>
-                                                <td class="t_align_c" width="300" height="50" valign="middle">
-                                                	<button type="button" onclick="submitByAjax()" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Login</button>
+                                            	<td width="200" height="50" align="right" valign="middle">
+                                                	<label class="m_bottom_5 d_inline_b">Admin ID</label>&nbsp;
                                                 </td>
+                                                <td width="40" height="50" align="right" valign="middle">
+                                                </td>
+                                                <td width="300" height="50" align="left" valign="middle">
+                                               		<label id="id" class="m_bottom_5 d_inline_b color_dark"><%=admin.getId()%></label>
+                                                </td>
+                                            </tr>
+                                            <tr class="m_bottom_25">
+                                            	<td width="200" height="50" align="right" valign="middle">
+                                                	<label class="m_bottom_5 d_inline_b color_dark">Unit</label>
+                                                </td>
+                                                <td width="40" height="50" align="right" valign="middle">
+                                                </td>
+                                                <td width="300" height="50" align="left" valign="middle">
+                                                	<label id="unit" class="m_bottom_5 d_inline_b color_dark"><%=admin.getUnit()%></label>
+                                                </td>
+                                            </tr>
+                                            <tr class="m_bottom_25">
+                                            	<td width="100" height="20" align="right" valign="middle"></td>
+                                            </tr>
+                                            <tr class="m_bottom_25">
+                                            	<td width="100" height="20" align="right" valign="middle"></td>
                                             </tr>
                                     	</table>
                                     </form>
 								</div>
 							</div>
-							<div class="row clearfix">
-							</div>
+							<div class="row clearfix"></div>
 						</section>
 					</div>
 				</div>
@@ -150,11 +176,10 @@
 		</div>
 
 		<button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
+
 		<!--scripts include-->
 		<script src="js/jquery-2.1.0.min.js"></script>
-		<script src="js/admin_login.js"></script>
 		<script src="js/navigation.js"></script>
-		<script src="js/jquery.form.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/retina.js"></script>
 		<script src="js/waypoints.min.js"></script>

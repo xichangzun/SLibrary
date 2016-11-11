@@ -5,10 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="Admin" namespace="/Admin" extends="struts-default">
-        <action name="login" class="adminAction" method="login">
-            <result name="success" type="redirect">/borrow.html</result>
-            <result name="error" type="redirect">/admin_login.jsp</result>
-        </action>
+    <package name="admin" namespace="/Admin" extends="struts-default">
+        <action name="login" class="adminAction" method="login"></action>
     </package>
 </struts>

@@ -6,6 +6,7 @@ import com.xcz.common.BaseAction;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by yhq on 2016/10/23.
@@ -26,13 +27,16 @@ public class AdminAction extends BaseAction{
         HttpServletRequest rq = ServletActionContext.getRequest();
         String id = rq.getParameter("id");
         String pwd = rq.getParameter("pwd");
-        admin = this.getAdminService().check(id, pwd);
+        admin = this.getAdminService().login(id, pwd);
         if (admin == null) {
-            rq.getSession().setAttribute("error", "ao");
+            rq.getSession().removeAttribute("admin");
+            setAjaxResponse("text/html;charset=UTF8", ERROR);
+            System.out.println("login error");
             return ERROR;
         }
-        rq.getSession().setAttribute("admin_name", admin.getUser_name());
-        rq.getSession().setAttribute("admin_id", admin.getId());
+        rq.getSession().setAttribute("admin", admin);
+        setAjaxResponse("text/html;charset=UTF8", SUCCESS);
+        System.out.println("login success");
         return SUCCESS;
     }
 }

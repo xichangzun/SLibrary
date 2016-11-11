@@ -1,8 +1,8 @@
 <!doctype html>
-<!--[if IE 9 ]><html class="ie9" lang="zh-cn"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="zh-cn"><!--<![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
-		<title>Add Book</title>
+		<title>Fine</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<!--meta info-->
@@ -45,8 +45,8 @@
 						<!--main menu-->
 						<nav role="navigation" class="f_left f_xs_none d_xs_none">
 							<ul class="horizontal_list main_menu clearfix">
-								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav1" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Borrow And Return</b></a></li>
-								<li class="relative current f_xs_none m_xs_bottom_5"><a id="nav2" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>
+								<li class="relative current f_xs_none m_xs_bottom_5"><a id="nav1" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Borrow And Return</b></a></li>
+								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav2" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Book Management</b></a></li>
 								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav3" href="#" class="tr_delay_hover color_light tt_uppercase"><b>E-Resource</b></a></li>
 								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav4" href="#" class="tr_delay_hover color_light tt_uppercase"><b>News Management</b></a></li>
 								<li class="relative f_xs_none m_xs_bottom_5"><a id="nav5" href="#" class="tr_delay_hover color_light tt_uppercase"><b>Recommendation</b></a></li>
@@ -71,7 +71,7 @@
 				<div class="container">
 					<ul class="horizontal_list clearfix bc_list f_size_medium">
 						<li class="m_right_10 current"><a href="#" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-						<li><a href="#" class="default_t_color">Books Management</a></li>
+						<li><a href="#" class="default_t_color">Borrow And Return</a></li>
 					</ul>
 				</div>
 			</section>
@@ -90,15 +90,21 @@
 									<!--Categories list-->
 									<ul class="categories_list">
 										<li class="active">
-											<a href="#" class="f_size_large scheme_color d_block relative">
-												<b>Add Books</b>
+											<a href="borrow.html" class="f_size_large color_dark d_block relative">
+												<b>Borrow Books</b>
 											</a>
 										</li>
 										<li>
-											<a href="books_delete.html" class="f_size_large color_dark d_block relative">
-												<b>Delete Books</b>
+											<a href="return.html" class="f_size_large color_dark d_block relative">
+												<b>Return Books</b>
 											</a>
 										</li>
+										<li>
+											<a href="fine.html" class="f_size_large scheme_color d_block relative">
+												<b>Fine</b>
+											</a>
+										</li>
+										
 									</ul>
 								</div>
 							</figure>
@@ -110,76 +116,54 @@
 							<div class="clearfix m_bottom_30">
 								<figure>
 									<div class="row clearfix r_corners photoframe  shadow m_bottom_45">
-										<h2 style="margin:20px 30px" class="tt_uppercase color_dark m_bottom_30">Add Books</h2>
-										<hr style="margin:0px 30px" >
-                                    <div style="margin:0px 30px">
+										<h2 style="margin:40px 40px" class="tt_uppercase color_dark m_bottom_30">Borrow Books</h2>
+										<hr style="margin:0px 40px" >
+									  <div css="col-lg-10 col-md-8 col-sm-8 m_xs_bottom_30">
                                 	<br>
-									<form action="/BookManage/Add" method="post" id = "addBook" enctype="multipart/form-data">
-										<ul>
-											<li class="m_bottom_15">
-                                            	<div class="f_left half_column">
-													<label class="required d_inline_b m_bottom_5">ISBN</label>
-													<input name = "ISBN" maxlength="14" class="full_width r_corners">
-												</div>
-                                                <div class="f_left half_column">
-													<label class="required d_inline_b m_bottom_5">Book Name</label>
-													<input name = "Book_name" maxlength="40" class="full_width r_corners">
-												</div>
-											</li>
-                                            <li class="clearfix m_bottom_15">
-												<div class="f_left half_column">
-													<label class="required d_inline_b m_bottom_5">Author</label>
-													<input name = "author" maxlength="20" class="full_width r_corners">
-												</div>
-												<div class="f_left half_column">
-													<label class="required d_inline_b m_bottom_5">Language</label>
-													<input name = "lang" maxlength="15" class="full_width r_corners">
-												</div>
-											</li>
-											<li class="m_bottom_15">
-                                                <div class="f_left half_column">
-													<label class="required d_inline_b m_bottom_5">Press</label>
-													<input name = "press" maxlength="20" class="full_width r_corners">
-												</div>
-                                                <div class="f_left half_column">
-													<label class="required d_inline_b m_bottom_5">Publish Year</label>
-													<input name = "pub_year" maxlength="4" size="4" class="full_width r_corners">
-												</div>
-											</li>
-                                             <li class="m_bottom_15">
-                                                <div class="f_left half_column">
-													<label  class="required d_inline_b m_bottom_5">Total Amount</label>
-													<input name = "total_amount" maxlength="3" class="full_width r_corners">
-												</div>
-                                                <div class="f_left half_column">
-													<label  class="required d_inline_b m_bottom_5">Call Number</label>
-													<input name = "call_no" maxlength="20" class="full_width r_corners">
-												</div>
-											</li>
-                                            <li class="m_bottom_15">
-                                                <div class="f_left half_column">
-													<label  class="d_inline_b m_bottom_5">Book Pages</label>
-													<input name = "pages" class="full_width r_corners">
-												</div>
-                                                <div class="f_left half_column">
-													<label  class="d_inline_b m_bottom_5">Book Size</label>
-													<input name = "size" class="full_width r_corners">
-												</div>
-											</li>
-                                            <li>
-                                                <div>
-                                                    <label class="d_inline_b m_bottom_5">Cover</label>
-                                                    <input type="file" name="cover" class="full_width r_corners">
-                                                </div>
-                                            </li>
-                                            <br>
-                                            <li class="t_align_c">
-												<button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Submit</button>
-											</li>
-                                            <br>
-										</ul>
-									</form>
-                                    </div>
+                                    <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>									
+									
+									<form id="Borrow">
+                                    	
+                                    	<table style="font-size:16px">
+                                        	
+                                            <tr class="m_bottom_25">
+                                            	<td width="200" height="50" align="right" valign="middle">
+                                                	<label for="password" class="required d_inline_b m_bottom_5">User ID</label>
+                                                </td>
+                                                <td width="40" height="50" align="right" valign="middle">
+                                                </td>
+                                                <td width="300" height="50" align="left" valign="middle">
+                                                	<input type="text" id="UserID" name="cf_name" class="full_width r_corners">
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr class="m_bottom_25">
+                                            	<td width="100" height="20" align="right" valign="middle">
+                                                </td>
+                                            </tr>
+                                            <tr class="m_bottom_25">
+                                            	<td width="100" height="50" align="right" valign="middle">
+                                                </td>
+                                                <td width="40" height="50" align="right" valign="middle">
+                                                </td>
+                                            	<td width="300" height="50" align="center" valign="middle">
+                                            		<button class="button_type_4 tr_all_hover r_corners bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Submit</button>
+                                                </td>
+                                            </tr>
+                                            <tr class="m_bottom_25">
+                                            	<td width="100" height="20" align="right" valign="middle">
+                                                </td>
+                                            </tr>
+                                            <tr class="m_bottom_25">
+                                            	<td width="100" height="20" align="right" valign="middle">
+                                                </td>
+                                            </tr>
+                                    	</table>
+                                    </form>
+                                   
+								</div>
+									</div>
+									
 								</figure>
 							</div>
 						</section>
@@ -268,6 +252,7 @@
 		<script src="js/jquery.tweet.min.js"></script>
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/jquery.custom-scrollbar.js"></script>
-		<script src="js/book_add.js"></script>
+		<script src="js/scripts.js"></script>
+		<script src="js/myscripts.js"></script>
 	</body>
 </html>
