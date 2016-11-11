@@ -31,12 +31,10 @@ public class AdminAction extends BaseAction{
         if (admin == null) {
             rq.getSession().removeAttribute("admin");
             setAjaxResponse("text/html;charset=UTF8", ERROR);
-            System.out.println("login error");
             return ERROR;
         }
         rq.getSession().setAttribute("admin", admin);
         setAjaxResponse("text/html;charset=UTF8", SUCCESS);
-        System.out.println("login success");
         return SUCCESS;
     }
 }
