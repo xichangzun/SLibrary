@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -122,4 +123,24 @@ public class NewsAction extends BaseAction {
         }
     }
 
+    public void callres(){
+        News[] xcz = this.getMynewservice().res_query();
+        JSONArray result = new JSONArray();
+        if(xcz != null){
+            for(News news_item :xcz){
+                JSONObject a = new JSONObject();
+                a.put("type",news_item.getSummary());
+                a.put("title",news_item.getTitle());
+                result.add(a);
+            }
+        }
+        HttpServletResponse rp = ServletActionContext.getResponse();
+        rp.setContentType("application/json;charset=UTF8");
+        try {
+            rp.getWriter().append(result.toJSONString());
+            rp.getWriter().close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

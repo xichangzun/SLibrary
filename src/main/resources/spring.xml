@@ -17,7 +17,7 @@
     com.xcz.borrow_history.action, com.xcz.borrow_history.domain, com.xcz.borrow_history.service,
     com.xcz.recommendation.action, com.xcz.recommendation.domain,com.xcz.recommendation.service,
     com.xcz.book_management.action,com.xcz.book_management.service,com.xcz.News.action,
-    com.xcz.News.Service,com.xcz.News.domain"/>
+    com.xcz.News.Service,com.xcz.News.domain,com.xcz.FINE.action,com.xcz.FINE.service"/>
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driverClassName}"></property>
@@ -64,4 +64,5 @@
     <import resource="BookManage-Spring-module.xml"/>
     <import resource="EBook-Spring-module.xml"/>
     <import resource="News-Spring-module.xml"/>
+    <import resource="Fine-Spring-module.xml"/>
 </beans>

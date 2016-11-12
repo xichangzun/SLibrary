@@ -46,6 +46,7 @@ public class SearchServiceImpl extends BaseService implements SearchService {
         }
     }
 
+
     private String concatSql(String keyword, String type){
         String sql = null;
         if (type.equals("Book Name")){

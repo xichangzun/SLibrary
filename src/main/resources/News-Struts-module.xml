@@ -18,6 +18,8 @@
         </action>
         <action name="callback" class="newsAction" method="callback">
         </action>
+        <action name="callres" class="newsAction" method="callres">
+        </action>
         <action name="KnowMore" class="newsAction" method="detail">
             <result name="success" type="redirect">/news_detail.jsp</result>
         </action>

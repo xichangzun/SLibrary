@@ -25,4 +25,34 @@ $(function () {
             hiter.appendTo(pdiv);
         })
     });
+
+    $.get("/News/callres",null,function (mydata) {
+       var pt = $("#nres");
+        pt.empty();
+        $.each(mydata,function (i,v) {
+            var tr = $("<tr>");
+            var td = $("<td>");
+            td.css({
+                "width":"600px",
+                "height":"50px",
+                "align":"left",
+                "valign":"middle"
+            })
+            var aiter = $("<a>");
+            aiter.addClass("color_dark d_block bt_link");
+            var text = "";
+            if(v.type == "BOOK")
+            {
+                text = "<span class='scheme_color t_align_r m_right_10'>New Book :</span>"+v.title;
+            }
+            else {
+                text = "<span class='scheme_color t_align_r m_right_10'>New E-Res :</span>"+v.title;
+            }
+            aiter.html(text);
+            aiter.appendTo(td);
+            td.appendTo(tr);
+            tr.appendTo(pt);
+
+        })
+    });
 });

@@ -154,22 +154,23 @@
                         </section>
                     </div>
 
-                    <div class="row clearfix m_bottom_15 m_xs_bottom_30">
-                        <div class="col-lg-7 col-md-7 col-sm-8 m_xs_bottom_10">
-                            <p class="d_inline_middle f_size_medium d_xs_block m_xs_bottom_5">Results 1 - 5 of 45</p>
-
+                    <div class="row clearfix m_xs_bottom_30">
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-5">
+                            <p class="d_inline_middle f_size_medium"></p>
                         </div>
-                        <div class="col-lg-5 col-md-5 col-sm-4 t_align_r t_xs_align_l">
+                        <div id="pagination" class="col-lg-5 col-md-5 col-sm-4 t_align_r t_xs_align_l">
                             <!--pagination-->
-                            <a role="button" href="#" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-left"></i></a>
+                            <a role="button" href="/Search/execute?page_index=${Pindex-1}" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-left"></i></a>
                             <ul class="horizontal_list clearfix d_inline_middle f_size_medium m_left_10">
-                                <li class="m_right_10"><a class="color_dark" href="#">1</a></li>
-                                <li class="m_right_10"><a class="scheme_color" href="#">2</a></li>
-                                <li class="m_right_10"><a class="color_dark" href="#">3</a></li>
+                                <li class="m_right_10"><a class="scheme_color" href="#" id="cur_page">${Pindex}</a></li>
+                                <li class="m_right_10 color_dark" id="page_cnt">/ ${PageCount} </li>
                             </ul>
-                            <a role="button" href="#" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-right"></i></a>
+                            <a role="button" href="/Search/execute?page_index=${Pindex+1}" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-right"></i></a>
+                            <a role="button" onclick="jumpToInput()" class="f_right button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><span style="margin:4px">go</span></a>
+                            <input id="page" style="width:50px;margin:0 6px 0 15px;height:23px" type="text" class="r_corners f_right type_2" >
                         </div>
                     </div>
+
                 </section>
             </div>
         </div>
@@ -215,37 +216,8 @@
     </footer>
 </div>
 
-
-<!--login popup-->
-<div class="popup_wrap d_none" id="login_popup">
-    <section class="popup r_corners shadow">
-        <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
-        <h3 class="m_bottom_20 color_dark">Log In</h3>
-        <form>
-            <ul>
-                <li class="m_bottom_15">
-                    <label for="username" class="m_bottom_5 d_inline_b">Username</label><br>
-                    <input type="text" name="" id="username" class="r_corners full_width">
-                </li>
-                <li class="m_bottom_25">
-                    <label for="password" class="m_bottom_5 d_inline_b">Password</label><br>
-                    <input type="password" name="" id="password" class="r_corners full_width">
-                </li>
-                <li class="m_bottom_15">
-                    <input type="checkbox" class="d_none" id="checkbox_10"><label for="checkbox_10">Remember me</label>
-                </li>
-                <li class="clearfix m_bottom_30">
-                    <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
-                    <div class="f_right f_size_medium f_mxs_none">
-                        <a href="#" class="color_dark">Forgot your password?</a><br>
-                        <a href="#" class="color_dark">Forgot your username?</a>
-                    </div>
-                </li>
-            </ul>
-        </form>
-    </section>
-</div>
 <button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
+
 <!--scripts include-->
 <script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
@@ -256,6 +228,12 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.custom-scrollbar.js"></script>
 <script src="js/scripts.js"></script>
-
+<script language="JavaScript">
+    function jumpToInput() {
+        var b = $("#page").val();
+        var text = "/Search/execute?page_index="+b;
+        window.location.href = text;
+    }
+</script>
 </body>
 </html>

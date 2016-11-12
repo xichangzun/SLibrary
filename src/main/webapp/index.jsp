@@ -342,6 +342,7 @@ else if(session.getAttribute("error") != null)
                                                 </select>
                                             </ul>
                                         </div>
+                                        <input name="page_index" value="0" type="hidden">
                                         <input style="float:left" type="submit" value="Search" class="butn butn-tabs r_corners">
                                     </form>
                                 </div><!--/ tab-content end-->
@@ -418,7 +419,7 @@ else if(session.getAttribute("error") != null)
                         </figcaption>
                         <div style="min-height:400px" class="widget_content">
                             <div class="clearfix m_bottom_0">
-                                <table>
+                                <table id = "nres">
                                     <tr>
                                         <td width="600" height="50" align="left" valign="middle">
                                             <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>
