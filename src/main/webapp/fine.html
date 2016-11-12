@@ -89,7 +89,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="#" class="f_size_large scheme_color d_block relative">
+											<a href="fine.html" class="f_size_large scheme_color d_block relative">
 												<b>Fine</b>
 											</a>
 										</li>
@@ -156,7 +156,7 @@
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-                                                	<label for="u_id" class="d_inline_b m_bottom_5 m_bottom_5 d_inline_b color_dark">13130130123</label>
+                                                	<label id="user_id" class="d_inline_b m_bottom_5 m_bottom_5 d_inline_b color_dark">13130130123</label>
                                                 </td>
                                             </tr>
                                         	<tr class="m_bottom_25">
@@ -166,7 +166,7 @@
                                                 <td width="40" height="50" align="right" valign="middle">
                                                 </td>
                                                 <td width="300" height="50" align="left" valign="middle">
-                                                	<label for="password" class="d_inline_b m_bottom_5 m_bottom_5 d_inline_b color_dark">$6.66</label>
+                                                	<label id="fine" class="d_inline_b m_bottom_5 m_bottom_5 d_inline_b color_dark">$6.66</label>
                                                 </td>
                                             </tr>
                                             
@@ -244,17 +244,8 @@
 				
 			</footer>
 		</div>
-
+		
 		<button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
-
-		<script type="text/javascript">
-			$('#query_fine button').click(function(event) {
-				$('#query_fine').hide();
-				$('#process_fine').show().find('label[for="u_id"]').html($('#query_fine input').val());
-
-			});
-		</script>
-
 		<!--scripts include-->
 		<script src="js/jquery-2.1.0.min.js"></script>
 		<script src="js/navigation.js"></script>
@@ -266,6 +257,6 @@
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/jquery.custom-scrollbar.js"></script>
 		<script src="js/scripts.js"></script>
-		<script src="js/myscripts.js"></script>
+		<script src="js/fine.js"></script>
 	</body>
 </html>

@@ -26,6 +26,7 @@
             <file>file://$MODULE_DIR$/src/main/resources/UserInfo-Struts-modules.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/EBook-Struts-module.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/News-Struts-module.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/Fine-Struts-module.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
@@ -41,6 +42,7 @@
           <file>file://$MODULE_DIR$/src/main/resources/spring.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/UserInfo-Spring-module.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/EBook-Spring-module.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/Fine-Spring-module.xml</file>
         </fileset>
       </configuration>
     </facet>

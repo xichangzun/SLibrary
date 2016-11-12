@@ -26,4 +26,5 @@
     <include file="BookManage-Struts-module.xml"/>
     <include file="EBook-Struts-module.xml"/>
     <include file="News-Struts-module.xml"/>
+    <include file="Fine-Struts-module.xml"/>
 </struts>
