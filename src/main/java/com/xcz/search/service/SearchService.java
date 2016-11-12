@@ -7,5 +7,4 @@ import com.xcz.search.domain.Book;
  */
 public interface SearchService {
     Book[] search(String keyword, String type);
-
 }

@@ -342,6 +342,7 @@ else if(session.getAttribute("error") != null)
                                                 </select>
                                             </ul>
                                         </div>
+                                        <input name="page_index" value="0" type="hidden">
                                         <input style="float:left" type="submit" value="Search" class="butn butn-tabs r_corners">
                                     </form>
                                 </div><!--/ tab-content end-->

@@ -30,19 +30,47 @@ public class SearchAction extends BaseAction {
         HttpServletRequest rq = ServletActionContext.getRequest();
         String keyword = rq.getParameter("keyword");
         String type = rq.getParameter("type");
+        String page = rq.getParameter("page_index");
         /*System.out.println("keyword is " + keyword);
         System.out.println("type is " + type);*/
-        Book[] result = this.getSearchService().search(keyword, type);
-        if(result == null || result.length == 0)
+        int index = Integer.parseInt(page);
+        Book[] true_result;
+        if(index == 0){
+            true_result =  this.getSearchService().search(keyword, type);
+            rq.getSession().setAttribute("true_result",true_result);
+        }
+        else {
+            true_result = (Book[]) rq.getSession().getAttribute("true_result");
+        }
+
+        if(true_result == null || true_result.length == 0)
         {
             System.out.print("error");
             rq.getSession().removeAttribute("result");
+            rq.getSession().setAttribute("PageCount",0);
             return ERROR;
         }
+        index = index>0?index-1:index;
+        int begin = index*6;
+        int end = begin+6;
+        if(begin+6>true_result.length){
+            end =true_result.length;
+        }
+        Book[] result = new Book[end-begin];
         for(int i = 0;i<result.length;i++)
         {
-            System.out.println(result[i].getBook_name());
+            System.out.println(true_result[i].getBook_name());
+            result[i] = true_result[begin+i];
         }
+        int pagecount;
+        if(true_result.length%6 == 0){
+            pagecount = true_result.length/6;
+        }
+        else {
+            pagecount = true_result.length/6+1;
+        }
+        rq.getSession().setAttribute("Pindex",index+1);
+        rq.getSession().setAttribute("PageCount",pagecount);
         rq.getSession().setAttribute("result",result);
         return SUCCESS;
     }
