@@ -14,7 +14,7 @@ import java.util.List;
 public class FineServiceImpl extends BaseService implements FineService {
     @Override
     public Double query(String id) {
-        String sql = "SELECT BORROW_HISTORY.* FROM BORROW_HISTORY,FINE WHERE BORROW_HISTORY.user_id = '" + id + "' AND BORROW_HISTORY.user_id = FINE.user_id AND BORROW_HISTORY.actual_date > FINE.payday AND BORROW_HISTORY.actual_date>BORROW_HISTORY.return_date";
+        String sql = "SELECT BORROW_HISTORY.* FROM BORROW_HISTORY,FINE WHERE BORROW_HISTORY.user_id = '" + id + "' AND BORROW_HISTORY.user_id = FINE.user_id AND BORROW_HISTORY.return_date > FINE.payday AND BORROW_HISTORY.return_date>BORROW_HISTORY.due_date";
         List x = this.getHibernateDAO().findBySql(sql);
         if(x == null||x.isEmpty())
         {
@@ -36,7 +36,7 @@ public class FineServiceImpl extends BaseService implements FineService {
     }
     @Override
     public  Double queryAll(String id){
-        String sql = "SELECT * FROM BORROW_HISTORY WHERE user_id = '"+id+"' AND return_date < sysdate() AND actual_date is NULL";
+        String sql = "SELECT * FROM BORROW_HISTORY WHERE user_id = '"+id+"' AND due_date < sysdate() AND return_date is NULL";
         List x = this.getHibernateDAO().findBySql(sql);
         double bill = query(id);
         if(x == null||x.isEmpty()){

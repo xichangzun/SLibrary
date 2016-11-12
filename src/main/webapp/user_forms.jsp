@@ -150,8 +150,8 @@
                                                         <td>${book.book_name}</td>
                                                         <td>${book.author}</td>
                                                         <td>${book.pub_year}</td>
+                                                        <td>${book.due_date}</td>
                                                         <td>${book.return_date}</td>
-                                                        <td>${book.actual_date}</td>
                                                     </tr>
                                                 </s:iterator>
                                                 </tbody>

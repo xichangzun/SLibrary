@@ -420,36 +420,36 @@ else if(session.getAttribute("error") != null)
                         <div style="min-height:400px" class="widget_content">
                             <div class="clearfix m_bottom_0">
                                 <table id = "nres">
-                                    <tr>
-                                        <td width="600" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="600" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="600" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="600" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New E-Res:</span>Resource Name</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="600" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New E-Res:</span>Resource Name</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="600" height="50" align="left" valign="middle">
-                                            <a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New E-Res:</span>Resource Name</a>
-                                        </td>
-                                    </tr>
+                                    <%--<tr>--%>
+                                        <%--<td width="600" height="50" align="left" valign="middle">--%>
+                                            <%--<a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td width="600" height="50" align="left" valign="middle">--%>
+                                            <%--<a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td width="600" height="50" align="left" valign="middle">--%>
+                                            <%--<a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New Book :</span>Book Name</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td width="600" height="50" align="left" valign="middle">--%>
+                                            <%--<a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New E-Res:</span>Resource Name</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td width="600" height="50" align="left" valign="middle">--%>
+                                            <%--<a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New E-Res:</span>Resource Name</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td width="600" height="50" align="left" valign="middle">--%>
+                                            <%--<a href="book_detail.html" class="color_dark d_block bt_link"><span class="scheme_color t_align_r m_right_10">New E-Res:</span>Resource Name</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
                                 </table>
                             </div>
                         </div>

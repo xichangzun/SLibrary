@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: root
@@ -6,6 +7,7 @@
   Time: 下午5:25
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
@@ -112,7 +114,7 @@
                                 <figcaption>
                                     <div class="clearfix">
                                         <div style="width:80%;padding:10px 15px" class="f_left f_sm_none w_sm_full m_xs_bottom_10">
-                                            <h4 class="fw_medium"><a href="#" class="color_dark">${news_item.title}</a></h4>
+                                            <h4 class="fw_medium"><a href="/News/detail?index=${news_item.id}" class="color_dark">${news_item.title}</a></h4>
                                             <hr class="m_bottom_10">
                                             <p class="d_sm_none d_xs_block">${news_item.summary}</p>
                                         </div>
