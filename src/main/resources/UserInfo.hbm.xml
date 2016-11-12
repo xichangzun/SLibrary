@@ -5,11 +5,11 @@
 <hibernate-mapping>
     <class name="com.xcz.UserInfo.domain.UserInfo" table="USER" schema="slibrary">
         <id name="id" type="string">
-            <column name="ID" length="14" />
+            <column name="id" length="14" />
             <generator class="assigned" />
         </id>
         <property name="user_name" type="string">
-            <column name="user_name" length="20" not-null="true" />
+            <column name="user_name" length="25" not-null="true" />
         </property>
         <property name="pwd" type="string">
             <column name="pwd" length="20" not-null="true" />
@@ -18,7 +18,7 @@
             <column name="unit" length="30" not-null="true" />
         </property>
         <property name="email" type="string">
-            <column name="email" length="25" not-null="true" />
+            <column name="email" length="25" not-null="false" />
         </property>
         <property name="tel" type="string">
             <column name="tel" length="15" not-null="false" />

@@ -15,5 +15,5 @@ public interface BorrowInfoService {
     Book queryBook(String ISBN);
     ArrayList<Book> queryBooks(ArrayList<String> ISBNs);
     Reservation[] queryReserve(String user_id);
-    String returnBook(String user_id,String ISBN);
+    String returnBook(String book_id);
 }

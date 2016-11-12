@@ -9,8 +9,8 @@ public class resultForRecord {
     public String book_name;
     public String author;
     public String pub_year;
+    public Date due_date;
     public Date return_date;
-    public Date actual_date;
 
     public String getBook_name() {
         return book_name;
@@ -36,19 +36,19 @@ public class resultForRecord {
         this.pub_year = pub_year;
     }
 
+    public Date getDue_date() {
+        return due_date;
+    }
+
+    public void setDue_date(Date due_date) {
+        this.due_date = due_date;
+    }
+
     public Date getReturn_date() {
         return return_date;
     }
 
     public void setReturn_date(Date return_date) {
         this.return_date = return_date;
-    }
-
-    public Date getActual_date() {
-        return actual_date;
-    }
-
-    public void setActual_date(Date actual_date) {
-        this.actual_date = actual_date;
     }
 }

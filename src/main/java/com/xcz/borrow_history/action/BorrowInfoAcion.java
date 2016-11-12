@@ -28,72 +28,65 @@ public class BorrowInfoAcion extends BaseAction {
     private BorrowInfoService borrowInfoService;
     private ArrayList<BorrowHistory> borrowHistories;
 
-    public BorrowInfoService getBorrowInfoService(){
+    public BorrowInfoService getBorrowInfoService() {
         return borrowInfoService;
     }
 
-    public void setBorrowInfoService(BorrowInfoService borrowInfoService){
+    public void setBorrowInfoService(BorrowInfoService borrowInfoService) {
         this.borrowInfoService = borrowInfoService;
     }
 
-    public String queryBorrow(){
+    public String queryBorrow() {
         HttpServletRequest request = ServletActionContext.getRequest();
         String user_id = (String) request.getSession().getAttribute("id");
-        if(user_id == null){
-            System.out.println(ERROR);
+        if (user_id == null) {
             return ERROR;
         }
-
+        // 获取所有借阅记录
         histories = this.getBorrowInfoService().check(user_id);
         // 查询借阅
-        if (histories != null){
+        if (histories != null) {
             // 有借阅的书未必有当前外借的书
-            ArrayList<String> ISBNs = new ArrayList<String>();
-            ArrayList<String> curISBNs = new ArrayList<String>();
+            // curIds为当前外借的book_id
+            // ids为已还的book_id
+            ArrayList<String> ids = new ArrayList<String>();
+            ArrayList<String> curIds = new ArrayList<String>();
+            // borrowHistories为已还书记录
             borrowHistories = new ArrayList<BorrowHistory>();
 
-            for (int i=0; i<histories.length; i++){
-
-                // 如果没有记录实际归还日期则当前外借
-                if (histories[i].getActual_date() == null){
-                    curISBNs.add(histories[i].getUionPK().getISBN());
-                }
-                else //已经归还
-                {
-                    ISBNs.add(histories[i].getUionPK().getISBN());
+            for (int i = 0; i < histories.length; i++) {
+                // 如果没有记录归还日期则当前外借
+                if (histories[i].getReturn_date() == null) {
+                    curIds.add(histories[i].getUionPK().getBook_id());
+                } else {
+                    ids.add(histories[i].getUionPK().getBook_id());
                     borrowHistories.add(histories[i]);
                 }
             }
-            //System.out.println(borrowHistories.size());
-            if(ISBNs.isEmpty())
-            {
-                request.getSession().setAttribute("borrow_count",0);
-            }
-            else
-            {
-                borrowBooks = this.getBorrowInfoService().queryBooks(ISBNs);
-                /*System.out.println(borrowBooks.size());
-                System.out.println(borrowHistories.size());*/
+
+            if (ids.isEmpty()) {
+                request.getSession().setAttribute("borrow_count", 0);
+            } else {
+                // 已还的书
+                borrowBooks = this.getBorrowInfoService().queryBooks(ids);
                 resultForRecord[] result = new resultForRecord[borrowHistories.size()];
-                for(int i = 0;i<borrowHistories.size();i++)
-                {
+                for (int i = 0; i < borrowHistories.size(); i++) {
                     result[i] = new resultForRecord();
                     result[i].book_name = borrowBooks.get(i).getBook_name();
                     result[i].author = borrowBooks.get(i).getAuthor();
                     result[i].pub_year = borrowBooks.get(i).getPub_year();
                     result[i].return_date = borrowHistories.get(i).getReturn_date();
-                    result[i].actual_date = borrowHistories.get(i).getActual_date();
+                    result[i].due_date = borrowHistories.get(i).getUionPK().getDue_date();
                 }
-
-                request.getSession().setAttribute("borrow_count",borrowHistories.size());
-                request.getSession().setAttribute("borrow_books",result);
+                request.getSession().setAttribute("borrow_count", borrowHistories.size());
+                request.getSession().setAttribute("borrow_books", result);
             }
 
-            if (curISBNs.isEmpty()){
+            if (curIds.isEmpty()) {
                 request.getSession().setAttribute("cur_borrow_count", 0);
             } else {
-                curBorrowBooks = this.getBorrowInfoService().queryBooks(curISBNs);
-                request.getSession().setAttribute("cur_borrow_count", curISBNs.size());
+                curBorrowBooks = this.getBorrowInfoService().queryBooks(curIds);
+                request.getSession().setAttribute("cur_borrow_count", curIds.size());
                 request.getSession().setAttribute("cur_borrow_books", curBorrowBooks);
             }
         } else {
@@ -103,21 +96,21 @@ public class BorrowInfoAcion extends BaseAction {
 
         // 查询预约
         reservations = this.getBorrowInfoService().queryReserve(user_id);
-        if (reservations != null){
-            ArrayList<String> ISBNs = new ArrayList<String>();
-            for (int i=0; i<reservations.length; i++){
-                ISBNs.add(reservations[i].getUionPK().getISBN());
+        if (reservations != null) {
+            ArrayList<String> ids = new ArrayList<String>();
+            for (int i = 0; i < reservations.length; i++) {
+                ids.add(reservations[i].getUionPK().getBook_id());
             }
-            reserveBooks = this.getBorrowInfoService().queryBooks(ISBNs);
+            reserveBooks = this.getBorrowInfoService().queryBooks(ids);
 
             resultForReserve[] result = new resultForReserve[reservations.length];
-            for (int i=0;i<reservations.length;i++){
+            for (int i = 0; i < reservations.length; i++) {
                 result[i] = new resultForReserve();
                 result[i].book_name = reserveBooks.get(i).getBook_name();
                 result[i].author = reserveBooks.get(i).getAuthor();
                 result[i].status = reservations[i].getState();
             }
-            request.getSession().setAttribute("reserve_count", ISBNs.size());
+            request.getSession().setAttribute("reserve_count", ids.size());
             request.getSession().setAttribute("reserve_books", result);
         } else {
             request.getSession().setAttribute("reserve_count", 0);
@@ -125,34 +118,26 @@ public class BorrowInfoAcion extends BaseAction {
         return SUCCESS;
     }
 
-    public void ajaxCallBack(){
+    // 借书
+    public void ajaxCallBack() {
         HttpServletRequest rq = ServletActionContext.getRequest();
-        String ISBN = rq.getParameter("ISBN");
-        String user_id = rq.getParameter("User_id");
+        String book_id = rq.getParameter("book_id");
+        String user_id = rq.getParameter("user_id");
         String result_message;
-        Book temp = this.getBorrowInfoService().queryBook(ISBN);
-        if(temp == null)
-        {
-            result_message = "ISBN错误，没有该书";
-        }
-        else if(temp.getAmount()>temp.getRes_amount())
-        {
-            if(this.getBorrowInfoService().add(user_id,ISBN))
-            {
-
-                result_message = "borrow success";
+        Book temp = this.getBorrowInfoService().queryBook(book_id);
+        if (temp == null) {
+            result_message = "ID is Wrong!";
+        } else if (temp.getState() == "Available") {
+            if (this.getBorrowInfoService().add(user_id, book_id)) {
+                result_message = "Borrow success";
+            } else {
+                result_message = "Borrow failed,please try later";
             }
-            else
-            {
-                result_message = "borrow failed,try later";
-            }
-        }
-        else
-        {
-            result_message = "this book has been reserved";
+        } else {
+            result_message = "This book has been reserved";
         }
         JSONObject a = new JSONObject();
-        a.put("message",result_message);
+        a.put("message", result_message);
         HttpServletResponse rp = ServletActionContext.getResponse();
         rp.setContentType("text/html;charset=UTF8");
         try {
@@ -164,15 +149,12 @@ public class BorrowInfoAcion extends BaseAction {
         return;
     }
 
-    public void returnBook()
-    {
+    public void returnBook() {
         HttpServletRequest rq = ServletActionContext.getRequest();
-        String ISBN = rq.getParameter("ISBN");
-        String user_id = rq.getParameter("User_id");
-        String result_message = this.getBorrowInfoService().returnBook(user_id,ISBN);
+        String book_id = rq.getParameter("book_id");
+        String result_message = this.getBorrowInfoService().returnBook(book_id);
         JSONObject a = new JSONObject();
-        a.put("message",result_message);
-
+        a.put("message", result_message);
         HttpServletResponse rp = ServletActionContext.getResponse();
         rp.setContentType("text/html;charset=UTF8");
         try {

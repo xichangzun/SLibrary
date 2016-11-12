@@ -1,6 +1,5 @@
 package com.xcz.recommendation.domain;
 
-import com.xcz.borrow_history.domain.UionPK;
 import com.xcz.common.BaseBean;
 
 import java.io.Serializable;
@@ -9,7 +8,7 @@ import java.io.Serializable;
  * Created by root on 16-10-15.
  */
 public class Recommendation extends BaseBean implements Serializable {
-    UionPK uionPK = new UionPK();
+    RecomUionPK uionPK = new RecomUionPK();
     private String book_name;
     private String lang;
     private String author;
@@ -19,6 +18,14 @@ public class Recommendation extends BaseBean implements Serializable {
     private String reason;
     private String state;
 
+
+    public RecomUionPK getUionPK() {
+        return uionPK;
+    }
+
+    public void setUionPK(RecomUionPK uionPK) {
+        this.uionPK = uionPK;
+    }
 
     public String getBook_name() {
         return book_name;
@@ -68,22 +75,6 @@ public class Recommendation extends BaseBean implements Serializable {
         this.amount = amount;
     }
 
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public UionPK getUionPK() {
-        return uionPK;
-    }
-
-    public void setUionPK(UionPK uionPK) {
-        this.uionPK = uionPK;
-    }
-
     public String getReason() {
         return reason;
     }
@@ -92,9 +83,17 @@ public class Recommendation extends BaseBean implements Serializable {
         this.reason = reason;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public Recommendation() {}
 
-    public Recommendation(UionPK uionPK, String book_name, String lang, String author, String press, Float price, Integer amount, String reason, String state) {
+    public Recommendation(RecomUionPK uionPK, String book_name, String lang, String author, String press, Float price, Integer amount, String reason, String state) {
         this.uionPK = uionPK;
         this.book_name = book_name;
         this.lang = lang;

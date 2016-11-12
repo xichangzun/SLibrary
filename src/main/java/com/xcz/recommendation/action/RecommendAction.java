@@ -2,8 +2,8 @@ package com.xcz.recommendation.action;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.xcz.borrow_history.domain.UionPK;
 import com.xcz.common.BaseAction;
+import com.xcz.recommendation.domain.RecomUionPK;
 import com.xcz.recommendation.domain.Recommendation;
 import com.xcz.recommendation.service.recommendService;
 import org.apache.struts2.ServletActionContext;
@@ -39,7 +39,7 @@ public class RecommendAction extends BaseAction {
         recommendation = new Recommendation();
         String id = (String) session.getAttribute("id");
         String ISBN = rq.getParameter("ISBN");
-        UionPK upk = new UionPK();
+        RecomUionPK upk = new RecomUionPK();
         upk.setISBN(ISBN);
         upk.setUser_id(id);
         recommendation.setUionPK(upk);

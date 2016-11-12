@@ -1,10 +1,8 @@
 /**
  * Created by yhq on 2016/10/23.
  */
-
-
 $(function () {
-    $("#addBook :button").click(function () {
+    $("#form :button").click(function () {
         var ISBN = $(":input[name='ISBN']").val();
         if( ISBN== ""){
             alert("bad form, ISBN is required");
@@ -14,7 +12,7 @@ $(function () {
             alert("bad form,ISBN must be number");
             return false;
         }
-        else if($(":input[name='Book_name']").val() == ""){
+        else if($(":input[name='name']").val() == ""){
             alert("bad form,Book_Name is required");
             return false;
         }
@@ -38,11 +36,11 @@ $(function () {
             alert("bad form, pub_year must be int ");
             return false;
         }
-        else  if($(":input[name='total_amount']").val() == ""){
+        else  if($(":input[name='amount']").val() == ""){
             alert("bad form, amount is required ");
             return false;
         }
-        else if(!(/^[0-9]*$/).test($(":input[name='total_amount']").val())){
+        else if(!(/^[0-9]*$/).test($(":input[name='amount']").val())){
             alert("bad form, amount must be int ");
             return false;
         }
@@ -59,7 +57,24 @@ $(function () {
             return false;
         }
         else {
-            return true;
+            var options = {
+                url: "/BookManage/Add",
+                type: "POST",
+                resetForm: true,
+                success: function (mydata) {
+                    if (mydata == "success")
+                        alert("Add Success!");
+                    else if(mydata == "error")
+                        alert("Add Failed!\nThe same ISBN is added!");
+                    else
+                        alert(mydata);
+                },
+                error: function () {
+                    alert("Request failed!Please retry it!");
+                }
+            };
+            $("#form").ajaxSubmit(options);
+            return false;
         }
     })
 });

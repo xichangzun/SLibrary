@@ -34,47 +34,8 @@
         }
     </style>
 </head>
-<%
-    if(session.getAttribute("id") != null)
-    {
 
-%>
-<script language="javascript">
-    function init()
-    {
-        document.getElementById("LoginButton").style.display = "none";
-        document.getElementById("InfoButton").style.display = "inline";
-        document.getElementById("InfoButton").style.display = "inline";
-    }
-</script>
-<%
-}
-else if(session.getAttribute("error") != null)
-{
-%>
-<script language="javascript">
-    function init()
-    {
-        alert("username or password wrong");
-    }
-</script>
-<%
-}
-else
-{
-%>
-<script language="javascript">
-    function init()
-    {
-        document.getElementById("InfoButton").style.display = "none";
-        document.getElementById("CheckOutButton").style.display = "none";
-
-    }
-</script>
-<%
-    }
-%>
-<body onload="init()">
+<body >
 <!--wide layout-->
 <div class="wide_layout relative">
     <!--[if (lt IE 9) | IE 9]>

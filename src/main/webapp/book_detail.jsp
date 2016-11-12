@@ -122,11 +122,17 @@
                             </tr>
                             <tr height="30">
                                 <td>Total Amount</td>
-                                <td><%=book.getTotal_amount()%></td>
+                                <td></td>
                             </tr>
                             <tr height="30">
                                 <td>Available Amount</td>
-                                <td><%=book.getAmount()%></td>
+                                <td></td>
+                            </tr>
+                            <tr height="30">
+                                <td>All Volume</td>
+                                <td>
+                                	<a href="book_all.html" class="color_dark d_block relative"><b>View</b></a>
+                               	</td>
                             </tr>
                         </table>
                     <hr class="divider_type_3 m_bottom_45">

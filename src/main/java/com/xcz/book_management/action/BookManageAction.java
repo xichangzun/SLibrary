@@ -2,6 +2,8 @@ package com.xcz.book_management.action;
 
 import com.xcz.book_management.service.BookManageService;
 import com.xcz.common.BaseAction;
+import com.xcz.common.ImageCompressUtil;
+import com.xcz.constant.MyConstant;
 import com.xcz.search.domain.Book;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
@@ -26,7 +28,6 @@ public class BookManageAction extends BaseAction {
         this.cover = cover;
     }
 
-
     public BookManageService getBookManageService() {
         return bookManageService;
     }
@@ -35,21 +36,22 @@ public class BookManageAction extends BaseAction {
         this.bookManageService = bookManageService;
     }
 
-    private String SavePhoto(String ISBN) {
+    private String saveCover(String ISBN) {
         if (cover == null)
             return "pictures/default.jpg";
         else {
+            String suffix = getSuffix(cover.getName());
             String path = ServletActionContext.getServletContext().getRealPath("/pictures");
-            System.out.println(path);
-            String fileName = ISBN + ".jpg";
+            String fileName = ISBN + suffix;
             try {
                 FileUtils.copyFile(cover, new File(path, fileName));
-                FileUtils.copyFile(cover, new File("/home/xichangzun/SLibrary/SLibrary/src/main/webapp/pictures", fileName));
-
+                FileUtils.copyFile(cover, new File(MyConstant.YHQ_PICTURE_PATH, fileName));
+                // 压缩图片
+                ImageCompressUtil.zipImageFile(path + "\\" + fileName, 107, 153, 0.8f, "");
+                ImageCompressUtil.zipImageFile(MyConstant.YHQ_PICTURE_PATH + "/" + fileName, 107, 153, 0.8f, "");
             } catch (IOException e) {
                 return "false";
             }
-
             return "pictures/" + fileName;
         }
     }
@@ -58,35 +60,76 @@ public class BookManageAction extends BaseAction {
         HttpServletRequest rq = ServletActionContext.getRequest();
         Book a = new Book();
         a.setISBN(rq.getParameter("ISBN"));
-        a.setBook_name(rq.getParameter("Book_name"));
+        int amount = Integer.parseInt(rq.getParameter("amount"));
+        int cnt = bookManageService.getBookCount(a.getISBN());
+        if (cnt == -1){
+            setAjaxResponse("text/html;charset=UTF8",ERROR);
+            return ERROR;
+        }
+        a.setBook_name(rq.getParameter("name"));
         a.setAuthor(rq.getParameter("author"));
         a.setLang(rq.getParameter("lang"));
         a.setPress(rq.getParameter("press"));
         a.setPub_year(rq.getParameter("pub_year"));
-        a.setTotal_amount(Integer.parseInt(rq.getParameter("total_amount")));
         a.setCall_no(rq.getParameter("call_no"));
-        String aa = rq.getParameter("pages");
-        if (!aa.isEmpty())
-            a.setPages(Integer.parseInt(aa));
-        aa = rq.getParameter("size");
-        if (!aa.isEmpty())
-            a.setSize(Integer.parseInt(aa));
-        a.setRes_amount(0);
-        a.setAmount(a.getTotal_amount());
-        aa = SavePhoto(a.getISBN());
-        if (aa.contentEquals("false")) return ERROR;
-        a.setCover(aa);
-        if (this.getBookManageService().addBook(a))
-            return SUCCESS;
-        else
+        a.setState("Available");
+        String t = rq.getParameter("pages");
+        if (!t.isEmpty())
+            a.setPages(Integer.parseInt(t));
+        t = rq.getParameter("size");
+        if (!t.isEmpty())
+            a.setSize(Integer.parseInt(t));
+        t = saveCover(a.getISBN());
+        if (t.contentEquals("false")){
+            setAjaxResponse("text/html;charset=UTF8",ERROR);
             return ERROR;
+        }
+        a.setCover(t);
+        //每本书一个id
+        try{
+            for (int i=cnt+1; i<=cnt+amount; i++){
+                a.setId(a.getISBN() + i);
+                bookManageService.addBook(a);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+            setAjaxResponse("text/html;charset=UTF8", ERROR);
+            return ERROR;
+        }
+        setAjaxResponse("text/html;charset=UTF8", SUCCESS);
+        return SUCCESS;
     }
 
     public String delBook() {
         HttpServletRequest rq = ServletActionContext.getRequest();
-        if (this.getBookManageService().delBook(rq.getParameter("keyword")))
-            return SUCCESS;
-        else
-            return ERROR;
+        String type = rq.getParameter("type");
+        String input = rq.getParameter("input");
+        if ("ISBN".equals(type)){
+            Boolean isDelete = bookManageService.delBookByISBN(input);
+            delFile(input);
+            if (isDelete)
+                setAjaxResponse("text/html;charset=UTF8", SUCCESS);
+            else
+                setAjaxResponse("text/html;charset=UTF8", ERROR);
+        } else{
+            Boolean isDelete = bookManageService.delBookById(input);
+            //如果只剩一本就删图片
+            if (isDelete)
+                setAjaxResponse("text/html;charset=UTF8", SUCCESS);
+            else
+                setAjaxResponse("text/html;charset=UTF8", ERROR);
+        }
+        return SUCCESS;
     }
+
+    private void delFile(String ISBN){
+        String path = ServletActionContext.getServletContext().getRealPath("/pictures");
+        FileUtils.deleteQuietly(new File(path + "\\" + ISBN + ".jpg"));
+        FileUtils.deleteQuietly(new File(MyConstant.YHQ_PICTURE_PATH + "/" + ISBN + ".jpg"));
+    }
+
+    private String getSuffix(String name){
+        return name.substring(name.indexOf("."), name.length());
+    }
+
 }

@@ -57,13 +57,12 @@ public class EBookAction extends BaseAction{
         System.out.println("type is " + type);*/
         ArrayList<EBook> result = this.geteBookService().search(type, keyword);
         if(result== null || result.size()==0) {
-            System.out.print("error");
             rq.getSession().removeAttribute("ebook_result");
             return ERROR;
         }
-        for(EBook ebook: result) {
+       /* for(EBook ebook: result) {
             System.out.println(ebook.getEbook_name());
-        }
+        }*/
         rq.getSession().setAttribute("ebook_result",result);
         return SUCCESS;
     }

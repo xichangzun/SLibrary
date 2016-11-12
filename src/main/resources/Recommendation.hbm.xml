@@ -3,7 +3,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.xcz.recommendation.domain.Recommendation" table="RECOMMENDATION" schema="SLibrary">
-        <composite-id name="uionPK" class="com.xcz.borrow_history.domain.UionPK">
+        <composite-id name="uionPK" class="com.xcz.recommendation.domain.RecomUionPK">
             <key-property name="user_id" />
             <key-property name="ISBN" />
         </composite-id>
@@ -20,7 +20,7 @@
             <column name="press" length="40" not-null="true"/>
         </property>
         <property name="price" type="java.lang.Float">
-            <column name="price" length="5" precision="2" />
+            <column name="price" length="7" precision="2" />
         </property>
         <property name="amount" type="java.lang.Integer">
             <column name="amount" length="3" not-null="false"/>
@@ -29,7 +29,7 @@
             <column name="reason" length="50" not-null="true"/>
         </property>
         <property name="state" type="java.lang.String">
-            <column name="state" length="10"/>
+            <column name="state" length="15"/>
         </property>
     </class>
 </hibernate-mapping>

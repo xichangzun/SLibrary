@@ -1,11 +1,11 @@
-package com.xcz.borrow_history.domain;
+package com.xcz.recommendation.domain;
 
 import java.io.Serializable;
 
 /**
- * Created by yhq on 2016/10/9.
+ * Created by yhq on 2016/11/12.
  */
-public class UionPK implements Serializable{
+public class RecomUionPK implements Serializable{
     private String user_id;
     private String ISBN;
 
@@ -26,8 +26,8 @@ public class UionPK implements Serializable{
     }
 
     public boolean equals(Object obj){
-        if (obj instanceof UionPK){
-            UionPK t = (UionPK) obj;
+        if (obj instanceof RecomUionPK){
+            RecomUionPK t = (RecomUionPK) obj;
             if (this.user_id.equals(t.getUser_id()) && this.ISBN.equals(t.getISBN())){
                 return true;
             }
@@ -38,4 +38,5 @@ public class UionPK implements Serializable{
     public int hashCode() {
         return super.hashCode();
     }
+
 }

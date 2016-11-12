@@ -7,5 +7,7 @@ import com.xcz.search.domain.Book;
  */
 public interface BookManageService  {
     Boolean addBook(Book a);
-    Boolean delBook(String ISBN);
+    Boolean delBookByISBN(String ISBN);
+    Boolean delBookById(String id);
+    int getBookCount(String ISBN);
 }

@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="com.xcz.ebook.domain.EBook" table="EBOOK" schema="slibrary">
         <id name="ISBN" type="string">
-            <column name="ISBN" length="25" />
+            <column name="ISBN" length="15" />
             <generator class="assigned" />
         </id>
         <property name="ebook_name" type="string">
@@ -27,10 +27,10 @@
             <column name="pub_year" length="4" not-null="true" />
         </property>
         <property name="cover" type="string">
-            <column name="cover" length="50" not-null="false" />
+            <column name="cover" length="40" not-null="false" />
         </property>
         <property name="pdf" type="string">
-            <column name="pdf" length="50" not-null="true" />
+            <column name="pdf" length="40" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

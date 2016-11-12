@@ -16,8 +16,8 @@
                 <param name="maximumSize">10485760</param>
             </interceptor-ref>
             <interceptor-ref name="defaultStack" />
-            <result name="success" type="redirect">/books_add.html</result>
-            <result name="error" type="redirect">/wrong.html</result>
+            <!--<result name="success" type="redirect">/books_add.html</result>
+            <result name="error" type="redirect">/wrong.html</result>-->
         </action>
         <action name="delete" class="bookManageAction" method="delBook">
             <result name = "success" type="redirect">/books_add.html</result>

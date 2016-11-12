@@ -1,7 +1,7 @@
 package com.xcz.recommendation.service;
 
-import com.xcz.borrow_history.domain.UionPK;
 import com.xcz.common.BaseService;
+import com.xcz.recommendation.domain.RecomUionPK;
 import com.xcz.recommendation.domain.Recommendation;
 
 import java.sql.Connection;
@@ -65,7 +65,7 @@ public class recommendServiceImpl extends BaseService implements recommendServic
         for(int i=0; i<result.size(); i++){
             Recommendation recom = new Recommendation();
             Object[] row = (Object[]) result.get(i);
-            UionPK uionPK = new UionPK();
+            RecomUionPK uionPK = new RecomUionPK();
             uionPK.setUser_id((String)row[0]);
             uionPK.setISBN((String)row[5]);
             recom.setUionPK(uionPK);

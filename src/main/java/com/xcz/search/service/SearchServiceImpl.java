@@ -13,39 +13,35 @@ import java.util.List;
  * Created by root on 16-10-9.
  */
 public class SearchServiceImpl extends BaseService implements SearchService {
-    public Book[] search(String keyword, String type)
-    {
+
+    public Book[] search(String keyword, String type) {
         String sql = concatSql(keyword, type);
         List result = this.getHibernateDAO().findBySql(sql);
-        if(result == null||result.isEmpty())
-        {
+        if(result == null||result.isEmpty()) {
             return null;
         }
-        else
-        {
-            ArrayList<Book> xcz =new ArrayList<Book>();
-            for(int i = 0;i<result.size();i++)
-            {
-                Object[] temp = (Object[]) result.get(i);
+        else {
+            ArrayList<Book> books =new ArrayList<Book>();
+            for(int i = 0;i<result.size();i++) {
+                Object[] row = (Object[]) result.get(i);
                 Book t2 = new Book();
-                t2.setBook_name((String)temp[0]);
-                t2.setISBN((String) temp[1]);
-                t2.setLang((String)temp[2]);
-                t2.setAuthor((String)temp[3]);
-                t2.setPress((String)temp[4]);
-                Timestamp trans = (Timestamp)temp[5];
+                t2.setId((String)row[0]);
+                t2.setISBN((String)row[1]);
+                t2.setBook_name((String)row[2]);
+                t2.setLang((String)row[3]);
+                t2.setAuthor((String)row[4]);
+                t2.setPress((String)row[5]);
+                Timestamp trans = (Timestamp)row[6];
                 t2.setPub_year(trans.toString().substring(0,4));
-                t2.setAmount((Integer)temp[6]);
-                t2.setRes_amount((Integer)temp[7]);
-                t2.setTotal_amount((Integer)temp[8]);
-                t2.setCall_no((String)temp[9]);
-                t2.setPages((Integer)temp[10]);
-                t2.setSize((Integer)temp[11]);
-                t2.setCover((String)temp[12]);
-                xcz.add(t2);
+                t2.setCall_no((String)row[7]);
+                t2.setState((String)row[8]);
+                t2.setPages((Integer)row[9]);
+                t2.setSize((Integer)row[10]);
+                t2.setCover((String)row[11]);
+                books.add(t2);
             }
-            Book[] fin = new Book[xcz.size()];
-            fin = xcz.toArray(fin);
+            Book[] fin = new Book[books.size()];
+            fin = books.toArray(fin);
             return fin;
         }
     }

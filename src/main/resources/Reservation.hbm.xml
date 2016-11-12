@@ -4,12 +4,15 @@
 
 <hibernate-mapping>
     <class name="com.xcz.borrow_history.domain.Reservation" table="RESERVATION" schema="slibrary">
-        <composite-id name="uionPK" class="com.xcz.borrow_history.domain.UionPK">
+        <composite-id name="uionPK" class="com.xcz.borrow_history.domain.ResUionPK">
             <key-property name="user_id" />
-            <key-property name="ISBN" />
+            <key-property name="book_id" />
         </composite-id>
         <property name="state" type="java.lang.String">
-            <column name="state" length="10" not-null="false" />
+            <column name="state" length="15" not-null="false" />
+        </property>
+        <property name="res_date" type="java.sql.Date">
+            <column name="res_date" length="20" not-null="false" />
         </property>
     </class>
 </hibernate-mapping>

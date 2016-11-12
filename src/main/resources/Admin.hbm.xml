@@ -9,7 +9,7 @@
             <generator class="assigned" />
         </id>
         <property name="user_name" type="string">
-            <column name="user_name" length="20"/>
+            <column name="user_name" length="25"/>
         </property>
         <property name="pwd" type="string">
             <column name="pwd" length="20" />

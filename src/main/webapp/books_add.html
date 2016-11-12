@@ -114,7 +114,7 @@
 										<hr style="margin:0px 30px" >
                                     <div style="margin:0px 30px">
                                 	<br>
-									<form action="/BookManage/Add" method="post" id = "addBook" enctype="multipart/form-data">
+									<form action="/BookManage/Add" method="post" id ="form" enctype="multipart/form-data">
 										<ul>
 											<li class="m_bottom_15">
                                             	<div class="f_left half_column">
@@ -123,7 +123,7 @@
 												</div>
                                                 <div class="f_left half_column">
 													<label class="required d_inline_b m_bottom_5">Book Name</label>
-													<input name = "Book_name" maxlength="40" class="full_width r_corners">
+													<input name = "name" maxlength="40" class="full_width r_corners">
 												</div>
 											</li>
                                             <li class="clearfix m_bottom_15">
@@ -148,8 +148,8 @@
 											</li>
                                              <li class="m_bottom_15">
                                                 <div class="f_left half_column">
-													<label  class="required d_inline_b m_bottom_5">Total Amount</label>
-													<input name = "total_amount" maxlength="3" class="full_width r_corners">
+													<label  class="required d_inline_b m_bottom_5">Amount</label>
+													<input name = "amount" maxlength="3" class="full_width r_corners">
 												</div>
                                                 <div class="f_left half_column">
 													<label  class="required d_inline_b m_bottom_5">Call Number</label>
@@ -174,7 +174,7 @@
                                             </li>
                                             <br>
                                             <li class="t_align_c">
-												<button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Submit</button>
+												<button type="button" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Submit</button>
 											</li>
                                             <br>
 										</ul>
@@ -227,40 +227,12 @@
 				
 			</footer>
 		</div>
-		
-		<!--login popup-->
-		<div class="popup_wrap d_none" id="login_popup">
-			<section class="popup r_corners shadow">
-				<button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
-				<h3 class="m_bottom_20 color_dark">Log In</h3>
-				<form>
-					<ul>
-						<li class="m_bottom_15">
-							<label for="username" class="m_bottom_5 d_inline_b">Username</label><br>
-							<input type="text" name="" id="username" class="r_corners full_width">
-						</li>
-						<li class="m_bottom_25">
-							<label for="password" class="m_bottom_5 d_inline_b">Password</label><br>
-							<input type="password" name="" id="password" class="r_corners full_width">
-						</li>
-						<li class="m_bottom_15">
-							<input type="checkbox" class="d_none" id="checkbox_10"><label for="checkbox_10">Remember me</label>
-						</li>
-						<li class="clearfix m_bottom_30">
-							<button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
-							<div class="f_right f_size_medium f_mxs_none">
-								<a href="#" class="color_dark">Forgot your password?</a><br>
-								<a href="#" class="color_dark">Forgot your username?</a>
-							</div>
-						</li>
-					</ul>
-				</form>
-			</section>
-		</div>
+
 		<button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 		<!--scripts include-->
 		<script src="js/jquery-2.1.0.min.js"></script>
 		<script src="js/navigation.js"></script>
+		<script src="js/jquery.form.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/retina.js"></script>
 		<script src="js/waypoints.min.js"></script>

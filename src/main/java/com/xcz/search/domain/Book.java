@@ -6,14 +6,42 @@ import java.sql.Date;
  * Created by root on 16-10-9.
  */
 public class Book {
+    private String id;
+    private String ISBN;
     private String book_name;
+    private String lang;
+    private String author;
+    private String press;
+    private String pub_year;
+    private String call_no;
+    private String state;
+    private Integer pages;
+    private Integer size;
+    private String cover;
 
-    public String getBook_name() {
-        return book_name;
+    public Book() {}
+
+    public Book(String id, String ISBN, String book_name, String lang, String author, String press, String pub_year, String call_no, String state, Integer pages, Integer size, String cover) {
+        this.id = id;
+        this.ISBN = ISBN;
+        this.book_name = book_name;
+        this.lang = lang;
+        this.author = author;
+        this.press = press;
+        this.pub_year = pub_year;
+        this.call_no = call_no;
+        this.state = state;
+        this.pages = pages;
+        this.size = size;
+        this.cover = cover;
     }
 
-    public void setBook_name(String book_name) {
-        this.book_name = book_name;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getISBN() {
@@ -22,6 +50,14 @@ public class Book {
 
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
+    }
+
+    public String getBook_name() {
+        return book_name;
+    }
+
+    public void setBook_name(String book_name) {
+        this.book_name = book_name;
     }
 
     public String getLang() {
@@ -56,36 +92,20 @@ public class Book {
         this.pub_year = pub_year;
     }
 
-    public Integer getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
-
-    public Integer getRes_amount() {
-        return res_amount;
-    }
-
-    public void setRes_amount(Integer res_amount) {
-        this.res_amount = res_amount;
-    }
-
-    public Integer getTotal_amount() {
-        return total_amount;
-    }
-
-    public void setTotal_amount(Integer total_amount) {
-        this.total_amount = total_amount;
-    }
-
     public String getCall_no() {
         return call_no;
     }
 
     public void setCall_no(String call_no) {
         this.call_no = call_no;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public Integer getPages() {
@@ -110,37 +130,5 @@ public class Book {
 
     public void setCover(String cover) {
         this.cover = cover;
-    }
-
-    private String ISBN;
-    private String lang;
-    private String author;
-    private String press;
-    private String pub_year;
-    private Integer amount;
-    private Integer res_amount;
-    private Integer total_amount;
-    private String call_no;
-    private Integer pages;
-    private Integer size;
-    private String cover;
-
-    public Book(String book_name, String ISBN, String lang, String author, String press, String pub_year, Integer amount, Integer res_amount, Integer total_amount, String call_no, Integer pages, Integer size, String cover) {
-        this.book_name = book_name;
-        this.ISBN = ISBN;
-        this.lang = lang;
-        this.author = author;
-        this.press = press;
-        this.pub_year = pub_year;
-        this.amount = amount;
-        this.res_amount = res_amount;
-        this.total_amount = total_amount;
-        this.call_no = call_no;
-        this.pages = pages;
-        this.size = size;
-        this.cover = cover;
-    }
-
-    public Book() {
     }
 }

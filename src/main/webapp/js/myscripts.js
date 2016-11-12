@@ -4,8 +4,8 @@
 $(function () {
     $("#Borrow :button").click(function () {
         var json = {
-            "ISBN": $("#ISBN").val(),
-            "User_id": $("#UserID").val()
+            "book_id": $("#book_id").val(),
+            "user_id": $("#user_id").val()
         }
         $.post("/BorrowHistory/borrow", json, function (mydata) {
             mydata = $.parseJSON(mydata);
@@ -14,8 +14,8 @@ $(function () {
             }
             else {
                 alert(mydata.message);
-                $("#ISBN").val("");
-                $("#UserID").val("");
+                $("#book_id").val("");
+                $("#user_id").val("");
             }
         })
         return false;
@@ -24,8 +24,7 @@ $(function () {
 $(function () {
     $("#Return :button").click(function () {
         var json = {
-            "ISBN": $("#ISBN").val(),
-            "User_id": $("#UserID").val()
+            "book_id": $("#book_id").val()
         }
         $.post("/BorrowHistory/BookReturn", json, function (mydata) {
             mydata = $.parseJSON(mydata);
@@ -34,8 +33,7 @@ $(function () {
             }
             else {
                 alert(mydata.message);
-                $("#ISBN").val("");
-                $("#UserID").val("");
+                $("#book_id").val("");
             }
         })
         return false;
