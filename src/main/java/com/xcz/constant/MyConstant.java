@@ -11,4 +11,7 @@ public class MyConstant {
     public static String XCZ_PICTURE_PATH = "/home/xichangzun/SLibrary/SLibrary/src/main/webapp/pictures";
     public static String YHQ_PDF_PATH = "E:/Workspaces/IntelliJ/SLibrary/src/main/webapp/pdf";
     public static String XCZ_PDF_PATH = "/home/xichangzun/SLibrary/SLibrary/src/main/webapp/pdf";
+    public static String BORROWED = "Borrowed";
+    public static String RESERVED = "Reserved";
+    public static String AVAILABLE = "Available";
 }

@@ -119,7 +119,7 @@
                                             <p class="d_sm_none d_xs_block">${news_item.summary}</p>
                                         </div>
                                         <div style="margin-top:8%" class="f_right f_sm_none t_align_r t_sm_align_l">
-                                            <button class="button_type_4 bg_light_color_2 tr_all_hover f_right m_left_5 r_corners color_dark mw_0 p_hr_0 d_sm_inline_middle f_sm_none" onClick="delcfm()"><i class="fa fa-trash-o"></i></button>
+                                            <button class="button_type_4 bg_light_color_2 tr_all_hover f_right m_left_5 r_corners color_dark mw_0 p_hr_0 d_sm_inline_middle f_sm_none" onClick="delcfm(${news_item.id})"><i class="fa fa-trash-o"></i></button>
                                             <a href="/News/detail?index=${news_item.id}"><button class="button_type_4 bg_light_color_2 tr_all_hover f_right r_corners color_dark mw_0 m_sm_left_5 p_hr_0 d_sm_inline_middle f_sm_none"><i class="fa fa-pencil"></i></button></a>
 
                                         </div>
@@ -178,13 +178,13 @@
 <button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 
 <script language="javascript">
-    function delcfm() {
+    function delcfm(nid) {
         if (!confirm("Are you sure to delete this news?")) {
             window.event.returnValue = false;
         }
         else {
             var json={
-                "index":${news_item.id}
+                "index":nid
             }
             $.get("/News/delete",json,function (mydata) {
                 if (mydata == "success"){
