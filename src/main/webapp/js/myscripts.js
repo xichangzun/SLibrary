@@ -48,7 +48,12 @@ $(function () {
         Qxcz.each(function () {
             if($(this).css("visibility") == "visible")
                 temp = true;
-        })
+        });
+        var Fxcz = $("#reg_form .mycss_3").each(function () {
+            if($(this).children("input").val() ==""){
+                temp = true;
+            }
+        });
         if(temp){
             alert("you can't submit until you fill the form correctly");
             return false;
@@ -90,5 +95,17 @@ $(function () {
                 c.css("visibility","hidden")
             }
         })
+    })
+});
+$(function () {
+    $("#reg_form :input[name='cfpwd']").on('blur',function () {
+        var c = $("#cfinfo");
+        if($(this).val() != $("#reg_form :input[name='pwd']").val()){
+            c.children("label").text("two password are different")
+            c.css("visibility","visible")
+        }
+        else {
+            c.css("visibility","hidden")
+        }
     })
 });

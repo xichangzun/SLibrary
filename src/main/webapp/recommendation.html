@@ -92,8 +92,7 @@
                             <br>
                             <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
                             <h2 class="tt_uppercase color_dark m_bottom_25">Recommending Form</h2>
-                            <p class="m_bottom_10">Please input the book information:</p>
-                            <form id="" action="/Recommend/add" method="post">
+                            <form id="rec_form" action="/Recommend/add" method="post">
                                 <ul>
                                     <li class="clearfix m_bottom_15">
                                         <div class="f_left half_column">
@@ -135,7 +134,7 @@
                                         <input type="text" id="cf_subject" name="amount" class="full_width r_corners">
                                     </li>
                                     <li class="m_bottom_15">
-                                        <label for="cf_message" class="d_inline_b m_bottom_5">Recommending reason</label>
+                                        <label for="cf_message" class="d_inline_b m_bottom_5 required">Recommending reason</label>
                                         <textarea id="cf_message" name="reason" class="full_width r_corners"></textarea>
                                     </li>
                                     <li class="m_bottom_15">
@@ -214,5 +213,6 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.custom-scrollbar.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/recommend.js"></script>
 </body>
 </html>

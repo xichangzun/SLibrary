@@ -7,8 +7,6 @@
 <struts>
     <package name="recommend" namespace="/Recommend" extends="struts-default">
         <action name="add" class="recommendAction" method="add">
-            <result name="success" type="redirect">/recommendation.jsp</result>
-            <result name="error" type="redirect">/recommendation.jsp</result>
         </action>
         <action name="get" class="recommendAction" method="queryByAjax"></action>
         <action name="updateState" class="recommendAction" method="updateState"></action>

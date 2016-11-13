@@ -51,7 +51,8 @@ public class RecommendAction extends BaseAction {
         recommendation.setAmount(Integer.parseInt(rq.getParameter("amount")));
         recommendation.setReason(rq.getParameter("reason"));
         recommendation.setState(UNHANDLE);
-        return this.getService().addrecommend(recommendation)?SUCCESS:ERROR;
+        setAjaxResponse("text/html;charset=UTF8",this.getService().addrecommend(recommendation)?SUCCESS:ERROR );
+        return SUCCESS;
     }
 
     public String queryByAjax(){
