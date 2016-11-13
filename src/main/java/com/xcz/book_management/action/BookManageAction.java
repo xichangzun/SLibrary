@@ -5,6 +5,8 @@ import com.xcz.common.BaseAction;
 import com.xcz.common.ImageCompressUtil;
 import com.xcz.constant.MyConstant;
 import com.xcz.search.domain.Book;
+import com.xcz.search.service.SearchService;
+import com.xcz.search.service.SearchServiceImpl;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
@@ -114,6 +116,28 @@ public class BookManageAction extends BaseAction {
         else {
             setAjaxResponse("text/html;charset=UTF8", ERROR);
             return ERROR;
+        }
+
+    }
+
+    public String reserve(){
+        HttpServletRequest rq = ServletActionContext.getRequest();
+        String ISBN = rq.getParameter("ISBN");
+        SearchServiceImpl temp = new SearchServiceImpl();
+        Book[] xcz = temp.search("ISBN",ISBN);
+        rq.getSession().setAttribute("reserve_candid",xcz);
+        return SUCCESS;
+    }
+
+    public void ajaxRes(){
+        HttpServletRequest rq = ServletActionContext.getRequest();
+        int id = Integer.parseInt(rq.getParameter("id")) ;
+        String user_id = (String)rq.getSession().getAttribute("id");
+        if(user_id == null){
+            setAjaxResponse("text/html;charset=UTF8","please login first");
+        }
+        else {
+            setAjaxResponse("text/html;charset=UTF8",this.getBookManageService().InsertRes(user_id,id+"")?SUCCESS:ERROR);
         }
 
     }

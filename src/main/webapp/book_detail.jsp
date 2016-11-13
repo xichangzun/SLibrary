@@ -131,7 +131,7 @@
                             <tr height="30">
                                 <td>All Volume</td>
                                 <td>
-                                	<a href="book_all.html" class="color_dark d_block relative"><b>View</b></a>
+                                	<a href="/BookManage/reserve?ISBN=<%=book.getISBN()%>" class="color_dark d_block relative"><b>View</b></a>
                                	</td>
                             </tr>
                         </table>

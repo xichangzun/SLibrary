@@ -23,5 +23,9 @@
             <result name = "success" type="redirect">/books_add.html</result>
             <result name="error" type="redirect">/wrong.html</result>
         </action>
+        <action name="reserve" class="bookManageAction" method="reserve">
+            <result name="success" type="redirect">/book_all.jsp</result>
+        </action>
+        <action name="insert" class="bookManageAction" method="ajaxRes"></action>
     </package>
 </struts>

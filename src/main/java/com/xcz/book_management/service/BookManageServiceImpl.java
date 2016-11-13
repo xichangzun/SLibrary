@@ -54,4 +54,18 @@ public class BookManageServiceImpl extends BaseService implements BookManageServ
         String sql = "INSERT into UPRECORD (type, title, add_time)VALUE ('BOOK','"+book_name+"',sysdate())";
         return this.getHibernateDAO().executeBySql(sql);
     }
+
+    public Boolean InsertRes(String user_id,String id){
+        try {
+            String sql = "INSERT INTO RESERVATION(user_id, book_id, res_date, state) VALUE ('"+user_id+"','"+id+"',sysdate(),'waiting')";
+            this.getHibernateDAO().executeBySql(sql);
+            sql = "UPDATE BOOK SET state = 'Reserved' WHERE id ="+id;
+            this.getHibernateDAO().executeBySql(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
+    }
 }
