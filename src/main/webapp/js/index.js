@@ -55,4 +55,11 @@ $(function () {
 
         })
     });
+
+    $(":input[type='submit']").click(function () {
+        if($(":input[name='keyword']").val() == ""){
+            alert("keyword cant be empty");
+            return false;
+        }
+    })
 });
