@@ -54,7 +54,7 @@
         <!--main menu container-->
     </header>
     <!--breadcrumbs-->
-    <section class="breadcrumbs">
+    <%--<section class="breadcrumbs">
         <div class="container">
             <form method="post" action="/Search/execute" >
                 <!-- filename: find-code-include -->
@@ -71,7 +71,7 @@
                 <input style="height:30px" class="button_type_9 r_corners t_align_c" id="lookup" value="  Search  " type="submit">
             </form>
         </div>
-    </section>
+    </section>--%>
     <!--content-->
     <div class="page_content_offset">
         <div class="container">
