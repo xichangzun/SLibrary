@@ -38,8 +38,8 @@ $(function () {
                 "align":"left",
                 "valign":"middle"
             })
-            var aiter = $("<a>");
-            aiter.addClass("color_dark d_block bt_link");
+            var aiter = $("<span>");
+            aiter.addClass("color_dark d_block");
             var text = "";
             if(v.type == "BOOK")
             {

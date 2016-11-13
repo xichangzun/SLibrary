@@ -80,7 +80,6 @@ public class NewsAction extends BaseAction {
 
     public String query(){
         HttpServletRequest rq = ServletActionContext.getRequest();
-        if(rq.getSession().getAttribute("news_array")!=null) return SUCCESS;
         News[] xcz = this.getMynewservice().query();
         rq.getSession().setAttribute("news_array",xcz);
         return SUCCESS;
