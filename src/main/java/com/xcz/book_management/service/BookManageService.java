@@ -10,4 +10,5 @@ public interface BookManageService  {
     Boolean delBookByISBN(String ISBN);
     Boolean delBookById(String id);
     int getBookCount(String ISBN);
+    Boolean Insert(String book_name);
 }

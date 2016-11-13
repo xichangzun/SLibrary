@@ -182,6 +182,20 @@
         if (!confirm("Are you sure to delete this news?")) {
             window.event.returnValue = false;
         }
+        else {
+            var json={
+                "index":${news_item.id}
+            }
+            $.get("/News/delete",json,function (mydata) {
+                if (mydata == "success"){
+                    window.location.href="/News/query"
+                }
+                else if (mydata == "error")
+                    alert("Delete Failed! try later");
+                else
+                    alert(mydata);
+            })
+        }
     }
 </script>
 

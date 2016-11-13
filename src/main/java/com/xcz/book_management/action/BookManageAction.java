@@ -97,6 +97,7 @@ public class BookManageAction extends BaseAction {
             setAjaxResponse("text/html;charset=UTF8", ERROR);
             return ERROR;
         }
+        this.getBookManageService().Insert(a.getBook_name());
         setAjaxResponse("text/html;charset=UTF8", SUCCESS);
         return SUCCESS;
     }

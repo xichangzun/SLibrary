@@ -10,4 +10,5 @@ public interface NewsService {
     Boolean updateNews(News a);
     News[] query();
     News[] res_query();
+    Boolean delete(int id);
 }

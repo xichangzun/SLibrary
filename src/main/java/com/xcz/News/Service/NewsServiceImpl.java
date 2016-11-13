@@ -100,4 +100,16 @@ public class NewsServiceImpl extends BaseService implements NewsService {
             return fin;
         }
     }
+
+    public Boolean delete(int id){
+        String sql = "DELETE FROM NEWS WHERE id="+id;
+        try {
+            this.getHibernateDAO().executeBySql(sql);
+            return true;
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

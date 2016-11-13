@@ -142,4 +142,11 @@ public class NewsAction extends BaseAction {
             e.printStackTrace();
         }
     }
+
+
+    public void delete(){
+        HttpServletRequest rq = ServletActionContext.getRequest();
+        int id = Integer.parseInt(rq.getParameter("index")) ;
+        setAjaxResponse("text/html;charset=UTF8",this.getMynewservice().delete(id)?SUCCESS:ERROR);
+    }
 }

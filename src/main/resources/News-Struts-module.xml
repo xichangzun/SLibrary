@@ -23,5 +23,6 @@
         <action name="KnowMore" class="newsAction" method="detail">
             <result name="success" type="redirect">/news_detail.jsp</result>
         </action>
+        <action name="delete" class="newsAction" method="delete"></action>
     </package>
 </struts>

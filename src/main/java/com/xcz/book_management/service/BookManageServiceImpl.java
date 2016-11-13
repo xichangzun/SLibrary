@@ -48,4 +48,10 @@ public class BookManageServiceImpl extends BaseService implements BookManageServ
         }
         return cnt;
     }
+
+    @Override
+    public Boolean Insert(String book_name){
+        String sql = "INSERT into UPRECORD (type, title, add_time)VALUE ('BOOK','"+book_name+"',sysdate())";
+        return this.getHibernateDAO().executeBySql(sql);
+    }
 }
