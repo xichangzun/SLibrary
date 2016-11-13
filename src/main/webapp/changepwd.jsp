@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: root
-  Date: 16-10-15
-  Time: 上午2:33
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
@@ -48,7 +41,7 @@
                     <div class="row clearfix">
                         <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
                             <li><a href="user_info.jsp" class="default_t_color">My Account</a></li>
-                            <li><a href="index.jsp" class="default_t_color">Checkout</a></li>
+                            <li><a href="/User/logout" class="default_t_color">Checkout</a></li>
                         </ul>
                     </div>
                 </div>

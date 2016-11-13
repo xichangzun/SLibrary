@@ -4,6 +4,6 @@
 $(document).ready(function () {
     $("#nav1").attr("href", "user_info.jsp");
     $("#nav2").attr("href", "/BorrowHistory/queryBorrowInfo");
-    $("#nav3").attr("href", "recommendation.jsp");
+    $("#nav3").attr("href", "recommendation.html");
     $("#nav4").attr("href", "changepwd.jsp");
 });

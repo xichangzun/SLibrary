@@ -67,8 +67,8 @@
     <section class="breadcrumbs">
         <div class="container">
             <ul class="horizontal_list clearfix bc_list f_size_medium">
-                <li class="m_right_10"><a href="admin_basic.html" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-                <li><a href="admin_newsManage.html" class="current default_t_color">News Management</a></li>
+                <li class="m_right_10"><a href="user_info.jsp" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+                <li><a href="admin_newsManage.jsp" class="current default_t_color">News Management</a></li>
             </ul>
         </div>
     </section>
@@ -87,7 +87,7 @@
                             <!--Categories list-->
                             <ul class="categories_list">
                                 <li>
-                                    <a href="admin_newsManage.html" class="f_size_large scheme_color d_block relative">
+                                    <a href="admin_newsManage.jsp" class="f_size_large scheme_color d_block relative">
                                         <b>Update News</b>
                                     </a>
                                 </li>

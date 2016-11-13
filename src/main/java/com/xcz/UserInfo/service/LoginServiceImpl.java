@@ -34,8 +34,7 @@ public class LoginServiceImpl extends BaseService implements LoginService {
     }
 
     public Boolean register(UserInfo userInfo) {
-        String sql = "SELECT * from USER WHERE id = '"+ userInfo.getId() +"'";
-        System.out.println(sql);
+        String sql = "SELECT * FROM USER WHERE id = '"+ userInfo.getId() +"'";
         List result = this.getHibernateDAO().findBySql(sql);
         if (result.size() == 0){
             sql = "INSERT INTO USER VALUES ('"+userInfo.getId()+"', '"+ userInfo.getUser_name()+"', '"+userInfo.getPwd()+"', " +

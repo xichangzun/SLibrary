@@ -72,6 +72,7 @@ public class BookManageAction extends BaseAction {
         a.setPress(rq.getParameter("press"));
         a.setPub_year(rq.getParameter("pub_year"));
         a.setCall_no(rq.getParameter("call_no"));
+        // 刚加入书的时候为Available
         a.setState("Available");
         String t = rq.getParameter("pages");
         if (!t.isEmpty())
@@ -102,24 +103,18 @@ public class BookManageAction extends BaseAction {
 
     public String delBook() {
         HttpServletRequest rq = ServletActionContext.getRequest();
-        String type = rq.getParameter("type");
-        String input = rq.getParameter("input");
-        if ("ISBN".equals(type)){
-            Boolean isDelete = bookManageService.delBookByISBN(input);
-            delFile(input);
-            if (isDelete)
-                setAjaxResponse("text/html;charset=UTF8", SUCCESS);
-            else
-                setAjaxResponse("text/html;charset=UTF8", ERROR);
-        } else{
-            Boolean isDelete = bookManageService.delBookById(input);
-            //如果只剩一本就删图片
-            if (isDelete)
-                setAjaxResponse("text/html;charset=UTF8", SUCCESS);
-            else
-                setAjaxResponse("text/html;charset=UTF8", ERROR);
+        String input = rq.getParameter("ISBN");
+        Boolean isDelete = bookManageService.delBookByISBN(input);
+        delFile(input);
+        if (isDelete) {
+            setAjaxResponse("text/html;charset=UTF8", SUCCESS);
+            return SUCCESS;
         }
-        return SUCCESS;
+        else {
+            setAjaxResponse("text/html;charset=UTF8", ERROR);
+            return ERROR;
+        }
+
     }
 
     private void delFile(String ISBN){

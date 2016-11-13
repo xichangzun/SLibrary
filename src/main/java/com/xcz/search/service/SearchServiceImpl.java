@@ -51,12 +51,12 @@ public class SearchServiceImpl extends BaseService implements SearchService {
         String sql = null;
         if (type.equals("Book Name")){
             String k = keyword.replace(' ','%');
-            sql = "SELECT * FROM BOOK WHERE book_name LIKE BINARY '%" + k + "%' ORDER BY pub_year DESC";
+            sql = "SELECT * FROM BOOK WHERE book_name LIKE BINARY '%" + k + "%' GROUP BY ISBN ORDER BY pub_year DESC";
         } else if (type.equals("Author")){
             String k = keyword.replace(' ','%');
-            sql = "SELECT * FROM BOOK WHERE author LIKE BINARY '%" + k + "%' ORDER BY pub_year DESC";
+            sql = "SELECT * FROM BOOK WHERE author LIKE BINARY '%" + k + "%' GROUP BY ISBN ORDER BY pub_year DESC";
         } else if (type.equals("ISBN")){
-            sql = "SELECT * FROM BOOK WHERE ISBN = '"+ keyword + "' ORDER BY pub_year DESC";
+            sql = "SELECT * FROM BOOK WHERE ISBN = '"+ keyword + "' GROUP BY ISBN ORDER BY pub_year DESC";
         } else {
             System.out.println("Undefined Type!");
         }

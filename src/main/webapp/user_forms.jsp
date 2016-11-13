@@ -142,8 +142,8 @@
                                                     <th style="width:350px">Book_Name</th>
                                                     <th style="width:250px">Author</th>
                                                     <th style="width:150px">Pub Year</th>
+                                                    <th style="width:150px">Due Date</th>
                                                     <th style="width:150px">Return Date</th>
-                                                    <th style="width:150px">Actual Date</th>
                                                 </tr>
                                                 <s:iterator value="#attr.borrow_books" id ="book">
                                                     <tr>

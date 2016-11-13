@@ -39,23 +39,44 @@ $(function () {
         return false;
     })
 });
+
+//注册
 $(function () {
     $("#reg_form :button").click(function () {
-        var temp = false
-        var Qxcz = $("#reg_form .fuck_3_hidden")
+        var temp = false;
+        var Qxcz = $("#reg_form .mycss_3_hidden")
         Qxcz.each(function () {
             if($(this).css("visibility") == "visible")
-                temp = true
+                temp = true;
         })
         if(temp){
-            alert("you can't submit until you fill the form correctly")
+            alert("you can't submit until you fill the form correctly");
+            return false;
+        } else{
+            var options = {
+                url: "/User/register",
+                type: "POST",
+                resetForm: false,
+                success: function (mydata) {
+                    if (mydata == "success")
+                        alert("Register Success!");
+                    else if (mydata == "error")
+                        alert("Register Failed!\nThis id is registered!");
+                    else
+                        alert(mydata);
+                },
+                error: function () {
+                    alert("Request failed! Please retry it!");
+                }
+            };
+            $("#reg_form").ajaxSubmit(options);
             return false;
         }
     })
 });
 
 $(function () {
-    $("#reg_form .fuck_3").each(function () {
+    $("#reg_form .mycss_3").each(function () {
         var a = $(this).children("input")
         var c = $(this).next()
         $(a).on("blur",function () {

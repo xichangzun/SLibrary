@@ -91,8 +91,10 @@ public class UserAction extends BaseAction {
         UserInfo userInfo = new UserInfo(id, name, pwd, unit, email, tel);
         boolean status = this.getLoginService().register(userInfo);
         if (status){
+            setAjaxResponse("text/html;charset=UTF8", SUCCESS);
             return SUCCESS;
         } else {
+            setAjaxResponse("text/html;charset=UTF8", ERROR);
             return ERROR;
         }
     }

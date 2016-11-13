@@ -1,11 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: root
-  Date: 16-10-15
-  Time: 下午10:57
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
@@ -48,7 +40,7 @@
                     <div class="row clearfix">
                         <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
                             <li><a href="user_info.jsp" class="default_t_color">My Account</a></li>
-                            <li><a href="index.jsp" class="default_t_color">Checkout</a></li>
+                            <li><a href="/User/logout.action" class="default_t_color">Checkout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -101,7 +93,7 @@
                             <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
                             <h2 class="tt_uppercase color_dark m_bottom_25">Recommending Form</h2>
                             <p class="m_bottom_10">Please input the book information:</p>
-                            <form action="/Recommend/add" method="post">
+                            <form id="" action="/Recommend/add" method="post">
                                 <ul>
                                     <li class="clearfix m_bottom_15">
                                         <div class="f_left half_column">

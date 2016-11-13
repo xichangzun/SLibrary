@@ -303,7 +303,7 @@ else if(session.getAttribute("error") != null)
                     <div class="row clearfix">
                         <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
                             <li id="LoginButton"><a href="#" data-popup="#login_popup">Log In</a></li>
-                            <li id="ReButton"><a href="user_register.jsp" class="default_t_color">Register</a></li>
+                            <li id="ReButton"><a href="user_register.html" class="default_t_color">Register</a></li>
                             <li id="InfoButton"><a href="user_info.jsp" class="default_t_color">My Account</a></li>
                             <li id="CheckOutButton"><a href="/User/logout" class="default_t_color">Checkout</a></li>
                         </ul>
