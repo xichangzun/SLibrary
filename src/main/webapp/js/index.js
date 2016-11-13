@@ -56,8 +56,15 @@ $(function () {
         })
     });
 
-    $(":input[type='submit']").click(function () {
-        if($(":input[name='keyword']").val() == ""){
+    $("#bSearch").click(function () {
+        if($("#search1").val() == ""){
+            alert("keyword cant be empty");
+            return false;
+        }
+    })
+
+    $("#eSearch").click(function () {
+        if($("#search2").val() == ""){
             alert("keyword cant be empty");
             return false;
         }

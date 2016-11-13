@@ -154,13 +154,14 @@ else
                         </div>
                         <div id="pagination" class="col-lg-5 col-md-5 col-sm-4 t_align_r t_xs_align_l">
                             <!--pagination-->
-                            <a role="button" onclick="prePage()" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-left"></i></a>
+                            <a role="button" id = "pre_page" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-left"></i></a>
                             <ul class="horizontal_list clearfix d_inline_middle f_size_medium m_left_10">
-                                <li class="m_right_10"><a class="scheme_color" href="#" id="cur_page">1</a></li>
-                                <li class="m_right_10 color_dark" id="page_cnt">/ 3 </li>
+                                <li class="m_right_10"><a class="scheme_color" href="#" id="cur_page">${EPindex}</a></li>
+                                <li class="m_right_10 color_dark">/</li>
+                                <li class="m_right_10 color_dark" id="page_cnt">${EPageCount}</li>
                             </ul>
-                            <a role="button" onclick="nextPage()" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-right"></i></a>
-                            <a role="button" onclick="jumpToInput()" class="f_right button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><span style="margin:4px">go</span></a>
+                            <a role="button" id="tail_page" class="button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><i class="fa fa-angle-right"></i></a>
+                            <a role="button" id="jump_page" class="f_right button_type_10 color_dark d_inline_middle bg_cs_hover bg_light_color_1 t_align_c tr_delay_hover r_corners box_s_none"><span style="margin:4px">go</span></a>
                             <input id="page" style="width:50px;margin:0 6px 0 15px;height:23px" type="text" class="r_corners f_right type_2" >
                         </div>
                     </div>
@@ -250,6 +251,6 @@ else
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.custom-scrollbar.js"></script>
 <script src="js/scripts.js"></script>
-
+<script src="ebook_search_result.jsp"></script>
 </body>
 </html>

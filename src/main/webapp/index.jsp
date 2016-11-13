@@ -343,7 +343,7 @@ else if(session.getAttribute("error") != null)
                                             </ul>
                                         </div>
                                         <input name="page_index" value="0" type="hidden">
-                                        <input style="float:left" type="submit" value="Search" class="butn butn-tabs r_corners">
+                                        <input id="bSearch" style="float:left" type="submit" value="Search" class="butn butn-tabs r_corners">
                                     </form>
                                 </div><!--/ tab-content end-->
                                 <!-- end-->
@@ -360,7 +360,8 @@ else if(session.getAttribute("error") != null)
                                             <option value="Author">Author</option>
                                         </select>
                                     </div>
-                                        <input style="float:left" type="submit" value="Search" class="butn butn-tabs r_corners">
+                                        <input name="page_index" value="0" type="hidden">
+                                        <input id="eSearch" style="float:left" type="submit" value="Search" class="butn butn-tabs r_corners">
                                     </form>
                                 </div>
                             </div><!--/ .tabs-container -->

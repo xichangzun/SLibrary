@@ -49,21 +49,46 @@ public class EBookAction extends BaseAction{
         this.eBookService = eBookService;
     }
 
-    public String search() {
+    public String search() {//not really split pages
         HttpServletRequest rq = ServletActionContext.getRequest();
         String keyword = rq.getParameter("keyword");
         String type = rq.getParameter("type");
+        String page = rq.getParameter("page_index");
         /*System.out.println("keyword is " + keyword);
         System.out.println("type is " + type);*/
-        ArrayList<EBook> result = this.geteBookService().search(type, keyword);
-        if(result== null || result.size()==0) {
+        int index = Integer.parseInt(page);
+        ArrayList<EBook> true_result = this.geteBookService().search(type, keyword);
+        if(true_result== null || true_result.size()==0) {
             rq.getSession().removeAttribute("ebook_result");
+            rq.getSession().setAttribute("EPageCount",0);
             return ERROR;
         }
        /* for(EBook ebook: result) {
             System.out.println(ebook.getEbook_name());
         }*/
+
+        index = index>0?index-1:index;
+        int begin = index*6;
+        int end = begin+6;
+        if(begin+6>true_result.size()){
+            end =true_result.size();
+        }
+        EBook[] result = new EBook[end-begin];
+        for(int i = 0;i<result.length;i++)
+        {
+            System.out.println(true_result.get(i).getEbook_name());
+            result[i] = true_result.get(i);
+        }
+        int pagecount;
+        if(true_result.size()%6 == 0){
+            pagecount = true_result.size()/6;
+        }
+        else {
+            pagecount = true_result.size()/6+1;
+        }
+        rq.getSession().setAttribute("EPindex",index+1);
         rq.getSession().setAttribute("ebook_result",result);
+        rq.getSession().setAttribute("EPageCount",pagecount);
         return SUCCESS;
     }
 
