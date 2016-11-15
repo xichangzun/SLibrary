@@ -46,7 +46,7 @@ public class SearchServiceImpl extends BaseService implements SearchService {
 
 
     private String concatSql(String keyword, String type){
-        String sql = "SELECT DISTINCT(ISBN), book_name, lang, author, press, pub_year, call_no, pages, size, cover FROM book WHERE ? ORDER BY pub_year DESC";
+        String sql = "SELECT DISTINCT(ISBN), book_name, lang, author, press, pub_year, call_no, pages, size, cover FROM BOOK WHERE ? ORDER BY pub_year DESC";
         String mySql = null;
         if (type.equals("Book Name")){
             String k = keyword.replace(' ','%');
