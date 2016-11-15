@@ -109,66 +109,67 @@
                                 <table style="font-size:16px">
                                     <tr class="m_bottom_45">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="cf_name"  class="m_bottom_5 d_inline_b">Name</label>&nbsp;
+                                            <label class="m_bottom_5 d_inline_b">Name</label>&nbsp;
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <label for="cf_name" class="m_bottom_5 d_inline_b color_dark">${user_name}</label>
+                                            <label class="m_bottom_5 d_inline_b color_dark">${user_name}</label>
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_25">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="cf_id" class="m_bottom_5 d_inline_b">Reader ID</label>&nbsp;
+                                            <label class="m_bottom_5 d_inline_b">Reader ID</label>&nbsp;
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <label for="cf_id" class="m_bottom_5 d_inline_b color_dark">${id}</label>
+                                            <label class="m_bottom_5 d_inline_b color_dark">${id}</label>
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_25">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="cf_name" class="m_bottom_5 d_inline_b color_dark">Work Unit</label>
+                                            <label class="m_bottom_5 d_inline_b color_dark">Work Unit</label>
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <label for="cf_workUnit" class="m_bottom_5 d_inline_b color_dark">${unit}</label>
+                                            <label class="m_bottom_5 d_inline_b color_dark">${unit}</label>
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_45">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="cf_email"  class="m_bottom_5 d_inline_b">E-mail</label>&nbsp;
+                                            <label class="m_bottom_5 d_inline_b">E-mail</label>&nbsp;
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <label for="cf_email" class="m_bottom_5 d_inline_b color_dark">${email}</label>
+                                            <label class="m_bottom_5 d_inline_b color_dark">${email}</label>
                                         </td>
                                     </tr>
 
                                     <tr class="m_bottom_45">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="cf_tel"  class="m_bottom_5 d_inline_b">Fine</label>&nbsp;
+                                            <label class="m_bottom_5 d_inline_b">Tel</label>&nbsp;
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <label for="cf_tel" class="m_bottom_5 d_inline_b color_dark"></label>
+                                            <label class="m_bottom_5 d_inline_b color_dark">${tel}</label>
                                         </td>
                                     </tr>
 
                                     <tr class="m_bottom_45">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="cf_tel"  class="m_bottom_5 d_inline_b">Tel</label>&nbsp;
+                                            <label class="m_bottom_5 d_inline_b">Fine</label>&nbsp;
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <label for="cf_tel" class="m_bottom_5 d_inline_b color_dark">${tel}</label>
+                                            <label class="m_bottom_5 d_inline_b color_dark">${fine}</label>
                                         </td>
                                     </tr>
+
                                     <tr class="m_bottom_25">
                                         <td width="100" height="20" align="right" valign="middle">
                                         </td>

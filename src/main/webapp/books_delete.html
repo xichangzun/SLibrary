@@ -179,12 +179,7 @@
 							"ISBN": $("#isbn").val()
 						},
 						success: function (mydata) {
-							if (mydata == "success")
-								alert("Delete Success!");
-							else if(mydata == "error")
-								alert("Delete Failed!\nPlease ensure the ISBN is correct!");
-							else
-								alert(mydata);
+							alert(mydata);
 						},
 						error: function () {
 							alert("Request Failed!Please retry it!");

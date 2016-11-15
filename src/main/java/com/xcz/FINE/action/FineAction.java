@@ -31,6 +31,7 @@ public class FineAction extends BaseAction {
         return this.getMyFineService().query(id);
     }
 
+    //查询罚款
     public void FineCallBack(){
         HttpServletRequest rq = ServletActionContext.getRequest();
         String id = rq.getParameter("id");
@@ -45,15 +46,16 @@ public class FineAction extends BaseAction {
         }
     }
 
+    //更新罚款
     public void Update(){
         HttpServletRequest rq = ServletActionContext.getRequest();
         String id = rq.getParameter("id");
         String message;
         if(this.getMyFineService().Update(id)){
-            message = "submit completed successfully";
+            message = "clear fine success!";
         }
         else {
-            message = "submit failed,try later";
+            message = "clear fine failed, please try later!";
         }
         HttpServletResponse rp = ServletActionContext.getResponse();
         rp.setContentType("text/html;charset=UTF8");

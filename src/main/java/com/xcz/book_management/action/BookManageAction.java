@@ -107,24 +107,25 @@ public class BookManageAction extends BaseAction {
     public String delBook() {
         HttpServletRequest rq = ServletActionContext.getRequest();
         String input = rq.getParameter("ISBN");
-        Boolean isDelete = bookManageService.delBookByISBN(input);
-        delFile(input);
-        if (isDelete) {
-            setAjaxResponse("text/html;charset=UTF8", SUCCESS);
-            return SUCCESS;
+        String msg;
+        try{
+            Boolean isDelete = bookManageService.delBookByISBN(input);
+            if (isDelete)
+                msg = "Delete Success!";
+            else
+                msg = "Noting is delete, please ensure ISBN is correct!";
+        } catch (Exception e) {
+            e.printStackTrace();
+            msg = "You can't delete this ISBN, because it have record in the system! ";
         }
-        else {
-            setAjaxResponse("text/html;charset=UTF8", ERROR);
-            return ERROR;
-        }
-
+        setAjaxResponse("text/html;charset=UTF8", msg);
+        return msg;
     }
 
     public String reserve(){
         HttpServletRequest rq = ServletActionContext.getRequest();
         String ISBN = rq.getParameter("ISBN");
-        SearchServiceImpl temp = new SearchServiceImpl();
-        Book[] xcz = temp.search("ISBN",ISBN);
+        Book[] xcz = bookManageService.searchAll(ISBN);
         rq.getSession().setAttribute("reserve_candid",xcz);
         return SUCCESS;
     }
@@ -151,5 +152,7 @@ public class BookManageAction extends BaseAction {
     private String getSuffix(String name){
         return name.substring(name.indexOf("."), name.length());
     }
+
+
 
 }

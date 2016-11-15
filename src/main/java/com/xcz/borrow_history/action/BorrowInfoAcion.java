@@ -127,7 +127,7 @@ public class BorrowInfoAcion extends BaseAction {
         Book temp = this.getBorrowInfoService().queryBook(book_id);
         if (temp == null) {
             result_message = "ID is Wrong!";
-        } else if (temp.getState() == "Available") {
+        } else if ("Available".equals(temp.getState())) {
             if (this.getBorrowInfoService().add(user_id, book_id)) {
                 result_message = "Borrow success";
             } else {

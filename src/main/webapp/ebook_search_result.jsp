@@ -135,6 +135,9 @@ else
                                                         <li>
                                                             Year: ${ebook.pub_year}
                                                         </li>
+                                                        <li>
+                                                            ISBN: ${ebook.ISBN}
+                                                        </li>
                                                     </ul>
                                                     </p>
                                                 </div>
@@ -251,6 +254,6 @@ else
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.custom-scrollbar.js"></script>
 <script src="js/scripts.js"></script>
-<script src="ebook_search_result.jsp"></script>
+<script src="js/ebook_search_result.js"></script>
 </body>
 </html>

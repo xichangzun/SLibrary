@@ -34,11 +34,13 @@ public class UserAction extends BaseAction {
             return ERROR;
         }
         System.out.print(SUCCESS);
+
         rq.getSession().setAttribute("user_name", xcz.getUser_name());
         rq.getSession().setAttribute("id", xcz.getId());
         rq.getSession().setAttribute("unit", xcz.getUnit());
         rq.getSession().setAttribute("email", xcz.getEmail());
         rq.getSession().setAttribute("tel", xcz.getTel());
+        /*rq.getSession().setAttribute("fine", );*/
         return SUCCESS;
     }
 
@@ -62,6 +64,9 @@ public class UserAction extends BaseAction {
         }
         if (session.getAttribute("tel") != null) {
             session.removeAttribute("tel");
+        }
+        if (session.getAttribute("fine") != null) {
+            session.removeAttribute("fine");
         }
         return SUCCESS;
     }

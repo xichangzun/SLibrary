@@ -3,6 +3,8 @@ package com.xcz.UserInfo.service;
 import com.xcz.UserInfo.domain.UserInfo;
 import com.xcz.common.BaseService;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,7 +41,12 @@ public class LoginServiceImpl extends BaseService implements LoginService {
         if (result.size() == 0){
             sql = "INSERT INTO USER VALUES ('"+userInfo.getId()+"', '"+ userInfo.getUser_name()+"', '"+userInfo.getPwd()+"', " +
                     "'"+userInfo.getUnit()+"', '"+userInfo.getEmail()+"', '"+userInfo.getTel()+"')";
-            System.out.println(sql);
+            this.getHibernateDAO().executeBySql(sql);
+            // 更新 FINE
+            Date now = new Date();
+            DateFormat dateFormat = DateFormat.getDateTimeInstance();
+            String date = dateFormat.format(now);
+            sql = "INSERT INTO FINE(user_id, payday) VALUES ('"+userInfo.getId()+"', '"+date+"')";
             this.getHibernateDAO().executeBySql(sql);
             return true;
         } else {

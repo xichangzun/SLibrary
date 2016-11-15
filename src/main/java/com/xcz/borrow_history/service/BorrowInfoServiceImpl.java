@@ -4,6 +4,7 @@ import com.mysql.jdbc.SQLError;
 import com.xcz.borrow_history.domain.BorrowHistory;
 import com.xcz.borrow_history.domain.Reservation;
 import com.xcz.common.BaseService;
+import com.xcz.constant.MyConstant;
 import com.xcz.search.domain.Book;
 import org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator;
 
@@ -113,8 +114,11 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
         date = date.replace("{1}",temp.get(Calendar.MONTH)+1+"");
         date = date.replace("{2}",temp.get(Calendar.DAY_OF_MONTH)+"");
         String sql = "INSERT INTO BORROW_HISTORY (user_id, book_id, due_date) VALUES ('"+user_id+"', '"+book_id+"','"+date+"' );";
+        String book_sql = "UPDATE BOOK SET state = '"+MyConstant.BORROWED+"' WHERE id = '"+book_id+"'";
         try {
             this.getHibernateDAO().executeBySql(sql);
+            System.out.println(book_sql);
+            this.getHibernateDAO().executeBySql(book_sql);
         }
         catch (Exception e)
         {
@@ -128,8 +132,10 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
     public String returnBook(String book_id)
     {
         String sql = "UPDATE BORROW_HISTORY SET return_date = curdate() WHERE book_id = '"+book_id+"'";
+        String book_sql = "UPDATE BOOK SET state = '"+MyConstant.AVAILABLE+"' WHERE id = '"+book_id+"'";
         try {
             this.getHibernateDAO().executeBySql(sql);
+            this.getHibernateDAO().executeBySql(book_sql);
             return "return success";
         }
         catch (Exception e) {
