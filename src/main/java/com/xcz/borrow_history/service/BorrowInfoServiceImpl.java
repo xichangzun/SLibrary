@@ -140,14 +140,24 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
         // 修改书的状态
         String sql = "UPDATE BORROW_HISTORY SET return_date = curdate() WHERE book_id = '"+book_id+"' AND return_date is NULL";
         String book_sql = "UPDATE BOOK SET state = '"+MyConstant.AVAILABLE+"' WHERE id = '"+book_id+"'";
+        String res_sql = "UPDATE RESERVATION SET state = 'ok' WHERE book_id ='"+book_id+"'";
+        String res_find_sql = "SELECT * FROM RESERVATION WHERE book_id = '"+book_id+"' AND state = 'waiting'";
         String msg;
         int historyCnt, bookCnt;
         historyCnt = bookCnt = 0;
         try {
-            // 如果有借书记录，先修改借书记录，修改成功再修改书的状态
+            // 如果有借书记录，先修改借书记录，修改成功再查看有没有预约记录，如果有，更新预约状态。通知管理员将本书收起，没有则更新书籍状态
             historyCnt = this.getHibernateDAO().updateBySql(sql);
             if (historyCnt == 1) {
-                bookCnt = this.getHibernateDAO().updateBySql(book_sql);
+                int temp = this.getHibernateDAO().findCountBySql(res_find_sql);
+                if(temp == 1){
+                    bookCnt = this.getHibernateDAO().updateBySql(res_sql);
+                    return "Return Success! This book is reserved,put it into the reservation shelf";
+                }
+                else {
+                    bookCnt = this.getHibernateDAO().updateBySql(book_sql);
+                }
+
             }
             if (bookCnt == 1) {
                 msg = "Return Success!";

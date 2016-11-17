@@ -133,13 +133,13 @@ public class BookManageAction extends BaseAction {
 
     public void ajaxRes(){
         HttpServletRequest rq = ServletActionContext.getRequest();
-        int id = Integer.parseInt(rq.getParameter("id")) ;
+        String id = rq.getParameter("id") ;
         String user_id = (String)rq.getSession().getAttribute("id");
         if(user_id == null){
             setAjaxResponse("text/html;charset=UTF8","please login first");
         }
         else {
-            String msg = bookManageService.InsertRes(user_id, id+"");
+            String msg = bookManageService.InsertRes(user_id, id);
             setAjaxResponse("text/html;charset=UTF8",msg);
         }
 

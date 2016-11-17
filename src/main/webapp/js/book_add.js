@@ -4,7 +4,7 @@
 $(function () {
     $("#form :button").click(function () {
         var ISBN = $(":input[name='ISBN']").val();
-        if( ISBN== ""){
+        if( ISBN.trim()== ""){
             alert("bad form, ISBN is required");
             return false;
         }
@@ -12,23 +12,23 @@ $(function () {
             alert("bad form,ISBN must be number");
             return false;
         }
-        else if($(":input[name='name']").val() == ""){
+        else if($(":input[name='name']").val().trim() == ""){
             alert("bad form,Book_Name is required");
             return false;
         }
-        else if($(":input[name='author']").val() == ""){
+        else if($(":input[name='author']").val().trim() == ""){
             alert("bad form, author is required");
             return false;
         }
-        else if($(":input[name='lang']").val() == ""){
+        else if($(":input[name='lang']").val().trim() == ""){
             alert("bad form , lang is required");
             return false;
         }
-        else if($(":input[name='press']").val() == ""){
+        else if($(":input[name='press']").val().trim() == ""){
             alert("bad form , press is required");
             return false;
         }
-        else if($(":input[name='pub_year']").val() == ""){
+        else if($(":input[name='pub_year']").val().trim() == ""){
             alert("bad form, pub_year is required");
             return false;
         }
@@ -36,7 +36,7 @@ $(function () {
             alert("bad form, pub_year must be int ");
             return false;
         }
-        else  if($(":input[name='amount']").val() == ""){
+        else  if($(":input[name='amount']").val().trim() == ""){
             alert("bad form, amount is required ");
             return false;
         }
@@ -44,7 +44,7 @@ $(function () {
             alert("bad form, amount must be int ");
             return false;
         }
-        else if($(":input[name='call_no']").val() == ""){
+        else if($(":input[name='call_no']").val().trim() == ""){
             alert("bad form, call_no is required ");
             return false;
         }

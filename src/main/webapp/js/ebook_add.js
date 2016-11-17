@@ -2,6 +2,39 @@
  * Created by yhq on 2016/11/10.
  */
 function submitByAjax() {
+    var ISBN = $(":input[name='ISBN']").val();
+    if( ISBN== ""){
+        alert("bad form, ISBN is required");
+        return false;
+    }
+    else if (!(/^[0-9]*$/).test(ISBN)){
+        alert("bad form,ISBN must be number");
+        return false;
+    }
+    else if($(":input[name='name']").val().trim() == ""){
+        alert("bad form,Book_Name is required");
+        return false;
+    }
+    else if($(":input[name='author']").val().trim() == ""){
+        alert("bad form, author is required");
+        return false;
+    }
+    else if($(":input[name='press']").val().trim() == ""){
+        alert("bad form , press is required");
+        return false;
+    }
+    else if($(":input[name='pub_year']").val().trim() == ""){
+        alert("bad form, pub_year is required");
+        return false;
+    }
+    else if(!(/^[0-9]*$/).test($(":input[name='pub_year']").val())){
+        alert("bad form, pub_year must be int ");
+        return false;
+    }
+    else if($(":input[name='pages']").val() != ""&& !(/^[0-9]*$/).test($(":input[name='pages']").val())){
+        alert("bad form, pages must be int ");
+        return false;
+    }
     var options = {
         url: "/EBook/add",
         type: "POST",
