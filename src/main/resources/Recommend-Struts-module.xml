@@ -6,8 +6,7 @@
 
 <struts>
     <package name="recommend" namespace="/Recommend" extends="struts-default">
-        <action name="add" class="recommendAction" method="add">
-        </action>
+        <action name="add" class="recommendAction" method="add"></action>
         <action name="get" class="recommendAction" method="queryByAjax"></action>
         <action name="updateState" class="recommendAction" method="updateState"></action>
         <action name="delete" class="recommendAction" method="delete"></action>

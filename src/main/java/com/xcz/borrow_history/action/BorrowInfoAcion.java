@@ -1,12 +1,16 @@
 package com.xcz.borrow_history.action;
 
 import com.alibaba.fastjson.JSONObject;
+import com.xcz.UserInfo.domain.UserInfo;
 import com.xcz.borrow_history.domain.BorrowHistory;
 import com.xcz.borrow_history.domain.Reservation;
 import com.xcz.borrow_history.domain.resultForRecord;
 import com.xcz.borrow_history.domain.resultForReserve;
 import com.xcz.borrow_history.service.BorrowInfoService;
 import com.xcz.common.BaseAction;
+import com.xcz.constant.MyConstant;
+import com.xcz.recommendation.domain.RecomUionPK;
+import com.xcz.recommendation.domain.Recommendation;
 import com.xcz.search.domain.Book;
 import org.apache.struts2.ServletActionContext;
 
@@ -25,6 +29,7 @@ public class BorrowInfoAcion extends BaseAction {
     private ArrayList<Book> curBorrowBooks;
     private ArrayList<Book> borrowBooks;
     private ArrayList<Book> reserveBooks;
+    private ArrayList<Recommendation> recs;
     private BorrowInfoService borrowInfoService;
     private ArrayList<BorrowHistory> borrowHistories;
 
@@ -115,7 +120,17 @@ public class BorrowInfoAcion extends BaseAction {
         } else {
             request.getSession().setAttribute("reserve_count", 0);
         }
+
+        // 查询推荐
+        recs = borrowInfoService.getRecByUser(user_id);
+        int rec_cnt = recs.size();
+        request.getSession().setAttribute("rec_count", rec_cnt);
+        request.getSession().setAttribute("recommend", recs);
         return SUCCESS;
+    }
+
+    public boolean queryUser(String id){
+        return borrowInfoService.checkUser(id);
     }
 
     // 借书
@@ -124,45 +139,46 @@ public class BorrowInfoAcion extends BaseAction {
         String book_id = rq.getParameter("book_id");
         String user_id = rq.getParameter("user_id");
         String result_message;
-        Book temp = this.getBorrowInfoService().queryBook(book_id);
-        if (temp == null) {
-            result_message = "ID is Wrong!";
-        } else if ("Available".equals(temp.getState())) {
-            if (this.getBorrowInfoService().add(user_id, book_id)) {
-                result_message = "Borrow success";
-            } else {
-                result_message = "Borrow failed,please try later";
-            }
+        // 检测书籍
+        Book book = borrowInfoService.queryBook(book_id);
+        // 检测用户
+        Boolean isUserExist = borrowInfoService.checkUser(user_id);
+        if (book == null) {
+            result_message = "This book is not exit!";
+        } else if(isUserExist == false) {
+            result_message = "This user ID is not registered!";
+        } else if(borrowInfoService.getFine(user_id) > 3.0) {
+            result_message = "Fine of this reader is more than $3.0!\nThe fine must be paid first!";
+        }  else if (MyConstant.AVAILABLE.equals(book.getState())) {
+            result_message = borrowInfoService.add(user_id, book_id);
+        } else if (MyConstant.BORROWED.equals(book.getState())){
+            result_message = "This book is borrowed!";
+        } else if (MyConstant.RESERVED.equals(book.getState())) {
+            result_message = "This book is reserved!";
         } else {
-            result_message = "This book has been reserved";
+            result_message = "Book status is unknown!";
         }
         JSONObject a = new JSONObject();
         a.put("message", result_message);
-        HttpServletResponse rp = ServletActionContext.getResponse();
-        rp.setContentType("text/html;charset=UTF8");
-        try {
-            rp.getWriter().append(a.toJSONString());
-            rp.getWriter().close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        setAjaxResponse("text/html;charset=UTF8", a.toJSONString());
         return;
     }
 
     public void returnBook() {
         HttpServletRequest rq = ServletActionContext.getRequest();
         String book_id = rq.getParameter("book_id");
-        String result_message = this.getBorrowInfoService().returnBook(book_id);
-        JSONObject a = new JSONObject();
-        a.put("message", result_message);
-        HttpServletResponse rp = ServletActionContext.getResponse();
-        rp.setContentType("text/html;charset=UTF8");
-        try {
-            rp.getWriter().append(a.toJSONString());
-            rp.getWriter().close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        Book book = borrowInfoService.queryBook(book_id);
+        String msg;
+        JSONObject json = new JSONObject();
+        // 检测书本是否存在
+        if (book != null) {
+            String result_message = this.getBorrowInfoService().returnBook(book_id);
+            json.put("message", result_message);
+        } else {
+            json.put("message", "This book is not exist!");
         }
+        msg = json.toJSONString();
+        setAjaxResponse("text/html;charset=UTF8", msg);
         return;
     }
 

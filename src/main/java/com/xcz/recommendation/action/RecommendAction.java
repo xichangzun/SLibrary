@@ -47,11 +47,18 @@ public class RecommendAction extends BaseAction {
         recommendation.setLang(rq.getParameter("lang"));
         recommendation.setAuthor(rq.getParameter("author"));
         recommendation.setPress(rq.getParameter("press"));
-        recommendation.setPrice(Float.parseFloat(rq.getParameter("price")));
+        Float price = 0f;
+        if (!rq.getParameter("price").equals(""))
+            try{
+                price = Float.parseFloat(rq.getParameter("price"));
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        recommendation.setPrice(price);
         recommendation.setAmount(Integer.parseInt(rq.getParameter("amount")));
         recommendation.setReason(rq.getParameter("reason"));
         recommendation.setState(UNHANDLE);
-        setAjaxResponse("text/html;charset=UTF8",this.getService().addrecommend(recommendation)?SUCCESS:ERROR );
+        setAjaxResponse("text/html;charset=UTF8",this.getService().addrecommend(recommendation));
         return SUCCESS;
     }
 

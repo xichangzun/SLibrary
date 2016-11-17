@@ -51,22 +51,31 @@ public class BookManageServiceImpl extends BaseService implements BookManageServ
     @Override
     public Boolean Insert(String book_name){
         String sql = "INSERT into UPRECORD (type, title, add_time)VALUE ('BOOK','"+book_name+"',sysdate())";
-        return this.getHibernateDAO().executeBySql(sql);
+        int cnt = this.getHibernateDAO().updateBySql(sql);
+        return cnt == 1 ? true: false;
     }
 
-    public Boolean InsertRes(String user_id,String id){
+    // 在RESERVATION表中插入记录，修改BOOK表中对应书的状态
+    public String InsertRes(String user_id,String id){
+        String msg;
         try {
             String sql = "INSERT INTO RESERVATION(user_id, book_id, res_date, state) VALUE ('"+user_id+"','"+id+"',sysdate(),'waiting')";
-            this.getHibernateDAO().executeBySql(sql);
-            sql = "UPDATE BOOK SET state = 'Reserved' WHERE id ="+id;
-            this.getHibernateDAO().executeBySql(sql);
+            // 插入数据成功才修改书的状态
+            if (this.getHibernateDAO().updateBySql(sql) == 1) {
+                sql = "UPDATE BOOK SET state = 'Reserved' WHERE id =" + id;
+                this.getHibernateDAO().updateBySql(sql);
+                msg = "Reserve Success!";
+            } else {
+                msg = "Reserve Failed!\n";
+            }
         }catch (Exception e){
             e.printStackTrace();
-            return false;
+            msg = "Reserve Error!";
         }
-        return true;
+        return msg;
     }
 
+    // 查询相同ISBN下的所有书
     public Book[] searchAll(String ISBN) {
         String sql = "SELECT * FROM BOOK WHERE ISBN = '"+ ISBN + "' ORDER BY pub_year DESC";
         List result = this.getHibernateDAO().findBySql(sql);

@@ -24,11 +24,11 @@ $(function () {
             return false;
         }
         if($("#cf_subject").val()==""||!(/^[0-9]*$/).test($("#cf_subject").val())){
-            alert("please input the right amount");
+            alert("Please input amount correctly!");
             return false;
         }
-        if($("#cf_message").text() ==""){
-            alert("why you want to add this recommend?you must have reason");
+        if($("#cf_message").val() ==""){
+            alert("Why you want to add this recommend?\nReason is required!");
             return false;
         }
 
@@ -37,12 +37,7 @@ $(function () {
             type: "POST",
             resetForm: false,
             success: function (mydata) {
-                if (mydata == "success")
-                    alert("Recommend Success!");
-                else if (mydata == "error")
-                    alert("Recommend Failed! try later");
-                else
-                    alert(mydata);
+                alert(mydata);
             },
             error: function () {
                 alert("Request failed! Please retry it!");

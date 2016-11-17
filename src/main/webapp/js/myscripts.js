@@ -10,7 +10,7 @@ $(function () {
         $.post("/BorrowHistory/borrow", json, function (mydata) {
             mydata = $.parseJSON(mydata);
             if (!mydata) {
-                alert("something wrong");
+                alert("Borrow Error!");
             }
             else {
                 alert(mydata.message);
@@ -55,7 +55,7 @@ $(function () {
             }
         });
         if(temp){
-            alert("you can't submit until you fill the form correctly");
+            alert("You can't submit until you fill the form correctly");
             return false;
         } else{
             var options = {

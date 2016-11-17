@@ -122,11 +122,12 @@ public class BookManageAction extends BaseAction {
         return msg;
     }
 
+    // 动态生成书的表格
     public String reserve(){
         HttpServletRequest rq = ServletActionContext.getRequest();
         String ISBN = rq.getParameter("ISBN");
         Book[] xcz = bookManageService.searchAll(ISBN);
-        rq.getSession().setAttribute("reserve_candid",xcz);
+        rq.getSession().setAttribute("all_isbn", xcz);
         return SUCCESS;
     }
 
@@ -138,7 +139,8 @@ public class BookManageAction extends BaseAction {
             setAjaxResponse("text/html;charset=UTF8","please login first");
         }
         else {
-            setAjaxResponse("text/html;charset=UTF8",this.getBookManageService().InsertRes(user_id,id+"")?SUCCESS:ERROR);
+            String msg = bookManageService.InsertRes(user_id, id+"");
+            setAjaxResponse("text/html;charset=UTF8",msg);
         }
 
     }
@@ -152,7 +154,5 @@ public class BookManageAction extends BaseAction {
     private String getSuffix(String name){
         return name.substring(name.indexOf("."), name.length());
     }
-
-
 
 }

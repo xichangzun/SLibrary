@@ -13,13 +13,7 @@
         <action name="logout" class="loginAction" method="logout">
             <result name="success" type="redirect">/index.jsp</result>
         </action>
-        <action name="change" class="loginAction" method="changePWD">
-            <result name="success" type="redirect">/changepwd.jsp</result>
-            <result name="error" type="redirect">/changepwd.jsp</result>
-        </action>
-        <action name="register" class="loginAction" method="register">
-            <!--<result name="success" type="redirect">/index.jsp</result>
-            <result name="error" type="redirect">/user_register.jsp</result>-->
-        </action>
+        <action name="change" class="loginAction" method="changePWD"></action>
+        <action name="register" class="loginAction" method="register"></action>
     </package>
 </struts>

@@ -55,9 +55,9 @@ public class SearchServiceImpl extends BaseService implements SearchService {
             String k = keyword.replace(' ','%');
             mySql = sql.replace("?", "author LIKE BINARY '%" + k + "%'");
         } else if (type.equals("ISBN")){
-            mySql = sql.replace("?", "book_name LIKE BINARY '%" + keyword + "%'");
+            mySql = sql.replace("?", "ISBN ='"+ keyword +"'");
         } else {
-                System.out.println("Undefined Type!");
+                System.out.println("Undefined Search Type!");
         }
         return mySql;
     }

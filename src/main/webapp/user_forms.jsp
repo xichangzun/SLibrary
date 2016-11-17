@@ -100,7 +100,7 @@
             <div class="row clearfix">
                 <!--left content column-->
                 <section >
-                    <h2 class="tt_uppercase color_dark m_bottom_25">My Circulation</h2>
+                    <h2 class="tt_uppercase color_dark m_bottom_25">My BookInfo</h2>
                     <!--sort-->
                     <div class="row clearfix m_bottom_10"></div>
 
@@ -128,7 +128,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Recommendation Requests</th>
-                                                <td><a href="javascript:show_recom()">${reserve_count}</a></td>
+                                                <td><a href="javascript:show_recom()">${rec_count}</a></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -136,6 +136,7 @@
                                     <figure class="r_corners photoframe tr_all_hover type_2 shadow relative clearfix">
 
                                         <div style="text-align:center; "class="table_sm_wrap r_corners wrapper shadow bg_light_color_1 m_bottom_30">
+                                            <!-- 历史借阅 -->
                                             <table id="lishijilu" style="display: none;padding:0 50px" class="table_type_8 full_width">
                                                 <tbody>
                                                 <tr class="f_size_large">
@@ -145,18 +146,18 @@
                                                     <th style="width:150px">Due Date</th>
                                                     <th style="width:150px">Return Date</th>
                                                 </tr>
-                                                <s:iterator value="#attr.borrow_books" id ="book">
+                                                <s:iterator value="#attr.borrow_books" id ="history">
                                                     <tr>
-                                                        <td>${book.book_name}</td>
-                                                        <td>${book.author}</td>
-                                                        <td>${book.pub_year}</td>
-                                                        <td>${book.due_date}</td>
-                                                        <td>${book.return_date}</td>
+                                                        <td>${history.book_name}</td>
+                                                        <td>${history.author}</td>
+                                                        <td>${history.pub_year}</td>
+                                                        <td>${history.due_date}</td>
+                                                        <td>${history.return_date}</td>
                                                     </tr>
                                                 </s:iterator>
                                                 </tbody>
                                             </table>
-                                            <!-- add yujie -->
+                                            <!-- 预约 -->
                                             <table id="yuyue" style="display: none;padding:0 100px" class=" table_type_8 full_width">
                                                 <tbody>
                                                 <tr class="f_size_large">
@@ -164,17 +165,16 @@
                                                     <th style="width:300px">Author</th>
                                                     <th style="width:250px">Request Status</th>
                                                 </tr>
-                                                <s:iterator value="#attr.reserve_books" id = "book">
+                                                <s:iterator value="#attr.reserve_books" id = "reserve">
                                                     <tr>
-                                                        <td>${book.book_name}</td>
-                                                        <td>${book.author}</td>
-                                                        <td>${book.status}</td>
+                                                        <td>${reserve.book_name}</td>
+                                                        <td>${reserve.author}</td>
+                                                        <td>${reserve.status}</td>
                                                     </tr>
                                                 </s:iterator>
                                                 </tbody>
                                             </table>
-                                            <!--  end-->
-                                            <!-- chencunxiang add -->
+                                            <!-- 当前外借 -->
                                             <table id="waijie" style="display: none;padding:0 50px" class=" table_type_2 full_width">
                                                 <tbody>
                                                 <tr class="f_size_large">
@@ -184,19 +184,19 @@
                                                     <th style="width:150px">ISBN</th>
                                                     <th style="width:150px">Call Number</th>
                                                 </tr>
-                                                <s:iterator value="#attr.cur_borrow_books" id = "book">
+                                                <s:iterator value="#attr.cur_borrow_books" id = "cur_borrow">
                                                     <tr >
-                                                        <td>${book.book_name}</td>
-                                                        <td>${book.author}</td>
-                                                        <td>${book.pub_year}</td>
-                                                        <td>${book.ISBN}</td>
-                                                        <td>${book.call_no}</td>
+                                                        <td>${cur_borrow.book_name}</td>
+                                                        <td>${cur_borrow.author}</td>
+                                                        <td>${cur_borrow.pub_year}</td>
+                                                        <td>${cur_borrow.ISBN}</td>
+                                                        <td>${cur_borrow.call_no}</td>
                                                     </tr>
                                                 </s:iterator>
 
                                                 </tbody>
                                             </table>
-                                            <!-- add end -->
+                                            <!-- 推荐 -->
                                             <table id="recom" style="display: none;padding:0 100px" class=" table_type_8 full_width">
 								                <tbody>
 							                      	<tr class="f_size_large">
@@ -204,11 +204,13 @@
 	                                                    <th style="width:300px">ISBN</th>
 	                                                    <th style="width:250px">Status</th>
 	                                                </tr>
-                                                    <tr >
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
+                                                    <s:iterator value="#attr.recommend" id = "recommend">
+                                                        <tr >
+                                                            <td>${recommend.book_name}</td>
+                                                            <td>${recommend.uionPK.ISBN}</td>
+                                                            <td>${recommend.state}</td>
+                                                        </tr>
+                                                    </s:iterator>
 							                    </tbody>
 						                  	</table>
                                         </div>

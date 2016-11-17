@@ -11,7 +11,7 @@
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 <head>
-    <title>Slibrary - News Detail</title>
+    <title>All Volume</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--meta info-->
@@ -40,27 +40,73 @@
         }
     </style>
 </head>
-<body>
+
+<%
+    if(session.getAttribute("id") != null)
+    {
+
+%>
+<script language="javascript">
+    function init()
+    {
+        document.getElementById("LoginButton").style.display = "none";
+        document.getElementById("ReButton").style.display = "none";
+        document.getElementById("InfoButton").style.display = "inline";
+        document.getElementById("CheckOutButton").style.display = "inline";
+    }
+</script>
+<%
+}
+else if(session.getAttribute("error") != null)
+{
+%>
+<script language="javascript">
+    function init()
+    {
+        alert("username or password wrong");
+        document.getElementById("LoginButton").style.display = "inline";
+        document.getElementById("ReButton").style.display = "inline";
+        document.getElementById("InfoButton").style.display = "none";
+        document.getElementById("CheckOutButton").style.display = "none";
+    }
+</script>
+<%
+}
+else
+{
+%>
+<script language="javascript">
+    function init()
+    {
+        document.getElementById("InfoButton").style.display = "none";
+        document.getElementById("CheckOutButton").style.display = "none";
+
+    }
+</script>
+<%
+    }
+%>
+
+<body onload="init()">
 <!--wide layout-->
 <div class="wide_layout relative">
-
     <!--markup header-->
     <header role="banner">
         <!--header bottom part-->
         <section class="h_bot_part container">
             <div class="clearfix row">
                 <div class="col-lg-8 col-md-6 col-sm-4 t_xs_align_c">
-                    <a href="index.html" class="logo m_xs_bottom_15 d_xs_inline_b">
+                    <a href="index.jsp" class="logo m_xs_bottom_15 d_xs_inline_b">
                         <img src="images/logo.png" alt="">
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
                     <div class="row clearfix">
                         <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
-                            <li><a href="#" data-popup="#login_popup">Log In</a></li>
-
-                            <li><a href="user_info.html" class="default_t_color">My Account</a></li>
-                            <li><a href="index.html" class="default_t_color">Checkout</a></li>
+                            <li id="LoginButton"><a href="#" data-popup="#login_popup">Log In</a></li>
+                            <li id="ReButton"><a href="user_register.html" class="default_t_color">Register</a></li>
+                            <li id="InfoButton"><a href="user_info.jsp" class="default_t_color">My Account</a></li>
+                            <li id="CheckOutButton"><a href="/User/logout" class="default_t_color">Checkout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -72,7 +118,7 @@
         <div class="container">
             <ul class="horizontal_list clearfix bc_list f_size_medium">
                 <li class="m_right_10"><a href="index.jsp" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-                <li class="m_right_10"><a href="book_detail.html" class="current default_t_color">Book Detail<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+                <li class="m_right_10"><a href="#" class="current default_t_color">Book Detail<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
                 <li><a href="#" class="current default_t_color">All Volume</a></li>
             </ul>
         </div>
@@ -92,7 +138,7 @@
                     <div class="clearfix m_bottom_30">
                         <figure>
                             <div class="row clearfix r_corners photoframe  shadow m_bottom_45">
-                                <h2 style="margin:40px 40px" class="tt_uppercase color_dark m_bottom_30">${reserve_candid[0].book_name}</h2><input id = 'ISBN'type="hidden" value="${reserve_candid[0].ISBN}">
+                                <h2 style="margin:40px 40px" class="tt_uppercase color_dark m_bottom_30">${all_isbn[0].book_name}</h2><input id = 'ISBN'type="hidden" value="${all_isbn[0].ISBN}">
                                 <hr style="margin:0px 40px" >
                                 <figcaption style="margin:0px 40px 40px 30px"  class="f_size_large">
                                     <table style="text-align:center" class="table_type_2 responsive_table full_width r_corners wraper shadow bg_light_color_1 m_bottom_30">
@@ -106,9 +152,9 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <s:iterator value="#attr.reserve_candid" id ="item" status="index">
+                                        <s:iterator value="#attr.all_isbn" id ="item" status="index">
                                             <tr>
-                                                <s:if test="item.state!='Available'">
+                                                <s:if test="#item.state == 'Borrowed'">
                                                     <!--Reserve-->
                                                     <td>
                                                         <button class="button_type_15 bg_scheme_color r_corners tr_all_hover color_light mw_0">Reserve</button><br>
@@ -122,7 +168,7 @@
                                                 <!--Book Status-->
                                                 <td>${item.state}</td>
                                                 <!--Book Call_no-->
-                                                <td>${item.call_no }</td>
+                                                <td>${item.call_no}</td>
                                             </tr>
                                         </s:iterator>
                                         </tbody>

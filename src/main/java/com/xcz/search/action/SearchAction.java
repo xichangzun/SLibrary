@@ -30,8 +30,6 @@ public class SearchAction extends BaseAction {
         String keyword = rq.getParameter("keyword");
         String type = rq.getParameter("type");
         String page = rq.getParameter("page_index");
-        /*System.out.println("keyword is " + keyword);
-        System.out.println("type is " + type);*/
         int index = Integer.parseInt(page);
         Book[] true_result;
         if (index == 0) {
@@ -42,7 +40,7 @@ public class SearchAction extends BaseAction {
         }
 
         if (true_result == null || true_result.length == 0) {
-            System.out.print("error");
+            System.out.println("no book result");
             rq.getSession().removeAttribute("result");
             rq.getSession().setAttribute("PageCount", 0);
             return ERROR;

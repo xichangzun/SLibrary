@@ -1,6 +1,5 @@
 package com.xcz.UserInfo.action;
 
-
 import com.xcz.UserInfo.domain.UserInfo;
 import com.xcz.UserInfo.service.LoginService;
 import com.xcz.common.BaseAction;
@@ -40,7 +39,8 @@ public class UserAction extends BaseAction {
         rq.getSession().setAttribute("unit", xcz.getUnit());
         rq.getSession().setAttribute("email", xcz.getEmail());
         rq.getSession().setAttribute("tel", xcz.getTel());
-        /*rq.getSession().setAttribute("fine", );*/
+        Double fine = loginService.getFine(id);
+        rq.getSession().setAttribute("fine", fine.toString());
         return SUCCESS;
     }
 
@@ -75,14 +75,18 @@ public class UserAction extends BaseAction {
         HttpServletRequest rq = ServletActionContext.getRequest();
         String checkpwd = (String) rq.getParameter("checkpwd");
         String new_password = (String) rq.getParameter("new_password");
+        String msg;
+        // 检测用户密码
         if (this.getLoginService().check(xcz.getId(), checkpwd) != null) {
-            this.getLoginService().changePassWord(xcz.getId(), new_password);
-            System.out.print("success");
-            return SUCCESS;
+            if (this.getLoginService().changePassWord(xcz.getId(), new_password))
+                msg = "You password changed success!";
+            else
+                msg = "Change password failed!";
         } else {
-            System.out.print("wrong! Account is not exist");
-            return ERROR;
+            msg = "Please check you old password!";
         }
+        setAjaxResponse("text/html;charset=UTF8", msg);
+        return msg;
     }
 
     public String register(){

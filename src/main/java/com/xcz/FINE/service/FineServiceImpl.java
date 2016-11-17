@@ -59,8 +59,8 @@ public class FineServiceImpl extends BaseService implements FineService {
         try{
             this.getHibernateDAO().executeBySql(sql);
             return true;
-        }catch (Exception ie){
-            ie.printStackTrace();
+        }catch (Exception e){
+            e.printStackTrace();
             return false;
         }
     }

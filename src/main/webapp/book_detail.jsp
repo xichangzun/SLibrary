@@ -54,24 +54,6 @@
         <!--main menu container-->
     </header>
     <!--breadcrumbs-->
-    <%--<section class="breadcrumbs">
-        <div class="container">
-            <form method="post" action="/Search/execute" >
-                <!-- filename: find-code-include -->
-                <div style="margin-top:1px" class="custom_select f_size_medium relative f_left">
-                    <div class="select_title r_corners relative color_dark">Book Name</div>
-                    <ul class="select_list d_none"></ul>
-                    <select name="type">
-                        <option value="Book Name">Book Name</option>
-                        <option value="Author">Author</option>
-                        <option value="ISBN">ISBN</option>
-                    </select>
-                </div>
-                <input autocomplete="off" class=" r_corners" style="width:30%; height:29px;" name="keyword"> &nbsp;
-                <input style="height:30px" class="button_type_9 r_corners t_align_c" id="lookup" value="  Search  " type="submit">
-            </form>
-        </div>
-    </section>--%>
     <!--content-->
     <div class="page_content_offset">
         <div class="container">

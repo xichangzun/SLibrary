@@ -11,6 +11,6 @@ public interface BookManageService  {
     Boolean delBookById(String id);
     int getBookCount(String ISBN);
     Boolean Insert(String book_name);
-    Boolean InsertRes(String user_id,String id);
+    String InsertRes(String user_id,String id);
     Book[] searchAll(String ISBN);
 }

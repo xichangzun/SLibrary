@@ -93,17 +93,17 @@
                             <h3 class="tt_uppercase color_dark m_bottom_5">&nbsp;</h3>
                             <h2 class="tt_uppercase color_dark m_bottom_25">Change Password</h2>
 
-                            <form  action="/User/change" method="post">
+                            <form id="form" action="/User/change" method="post">
 
                                 <table style="font-size:16px">
                                     <tr class="m_bottom_45">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="password"  class="m_bottom_5 d_inline_b">User ID</label>&nbsp;
+                                            <label  class="m_bottom_5 d_inline_b">User ID</label>&nbsp;
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <label for="password" class="m_bottom_5 d_inline_b color_dark">${id}</label>
+                                            <label class="m_bottom_5 d_inline_b color_dark">${id}</label>
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_25">
@@ -118,32 +118,32 @@
                                     </tr>
                                     <tr class="m_bottom_25">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="password" class="required d_inline_b m_bottom_5">Old Password</label>
+                                            <label class="required d_inline_b m_bottom_5">Old Password</label>
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <input type="password" id="oldpassword" name="checkpwd" class="full_width r_corners">
+                                            <input type="password" id="old_pwd" name="checkpwd" class="full_width r_corners">
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_25">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="password" class="required d_inline_b m_bottom_5">New Password</label>
+                                            <label class="required d_inline_b m_bottom_5">New Password</label>
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <input type="password" id="newpassword" name="new_password" class="full_width r_corners">
+                                            <input type="password" id="new_pwd" name="new_password" class="full_width r_corners">
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_25">
                                         <td width="200" height="50" align="right" valign="middle">
-                                            <label for="password" class="required d_inline_b m_bottom_5">Confirm Password</label>
+                                            <label class="required d_inline_b m_bottom_5">Confirm Password</label>
                                         </td>
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="left" valign="middle">
-                                            <input type="password" id="confirmpassword" name="cf_password" class="full_width r_corners">
+                                            <input type="password" id="confirm_pwd" name="cf_password" class="full_width r_corners">
                                         </td>
                                     </tr>
                                     <tr class="m_bottom_25">
@@ -156,7 +156,7 @@
                                         <td width="40" height="50" align="right" valign="middle">
                                         </td>
                                         <td width="300" height="50" align="center" valign="middle">
-                                            <button  class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove" type="submit"  value="Submit">Save</button>
+                                            <button onclick="submitMyForm()" type="button" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hove">Save</button>
 
                                         </td>
                                     </tr>
@@ -222,8 +222,41 @@
 </div>
 
 <button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
+
+<script>
+       function submitMyForm() {
+            if($("#old_pwd").val()==""){
+                alert("please input the old password!");
+                return false;
+            }
+            if($("#new_pwd").val() ==""){
+                alert("please input the new password");
+                return false;
+            }
+            if ($("#confirm_pwd").val() != $("#new_pwd").val()){
+                alert("Two password is different!");
+                return false;
+            }
+
+            var options = {
+                url: "/User/change",
+                type: "POST",
+                resetForm: true,
+                success: function (mydata) {
+                    alert(mydata);
+                },
+                error: function () {
+                    alert("Request failed! Please retry it!");
+                }
+            };
+            $("#form").ajaxSubmit(options);
+            return false;
+        };
+</script>
+
 <!--scripts include-->
 <script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery.form.min.js"></script>
 <script src="js/user_nav.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/retina.js"></script>
