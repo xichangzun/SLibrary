@@ -15,5 +15,6 @@
         </action>
         <action name="change" class="loginAction" method="changePWD"></action>
         <action name="register" class="loginAction" method="register"></action>
+        <action name="ajaxlogin" class="loginAction" method="ajaxlogin"></action>
     </package>
 </struts>
