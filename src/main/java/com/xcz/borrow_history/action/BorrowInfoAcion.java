@@ -145,16 +145,26 @@ public class BorrowInfoAcion extends BaseAction {
         Boolean isUserExist = borrowInfoService.checkUser(user_id);
         if (book == null) {
             result_message = "This book is not exit!";
-        } else if(isUserExist == false) {
+        } else if(!isUserExist) {
             result_message = "This user ID is not registered!";
         } else if(borrowInfoService.getFine(user_id) > 3.0) {
             result_message = "Fine of this reader is more than $3.0!\nThe fine must be paid first!";
-        }  else if (MyConstant.AVAILABLE.equals(book.getState())) {
+        }
+        else if (MyConstant.AVAILABLE.equals(book.getState())) {
             result_message = borrowInfoService.add(user_id, book_id);
         } else if (MyConstant.BORROWED.equals(book.getState())){
             result_message = "This book is borrowed!";
         } else if (MyConstant.RESERVED.equals(book.getState())) {
-            result_message = "This book is reserved!";
+            if(borrowInfoService.getRes(book_id).equals(user_id)){
+                if(borrowInfoService.deleteRes(user_id,book_id) != 1){
+                    result_message = "Borrow Failed,can't delete the reservation";
+                }
+                else {
+                    result_message = borrowInfoService.add(user_id,book_id);
+                }
+            }else {
+                result_message = "This book is reserved!";
+            }
         } else {
             result_message = "Book status is unknown!";
         }

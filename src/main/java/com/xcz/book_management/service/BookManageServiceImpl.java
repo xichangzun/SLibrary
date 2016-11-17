@@ -59,6 +59,12 @@ public class BookManageServiceImpl extends BaseService implements BookManageServ
     public String InsertRes(String user_id,String id){
         String msg;
         try {
+            String check = "SELECT * FROM BORROW_HISTORY WHERE book_id = '"+id+"' AND  user_id = '"+user_id+"' AND BORROW_HISTORY.return_date IS NULL ";
+            int t = this.getHibernateDAO().findCountBySql(check);
+            if(t == 1){
+                msg = "Reserve Failed,you have borrowed this book and not returned";
+                return msg;
+            }
             String sql = "INSERT INTO RESERVATION(user_id, book_id, res_date, state) VALUE ('"+user_id+"','"+id+"',sysdate(),'waiting')";
             // 插入数据成功才修改书的状态
             if (this.getHibernateDAO().updateBySql(sql) == 1) {

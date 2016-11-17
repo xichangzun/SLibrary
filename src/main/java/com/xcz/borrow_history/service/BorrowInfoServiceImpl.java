@@ -178,12 +178,20 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
     public Boolean checkUser(String id) {
         String sql = "SELECT * FROM USER WHERE id = '"+id+"'";
         int cnt = this.getHibernateDAO().findCountBySql(sql);
-        return cnt == 1 ? true : false;
+        return cnt == 1 ;
     }
 
     @Override
     public Double getFine(String id) {
         return queryAllFine(id);
+    }
+
+
+    public String getRes(String id){
+        String sql = "SELECT user_id FROM RESERVATION WHERE book_id = '"+id+"'AND state = 'ok'";
+        List xcz = getHibernateDAO().find(sql);
+        Object[] user_id = (Object[])xcz.get(0);
+        return  (String) user_id[0];
     }
 
     public ArrayList<Recommendation> getRecByUser(String id) {
@@ -212,4 +220,10 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
         }
         return data;
     }
+
+    public int deleteRes(String user_id,String book_id){
+        String sql = "DELETE FROM RESERVATION WHERE user_id ='"+user_id+"' AND  book_id = '"+book_id+"'";
+        return this.getHibernateDAO().updateBySql(sql);
+    }
+
 }

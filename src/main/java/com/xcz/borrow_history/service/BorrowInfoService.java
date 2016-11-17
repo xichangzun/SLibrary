@@ -20,4 +20,6 @@ public interface BorrowInfoService {
     Boolean checkUser(String id);
     Double getFine(String id);
     ArrayList<Recommendation> getRecByUser(String id);
+    String getRes(String id);
+    int deleteRes(String user_id,String book_id);
 }

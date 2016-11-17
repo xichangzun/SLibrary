@@ -133,3 +133,12 @@ INSERT INTO slibrary.book (id, book_name, ISBN, lang, author, press, pub_year, c
 INSERT INTO slibrary.book (id, book_name, ISBN, lang, author, press, pub_year, call_no, pages, size, cover) VALUES ('97871151722591', 'Embedded Linux', '9787115172259', 'EN', 'Hallinan,Christopher', 'The People''s Posts', 2008, 'TP316.89/H189', 537, 25, 'pictures/9787115172259.jpg');
 INSERT INTO slibrary.book (id, book_name, ISBN, lang, author, press, pub_year, call_no, pages, size, cover) VALUES ('97873012617501', 'A history of philosophy', '9787301261750', 'EN', 'Thilly, Frank', 'Peking University', 2015, 'B5/T441', 612, 23, 'pictures/9787301261750.jpg');
 INSERT INTO slibrary.book (id, book_name, ISBN, lang, author, press, pub_year, call_no, pages, size, cover) VALUES ('97875641460161', 'Linux system programming', '9787564146016', 'EN', 'Robert', 'Southeast University', 2014, 'TP316.89/L897', 429, 24, 'pictures/9787564146016.jpg');
+
+
+
+
+CREATE EVENT event_delnull
+  ON SCHEDULE
+    EVERY 1440 MINUTE STARTS '2016-01-01 00:00:00' ENDS '2016-12-31 00:00:00'
+DO
+  DELETE FROM RESERVATION WHERE TIMEDIFF(SYSDATE(),res_date)>'960:00:00';

@@ -41,77 +41,31 @@
     </style>
 </head>
 
-<%
-    if(session.getAttribute("id") != null)
-    {
-
-%>
-<script language="javascript">
-    function init()
-    {
-        document.getElementById("LoginButton").style.display = "none";
-        document.getElementById("ReButton").style.display = "none";
-        document.getElementById("InfoButton").style.display = "inline";
-        document.getElementById("CheckOutButton").style.display = "inline";
-    }
-</script>
-<%
-}
-else if(session.getAttribute("error") != null)
-{
-%>
-<script language="javascript">
-    function init()
-    {
-        alert("username or password wrong");
-        document.getElementById("LoginButton").style.display = "inline";
-        document.getElementById("ReButton").style.display = "inline";
-        document.getElementById("InfoButton").style.display = "none";
-        document.getElementById("CheckOutButton").style.display = "none";
-    }
-</script>
-<%
-}
-else
-{
-%>
-<script language="javascript">
-    function init()
-    {
-        document.getElementById("InfoButton").style.display = "none";
-        document.getElementById("CheckOutButton").style.display = "none";
-
-    }
-</script>
-<%
-    }
-%>
-
-<body onload="init()">
+<body >
 <!--wide layout-->
 <div class="wide_layout relative">
     <!--markup header-->
     <header role="banner">
         <!--header bottom part-->
-        <section class="h_bot_part container">
-            <div class="clearfix row">
-                <div class="col-lg-8 col-md-6 col-sm-4 t_xs_align_c">
-                    <a href="index.jsp" class="logo m_xs_bottom_15 d_xs_inline_b">
-                        <img src="images/logo.png" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">
-                    <div class="row clearfix">
-                        <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">
-                            <li id="LoginButton"><a href="#" data-popup="#login_popup">Log In</a></li>
-                            <li id="ReButton"><a href="user_register.html" class="default_t_color">Register</a></li>
-                            <li id="InfoButton"><a href="user_info.jsp" class="default_t_color">My Account</a></li>
-                            <li id="CheckOutButton"><a href="/User/logout" class="default_t_color">Checkout</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <%--<section class="h_bot_part container">--%>
+            <%--<div class="clearfix row">--%>
+                <%--<div class="col-lg-8 col-md-6 col-sm-4 t_xs_align_c">--%>
+                    <%--<a href="index.jsp" class="logo m_xs_bottom_15 d_xs_inline_b">--%>
+                        <%--<img src="images/logo.png" alt="">--%>
+                    <%--</a>--%>
+                <%--</div>--%>
+                <%--<div class="col-lg-4 col-md-6 col-sm-8 t_xs_align_c t_align_r m_xs_bottom_0">--%>
+                    <%--<div class="row clearfix">--%>
+                        <%--<ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">--%>
+                            <%--<li id="LoginButton"><a href="#" data-popup="#login_popup">Log In</a></li>--%>
+                            <%--<li id="ReButton"><a href="user_register.html" class="default_t_color">Register</a></li>--%>
+                            <%--<li id="InfoButton"><a href="user_info.jsp" class="default_t_color">My Account</a></li>--%>
+                            <%--<li id="CheckOutButton"><a href="/User/logout" class="default_t_color">Checkout</a></li>--%>
+                        <%--</ul>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</section>--%>
     </header>
     <!--breadcrumbs-->
     <section class="breadcrumbs">
