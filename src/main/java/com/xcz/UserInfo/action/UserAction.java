@@ -125,6 +125,6 @@ public class UserAction extends BaseAction {
         rq.getSession().setAttribute("tel", xcz.getTel());
         Double fine = loginService.getFine(id);
         rq.getSession().setAttribute("fine", fine.toString());
-        setAjaxResponse("text/html;charset=UTF8","login success");
+        setAjaxResponse("text/html;charset=UTF8",SUCCESS);
     }
 }

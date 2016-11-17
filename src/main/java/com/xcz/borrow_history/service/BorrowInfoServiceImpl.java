@@ -189,7 +189,7 @@ public class BorrowInfoServiceImpl extends BaseService implements BorrowInfoServ
 
     public String getRes(String id){
         String sql = "SELECT user_id FROM RESERVATION WHERE book_id = '"+id+"'AND state = 'ok'";
-        List xcz = getHibernateDAO().find(sql);
+        List xcz = getHibernateDAO().findBySql(sql);
         Object[] user_id = (Object[])xcz.get(0);
         return  (String) user_id[0];
     }

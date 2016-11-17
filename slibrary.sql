@@ -135,10 +135,8 @@ INSERT INTO slibrary.book (id, book_name, ISBN, lang, author, press, pub_year, c
 INSERT INTO slibrary.book (id, book_name, ISBN, lang, author, press, pub_year, call_no, pages, size, cover) VALUES ('97875641460161', 'Linux system programming', '9787564146016', 'EN', 'Robert', 'Southeast University', 2014, 'TP316.89/L897', 429, 24, 'pictures/9787564146016.jpg');
 
 
-
-
 CREATE EVENT event_delnull
   ON SCHEDULE
     EVERY 1440 MINUTE STARTS '2016-01-01 00:00:00' ENDS '2016-12-31 00:00:00'
-DO
+  DO
   DELETE FROM RESERVATION WHERE TIMEDIFF(SYSDATE(),res_date)>'960:00:00';

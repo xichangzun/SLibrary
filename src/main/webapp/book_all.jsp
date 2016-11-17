@@ -136,6 +136,7 @@
                 <aside class="col-lg-1 col-md-3 col-sm-3">
 
                 </aside>
+                <input id="user_id" type="hidden" value="${id}">
             </div>
         </div>
     </div>
@@ -196,7 +197,7 @@
                     <input type="password" name="PWD" id="password" class="r_corners full_width">
                 </li>
                 <li class="clearfix m_bottom_30">
-                    <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
+                    <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15" type="button">Log In</button>
                 </li>
             </ul>
         </form>
@@ -206,6 +207,7 @@
 <button class="t_align_c r_corners tr_all_hover type_2 animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 <!--scripts include-->
 <script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery.form.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/retina.js"></script>
 <script src="js/waypoints.min.js"></script>

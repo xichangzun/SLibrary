@@ -33,7 +33,7 @@ $(function () {
             return false;
         }
         else if(!(/^[0-9]*$/).test($(":input[name='pub_year']").val())){
-            alert("bad form, pub_year must be int ");
+            alert("bad form, pub_year must be number ");
             return false;
         }
         else  if($(":input[name='amount']").val().trim() == ""){
@@ -41,7 +41,7 @@ $(function () {
             return false;
         }
         else if(!(/^[0-9]*$/).test($(":input[name='amount']").val())){
-            alert("bad form, amount must be int ");
+            alert("bad form, amount must be number ");
             return false;
         }
         else if($(":input[name='call_no']").val().trim() == ""){
@@ -49,11 +49,11 @@ $(function () {
             return false;
         }
         else if($(":input[name='pages']").val() != ""&& !(/^[0-9]*$/).test($(":input[name='pages']").val())){
-            alert("bad form, pages must be int ");
+            alert("bad form, pages must be number ");
             return false;
         }
         else if($(":input[name='size']").val() != ""&& !(/^[0-9]*$/).test($(":input[name='size']").val())){
-            alert("bad form, size must be int ");
+            alert("bad form, size must be number ");
             return false;
         }
         else {

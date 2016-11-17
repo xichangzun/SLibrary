@@ -12,7 +12,7 @@ function submitByAjax() {
         return false;
     }
     else if($(":input[name='name']").val().trim() == ""){
-        alert("bad form,Book_Name is required");
+        alert("bad form,E-Res Name is required");
         return false;
     }
     else if($(":input[name='author']").val().trim() == ""){
@@ -28,11 +28,11 @@ function submitByAjax() {
         return false;
     }
     else if(!(/^[0-9]*$/).test($(":input[name='pub_year']").val())){
-        alert("bad form, pub_year must be int ");
+        alert("bad form, pub_year must be number ");
         return false;
     }
     else if($(":input[name='pages']").val() != ""&& !(/^[0-9]*$/).test($(":input[name='pages']").val())){
-        alert("bad form, pages must be int ");
+        alert("bad form, pages must be number ");
         return false;
     }
     var options = {

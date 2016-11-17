@@ -157,7 +157,7 @@ public class BorrowInfoAcion extends BaseAction {
         } else if (MyConstant.RESERVED.equals(book.getState())) {
             if(borrowInfoService.getRes(book_id).equals(user_id)){
                 if(borrowInfoService.deleteRes(user_id,book_id) != 1){
-                    result_message = "Borrow Failed,can't delete the reservation";
+                    result_message = "Borrow failed,can't delete the reservation";
                 }
                 else {
                     result_message = borrowInfoService.add(user_id,book_id);
